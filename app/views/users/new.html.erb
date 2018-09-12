@@ -1,3 +1,13 @@
 <h1>Sign Up</h1>
 
-Sign up form here
+<%= form_for :user, url: '/signup' do |f| %>
+  Name: <%= f.text_field :name %> </br>
+  Job Title: <%= f.text_field :title %>
+
+  </p>
+  Email: <%= f.text_field :email %> </br>
+  Password: <%= f.password_field :password %> </br>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+
+  <p><%= f.submit "Signup" %></p>
+<% end %>
