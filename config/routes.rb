@@ -3,9 +3,15 @@ Rails.application.routes.draw do
 
   root "welcome#home"
 
-  get "/signin", to: "sessions#new"
-  post "/sessions/create", to: "sessions#create"
-  delete "/signout", to: "sessions#destroy"
+  # get '/auth/facebook/callback' => 'sessions#create'
+
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  get '/dashboard' => 'users#show'
 
   resources :users
 

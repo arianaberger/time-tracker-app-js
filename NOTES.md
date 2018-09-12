@@ -24,7 +24,7 @@ create new
 
 - has_many :projects
 - has_many :users, through: :projects
-
+*add location along with maps view* 
 
 PROJECT (JOIN)
 - name
