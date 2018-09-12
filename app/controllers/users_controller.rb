@@ -5,9 +5,9 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       session[:user_id] = @user.id
-      redirect_to dashboard_path(@user)
+      redirect_to '/dashboard'
     else
-      redirect_to signup_path #add error message to form if fields are missing
+      redirect_to '/signup' #add error message to form if fields are missing
     end
   end
 
