@@ -24,7 +24,7 @@ create new
 
 - has_many :projects
 - has_many :users, through: :projects
-*add location along with maps view* 
+*add location along with maps view*
 
 PROJECT (JOIN)
 - name
@@ -64,3 +64,19 @@ clients/1/projects -> show (index) + create a new project?
 
 projects/1/entries [index] + create a new one from this page
 -> post to projects/1/entries + redirect_to entry page
+
+
+--------------
+
+Clients
+- Index page -> add or create new client
+- Client specific page
+  -> add a project or click link to current project for this client
+
+Projects
+- Index page -> can add new project from here
+- Project specific page
+  -> add a time entry
+
+Add Time Entry
+- form: choose project to add entry (can this be dynamic?)
