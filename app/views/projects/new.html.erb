@@ -1,3 +1,15 @@
 <h1>Create a new Project</h1>
 
-Client: <%= @client.name %>
+<p>Client: <%= @client.name %></p>
+
+
+<%= form_for :project, url: '/projects' do |f| %>
+  <%= f.label "Project Name:" %>
+  <%= f.text_field :name %></br>
+  <%= f.label "Deadline:" %>
+  <%= f.text_field :deadline %></br>
+  <%= f.label "Status:" %>
+  <%= f.text_field :status %>
+
+  <p><%= f.submit "Create Client" %></p>
+<% end %>

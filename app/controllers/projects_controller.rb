@@ -4,4 +4,8 @@ class ProjectsController < ApplicationController
     @client = Client.find(params[:client_id])
   end
 
+  def create
+    
+  end
+
 end
