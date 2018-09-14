@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :clients do
-    resources :projects, only: [:index]
+    resources :projects, shallow: true
   end
 
   resources :projects do

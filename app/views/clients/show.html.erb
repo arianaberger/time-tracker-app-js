@@ -16,6 +16,6 @@ Client's Projects:
   </ul>
 <% end %>
 
-Show client's projects, or click to add new project for this client
 
+<%= link_to "+ Add a Project", new_client_project_path(@client) %>
 <p><%= link_to "< View all clients", clients_path %></p>
