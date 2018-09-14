@@ -1,7 +1,21 @@
+<% if flash[:notice] %>
+  <font color="green"><%= flash[:notice] %></font>
+<% end %>
+
 <h1><%= @client.name %></h1>
 
-Add alert for successfully added client
-</br>
+Client's Projects:
+
+<% if @projects.empty? %>
+  <p>Client does not have any assigned projects yet.</p>
+<% else %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= project.name %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 Show client's projects, or click to add new project for this client
 
 <p><%= link_to "< View all clients", clients_path %></p>

@@ -61,6 +61,7 @@ Nested routes
 
 clients/1/projects -> show (index) + create a new project?
 -> post to clients/1/projects (then create, redirect to that project[:id])
+-> client_projects GET    /clients/:client_id/projects(.:format)      projects#index
 
 projects/1/entries [index] + create a new one from this page
 -> post to projects/1/entries + redirect_to entry page
