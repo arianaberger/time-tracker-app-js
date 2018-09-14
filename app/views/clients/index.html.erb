@@ -1,5 +1,11 @@
 <h1>Clients Index Page</h1>
 
-Dropdwown list of current clients
+Link to each client's show page:
+<ul>
+<% @clients.each do |client| %>
+  <li><%= link_to "#{client.name}", client_path(client) %></li>
+<% end %>
+</ul>
+
 
 <p><%= link_to "Add new client", new_client_path %></p>
