@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+  <font color="green"><%= flash[:notice] %></font>
+<% end %>
+
+<h1><%= @project.name %></h1>
+
+<ul>
+	<li><%= @project.client.name %></li>
+	<li><%= @project.status %></li>
+</ul>
+
