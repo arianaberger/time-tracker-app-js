@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :projects do
-    resources :entries, shallow: true
+    resources :entries, only: [:index]
   end
 
 end

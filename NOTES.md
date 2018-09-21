@@ -73,6 +73,7 @@ Clients
 - Index page -> add or create new client
 - Client specific page
   -> add a project or click link to current project for this client
+  *get create project form to work (date??)*
 
 Projects
 - Index page -> can add new project from here

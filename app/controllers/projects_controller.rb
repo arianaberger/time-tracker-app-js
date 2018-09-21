@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    
+    raise params.inspect
   end
 
 end
