@@ -26,7 +26,7 @@ Specs:
 - [ ] Include logout (how e.g. Devise)
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
 
-- [ ] Include nested resource show or index (URL e.g. users/2/recipes)
+- [x] Include nested resource show or index (URL e.g. users/2/recipes)
   > client_projects GET    /clients/:client_id/projects(.:format)      projects#index
   > Shows index page of all the projects for a client
 

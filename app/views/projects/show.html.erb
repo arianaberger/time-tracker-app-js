@@ -5,7 +5,7 @@
 <h1><%= @project.name %></h1>
 
 <ul>
-	<li><%= @project.client.name %></li>
+	<li><%= link_to "#{@project.client.name}", @client %></li>
 	<li><%= @project.status %></li>
 </ul>
 

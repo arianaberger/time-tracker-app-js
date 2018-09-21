@@ -1,5 +1,10 @@
 class ProjectsController < ApplicationController
 
+  def index
+    @client = Client.find(params[:client_id])
+    @projects = @client.projects 
+  end
+
   def new
     @client = Client.find(params[:client_id])
   end
@@ -18,6 +23,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @client = @project.client
   end
 
   private

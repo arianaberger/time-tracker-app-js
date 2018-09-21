@@ -4,18 +4,13 @@
 
 <h1><%= @client.name %></h1>
 
-Client's Projects:
-
+<p>
 <% if @projects.empty? %>
-  <p>Client does not have any assigned projects yet.</p>
+  Client does not have any assigned projects yet.
 <% else %>
-  <ul>
-    <% @projects.each do |project| %>
-      <li><%= project.name %></li>
-    <% end %>
-  </ul>
+  <%= link_to "View Client Projects", client_projects_path(@client) %>
 <% end %>
-
+</p>
 
 <%= link_to "+ Add a Project", new_client_project_path(@client) %>
 <p><%= link_to "< View all clients", clients_path %></p>
