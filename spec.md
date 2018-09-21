@@ -31,6 +31,10 @@ Specs:
   > Shows index page of all the projects for a client
 
 - [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+  > project_entries GET    /projects/:project_id/entries(.:format)     entries#index
+  > New form will be on entries#index page  
+  
+
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 
 Confirm:
