@@ -2,6 +2,7 @@ class ClientsController < ApplicationController
 
   def index
     @clients = Client.all
+    @user = User.find(session[:user_id])
   end
 
   def create

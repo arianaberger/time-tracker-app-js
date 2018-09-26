@@ -1,8 +1,13 @@
 class ProjectsController < ApplicationController
 
   def index
-    @client = Client.find(params[:client_id])
-    @projects = @client.projects 
+    if params[:client_id]
+      @name = Client.find(params[:client_id]) 
+      @projects = @name.projects
+    else
+      @name = User.find(session[:user_id])
+      @projects = @name.projects
+    end
   end
 
   def new
