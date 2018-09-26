@@ -1,8 +1,7 @@
 <h1>Add New Client</h1>
 
-<%= form_for :client, url: '/clients' do |f| %>
+<%= form_for :client, url: "/users/#{@user.id}/clients" do |f| %>
   <p>Name: <%= f.text_field :name %></p>
   <p><%= f.submit "Create Client" %></p>
 <% end %>
 
-<p><%= link_to "< View all clients", clients_path %></p>

@@ -5,6 +5,10 @@ class ClientsController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def new
+    @user = User.find(session[:user_id])
+  end
+
   def create
     @client = Client.new(client_params)
     if @client.valid?
