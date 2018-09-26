@@ -13,10 +13,9 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   get '/dashboard' => 'users#show'
 
-  resources :users
-
-  resources :clients do
+  resources :users do
     resources :projects, shallow: true
+    resources :clients, shallow: true
   end
 
   resources :projects do
