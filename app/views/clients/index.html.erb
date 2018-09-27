@@ -1,13 +1,15 @@
-<h1>Your Clients</h1>
+<h1>Clients</h1>
 
-Link to each client's show page:
-<ul>
-<% @clients.each do |client| %>
-  <li><%= link_to "#{client.name}", client_path(client) %></li>
+<% if @clients.empty? %>
+	<strong>There are currently no clients saved.</strong>
+<% else %>
+	<ul>
+	<% @clients.each do |client| %>
+	  <li><%= link_to "#{client.name}", client_path(client) %></li>
+	<% end %>
+	</ul>
 <% end %>
-</ul>
 
-
-<p><%= link_to "Add new client", new_user_client_path(@user) %></p>
+<p><%= link_to "Add new client", new_client_path %></p>
 
 <p><%= link_to "< Return to Dashboard", "/dashboard" %></p>
