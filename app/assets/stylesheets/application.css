@@ -24,10 +24,14 @@ body {
 }
 
 .header-nav {
-	background-color: #99ff99;
+	background-color: #ffcccc;
 	padding-bottom: 10px;
 	padding-top: 10px;
 	padding-left: 10px;
+}
+
+.user-info {
+	text-align: right;
 }
 
 

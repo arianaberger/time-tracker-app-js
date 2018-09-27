@@ -1,12 +1,3 @@
-<%= link_to "Manage Clients", clients_path %> |
-<%= link_to "Manage Projects", user_projects_path(@user) %> | 
-<%#= link_to "Manage Time Entries",  %>
-
-<hr>
-
 <h1>Welcome <%= @user.name %>!</h1>
 <h4>Position: <%= @user.title %></h4>
 
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <%= submit_tag 'Logout' %>
-<% end %>
