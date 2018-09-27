@@ -8,7 +8,12 @@
 <% if @projects.empty? %>
   Client does not have any assigned projects yet.
 <% else %>
-  <%= link_to "View Client Projects", client_projects_path(@client) %>
+	<h3>Projects:</h3>
+	<ul>
+	<% @projects.each do |project| %>
+	  <li><%= link_to "#{project.name}", project_path(project) %></li>
+	  <% end %>
+	</ul>
 <% end %>
 </p>
 
