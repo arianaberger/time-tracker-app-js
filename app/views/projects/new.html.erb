@@ -3,6 +3,7 @@
 <%= form_for :project, url: "/projects" do |f| %>
 
   <%= f.collection_select :client_id, Client.all, :id, :name %>
+
   <br>
 
   <%= f.hidden_field :user_id, value: session[:user_id] %>
