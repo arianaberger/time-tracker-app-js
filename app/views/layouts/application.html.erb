@@ -11,14 +11,15 @@
 
   <body>
 
-    <div class="navbar" role="navigation">
+    <div class="header-nav" role="navigation">
       <% if current_user %>
         <%= link_to "Manage Clients", clients_path %> |
         <%= link_to "Manage Projects", user_projects_path(@user) %> | 
         <%= link_to "Log Out", logout_path, method: :delete %>
       <% else %>
         <%= link_to "Login", login_path %> | 
-        <%= link_to "Sign up", signup_path %>
+        <%= link_to "Sign up", signup_path %> | 
+        <a href='/auth/facebook'>Sign Up via Facebook</a>
       <% end %>
     </div>
 
