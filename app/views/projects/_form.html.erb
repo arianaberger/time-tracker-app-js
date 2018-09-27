@@ -1,0 +1,17 @@
+<%= form_for project do |f| %>
+
+  <%= f.collection_select :client_id, Client.all, :id, :name %>
+
+  <br>
+
+  <%= f.hidden_field :user_id, value: session[:user_id] %>
+
+  <%= f.label "Project Name:" %>
+  <%= f.text_field :name %></br>
+  <%= f.label "Deadline:" %>
+  <%= f.text_field :deadline %></br>
+  <%= f.label "Status:" %>
+  <%= f.text_field :status %>
+
+  <p><%= f.submit %></p>
+<% end %>
