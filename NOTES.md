@@ -45,30 +45,18 @@ time: start_time
 end_time:
 
 - belongs_to :project (needs foreign key)
-*- has_many :tags*
 
-
-
-*---
-TAGS (NEED ANOTHER JOIN?)
-- description
-
-- has_many :entries, through: entry_tags
-- has_many :entry_tags*
-
-
+--------------
 Nested routes
 
-clients/1/projects -> show (index) + create a new project?
--> post to clients/1/projects (then create, redirect to that project[:id])
--> client_projects GET    /clients/:client_id/projects(.:format)      projects#index
+users/1/projects -> show (index) + link to create a new project
+-> post to /projects
 
-projects/1/entries [index] + create a new one from this page
--> post to projects/1/entries + redirect_to entry page
+clients/1/projects/new 
+-> post to /projects
 
 
 --------------
-
 Clients
 - Index page -> add or create new client
 - Client specific page
@@ -82,3 +70,8 @@ Projects
 
 Add Time Entry
 - form: choose project to add entry (can this be dynamic?)
+
+
+
+27.09.18
+- add edit and delete to projects (or add a 'mark complete' to change status to complete?)

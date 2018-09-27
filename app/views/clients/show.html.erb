@@ -2,20 +2,18 @@
   <font color="green"><%= flash[:notice] %></font>
 <% end %>
 
-<h1><%= @client.name %></h1>
+<h1>Client Name: <%= @client.name %></h1>
 
-<p>
+<h3>Projects:</h3>
+
 <% if @projects.empty? %>
-  Client does not have any assigned projects yet.
+  <p>Client does not have any assigned projects yet.</p>
 <% else %>
-	<h3>Projects:</h3>
 	<ul>
 	<% @projects.each do |project| %>
 	  <li><%= link_to "#{project.name}", project_path(project) %></li>
 	  <% end %>
 	</ul>
 <% end %>
-</p>
 
 <%= link_to "+ Add a Project", new_client_project_path(@client) %>
-<p><%= link_to "< View all clients", clients_path %></p>

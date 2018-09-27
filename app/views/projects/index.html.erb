@@ -2,6 +2,7 @@
 
 
 <h3>Projects:</h3>
+
 <ul>
 <% @projects.each do |project| %>
   <li><%= link_to "#{project.name}", project_path(project) %></li>
@@ -9,4 +10,4 @@
 </ul>
 
 
-<%= link_to "Add a new project", new_user_project_path(@name) %>
+<%= link_to "+ Add a new project", new_user_project_path(@name) %>
