@@ -5,6 +5,7 @@
 <hr>
 
 <h1>Welcome <%= @user.name %>!</h1>
+<h4>Position: <%= @user.title %></h4>
 
 <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
   <%= submit_tag 'Logout' %>

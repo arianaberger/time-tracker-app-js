@@ -1,10 +1,10 @@
 <h1>Create a new Project</h1>
 
-<p>Client: <%= @client.name %></p>
+<%= form_for :project, url: "/projects" do |f| %>
 
+  <%= f.collection_select :client_id, Client.all, :id, :name %>
+  <br>
 
-<%= form_for :project, url: '/projects' do |f| %>
-  <%= f.hidden_field :client_id, value: @client.id %>
   <%= f.hidden_field :user_id, value: session[:user_id] %>
 
   <%= f.label "Project Name:" %>

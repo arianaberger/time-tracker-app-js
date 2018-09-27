@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  #add private method and before_action for certain views to get access to @projects
+
   def index
     if params[:client_id]
       @name = Client.find(params[:client_id]) 
@@ -11,7 +13,11 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @client = Client.find(params[:client_id])
+    if params[:client_id]
+      @name = Client.find(params[:client_id]) 
+    else
+      @name = User.find(session[:user_id])
+    end
   end
 
   def create

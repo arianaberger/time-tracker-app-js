@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   get '/dashboard' => 'users#show'
 
+  post '/projects' => 'projects#create'
+
+
 #I don't want any extra :user routes here!
-  resources :users, only: [:index] do 
+  resources :users, only: [:index, :create, :show] do 
     resources :projects, shallow: true
   end
 
