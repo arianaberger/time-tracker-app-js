@@ -3,13 +3,7 @@ class ProjectsController < ApplicationController
   #add private method and before_action for certain views to get access to @projects
 
   def index
-    if params[:client_id]
-      @name = Client.find(params[:client_id]) 
-      @projects = @name.projects
-    else
-      @name = User.find(session[:user_id])
-      @projects = @name.projects
-    end
+      @user = User.find(session[:user_id])
   end
 
   def new

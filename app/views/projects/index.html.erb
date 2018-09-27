@@ -1,13 +1,13 @@
-<h1><%= @name.name %></h1>
+<h1><%= @user.name %></h1>
 
 
 <h3>Projects:</h3>
 
 <ul>
-<% @projects.each do |project| %>
+<% @user.projects.each do |project| %>
   <li><%= link_to "#{project.name}", project_path(project) %></li>
   <% end %>
 </ul>
 
 
-<%= link_to "+ Add a new project", new_user_project_path(@name) %>
+<%= link_to "+ Add a new project", new_user_project_path(@user) %>
