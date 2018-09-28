@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
 
 	def index
-		@entries = Entry.all.order("created_at DESC")
+		@entries = Entry.desc_order
 	end
 
 	def new

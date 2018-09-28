@@ -10,4 +10,7 @@
 	<li>Deadline: <%= @project.deadline %></li>
 </ul>
 
-<p><%= link_to 'Edit Project', edit_project_path(@project) %></p> 
+<p>
+	<%= link_to 'Edit Project', edit_project_path(@project) %> | 
+	<%= link_to "+ Add new time entry", new_entry_path %> | Display most recent time entries here 
+</p> 
