@@ -1,4 +1,14 @@
+<h3>Time Entries</h3>
+
+<p>
+<% if flash[:notice] %>
+  <font color="green"><%= flash[:notice] %></font>
+<% end %>
+</p>
+
 <% @entries.each do |entry| %>
-	<%= entry.date %> <br>
-	<%= entry.notes %>
+	<p>
+		Date: <%= entry.date %> <br>
+		Notes: <%= entry.notes %>
+	</p>
 <% end %>
