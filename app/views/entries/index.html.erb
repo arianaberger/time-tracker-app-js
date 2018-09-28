@@ -1,1 +1,4 @@
-Display the entries
+<% @entries.each do |entry| %>
+	<%= entry.date %> <br>
+	<%= entry.notes %>
+<% end %>

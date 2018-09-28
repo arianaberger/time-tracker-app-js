@@ -77,7 +77,7 @@ Add Time Entry
 + added partial for edit & new forms for projects
 
 28.09.18
-- update projects controller (might have too much stuff!)
+- update projects controller (might have too much stuff!) + PRIVATE METHODS
 - work on adding entries
 - FB login
 - scope method?
