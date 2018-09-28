@@ -9,7 +9,6 @@ class EntriesController < ApplicationController
 	end
 
 	def create
-		raise params.inspect
 		@entry = Entry.new(entry_params)
 		if @entry.save?
 			flash[:notice] = "Time entry successfully saved."
