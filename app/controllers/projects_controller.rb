@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :current_project, except: [:index, :create, :new]
 
   def index
-      @user = User.find(session[:user_id])
+    @user = User.find(session[:user_id])
   end
 
   def new
