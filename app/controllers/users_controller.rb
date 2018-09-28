@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+    #display all entries in the show page
   end
 
   private

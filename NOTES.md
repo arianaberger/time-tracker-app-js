@@ -77,9 +77,10 @@ Add Time Entry
 + added partial for edit & new forms for projects
 
 28.09.18
-+ update projects controller (might have too much stuff!)
-
+- update projects controller (might have too much stuff!)
 - work on adding entries
 - FB login
 - scope method?
 - validations
+- validations for creating and updating things (double check)
+- have status for projects be a dropdown

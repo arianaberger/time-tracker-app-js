@@ -28,13 +28,10 @@ Specs:
 - [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
 
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
-  > client_projects GET    /clients/:client_id/projects(.:format)      projects#index
-  > Shows index page of all the projects for a client
+  > /users/1/projects
 
-- [ ] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
-  > project_entries GET    /projects/:project_id/entries(.:format)     entries#index
-  > New form will be on entries#index page  
-  
+- [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+  > /users/1/projects/new  
 
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
 

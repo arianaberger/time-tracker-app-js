@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   post '/projects' => 'projects#create'
 
+  resources :entries
+
 
 #I don't want any extra :user routes here!
   resources :users, only: [:index, :create, :show] do 
