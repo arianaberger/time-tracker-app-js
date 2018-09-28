@@ -1,5 +1,6 @@
 <%= form_for project do |f| %>
 
+  <%= f.label "Choose Client:" %>
   <%= f.collection_select :client_id, Client.all, :id, :name %>
 
   <br>

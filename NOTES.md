@@ -74,4 +74,12 @@ Add Time Entry
 
 
 27.09.18
-- add edit and delete to projects (or add a 'mark complete' to change status to complete?)
++ added partial for edit & new forms for projects
+
+28.09.18
++ update projects controller (might have too much stuff!)
+
+- work on adding entries
+- FB login
+- scope method?
+- validations
