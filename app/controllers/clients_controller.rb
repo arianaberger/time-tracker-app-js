@@ -2,11 +2,11 @@ class ClientsController < ApplicationController
 
   def index
     @clients = Client.all
-    @user = User.find(session[:user_id])
+    @user = current_user
   end
 
   def new
-    @user = User.find(session[:user_id])
+    @user = current_user
   end
 
   def create
@@ -16,7 +16,6 @@ class ClientsController < ApplicationController
       flash[:notice] = "Client created successfully"
       redirect_to client_path(@client)
     else
-      #add error to say 'name must be filled out'?
       render :new
     end
   end

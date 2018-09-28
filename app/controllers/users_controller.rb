@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    #display all entries in the show page
   end
 
   private
