@@ -72,11 +72,16 @@ Add Time Entry
 - form: choose project to add entry (can this be dynamic?)
 
 
-
 27.09.18
 + added partial for edit & new forms for projects
 
-28.09.18
+29.09.18
++ added delete function for projcets and flash message when successful
+
+- add dynamic route redirect for deleting project from user or client route
+
+
+To-Do:
 - FB login
 - scope method? - add one for displaying top 5 entries on dashboard
 - validations

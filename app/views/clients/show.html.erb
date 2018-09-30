@@ -1,8 +1,8 @@
+<h1>Client Name: <%= @client.name %></h1>
+
 <% if flash[:notice] %>
   <font color="green"><%= flash[:notice] %></font>
 <% end %>
-
-<h1>Client Name: <%= @client.name %></h1>
 
 <h3>Projects:</h3>
 
@@ -16,4 +16,7 @@
 	</ul>
 <% end %>
 
-<%= link_to "+ Add a Project", new_client_project_path(@client) %>
+<p>
+	<%= link_to "+ Add a Project", new_client_project_path(@client) %> |
+	<%= link_to "Delete Client", "/clients/#{@client.id}", method: :delete %>
+</p>
