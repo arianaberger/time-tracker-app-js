@@ -10,4 +10,7 @@
 	<li>Deadline: <%= @project.deadline %></li>
 </ul>
 
-<p><%= link_to 'Edit Project', edit_project_path(@project) %></p> 
+<p>
+	<%= link_to 'Edit Project', edit_project_path(@project) %> | 
+	<%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete %>
+</p>

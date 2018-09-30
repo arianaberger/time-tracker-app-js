@@ -29,6 +29,11 @@ class ProjectsController < ApplicationController
     redirect_to @project
   end
 
+  def destroy
+    current_project.destroy
+    redirect_to user_projects_path(current_user)
+  end
+
   private
 
   def current_project

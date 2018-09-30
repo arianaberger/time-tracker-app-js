@@ -77,10 +77,10 @@ Add Time Entry
 + added partial for edit & new forms for projects
 
 28.09.18
-- update projects controller (might have too much stuff!) + PRIVATE METHODS
-- work on adding entries
 - FB login
-- scope method?
+- scope method? - add one for displaying top 5 entries on dashboard
 - validations
-- validations for creating and updating things (double check)
+- validations that appear in views for creating and updating things (double check)
 - have status for projects be a dropdown
+- Show total time for projects, weekly time, etc
+

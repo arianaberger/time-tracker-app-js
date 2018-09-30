@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 
   resources :entries
 
-
 #I don't want any extra :user routes here!
   resources :users, only: [:index, :create, :show] do 
     resources :projects, shallow: true
