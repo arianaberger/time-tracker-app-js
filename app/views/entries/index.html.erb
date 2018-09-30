@@ -1,4 +1,4 @@
-<h3>Time Entries</h3>
+<h1>Time Entries</h1>
 
 <p>
 <% if flash[:notice] %>
@@ -8,7 +8,8 @@
 
 <% @entries.each do |entry| %>
 	<p>
-		Date: <%= entry.date %> <br>
-		Notes: <%= entry.notes %> <Br>
+		<strong><%= entry.date.strftime("%b %d, %Y") %></strong> <br>
+		<strong>Hours:</strong> <%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %> | 
+		<strong>Notes:</strong> <%= entry.notes %> <br>
 	</p>
 <% end %>

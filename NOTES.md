@@ -76,9 +76,11 @@ Add Time Entry
 + added partial for edit & new forms for projects
 
 29.09.18
-+ added delete function for projcets and flash message when successful
++ added delete function for projcets and client, flash message when successful
 
-- add dynamic route redirect for deleting project from user or client route
+- add dynamic route redirect for deleting project from user or client route?
+- add new project from client route -> not showing client in dropdown?
+- Display total hours for entries? Add model method
 
 
 To-Do:

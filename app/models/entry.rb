@@ -3,7 +3,7 @@ class Entry < ApplicationRecord
   belongs_to :user
 
   def self.desc_order
-  	order(created_at: :asc)
+  	order(date: :desc)
   end
 
 end
