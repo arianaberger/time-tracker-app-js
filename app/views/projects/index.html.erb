@@ -1,5 +1,9 @@
 <h1>Your Projects</h1>
 
+<% if flash[:notice] %>
+  <font color="green"><%= flash[:notice] %></font>
+<% end %>
+
 <ul>
 <% @user.projects.each do |project| %>
   <li><%= link_to "#{project.name}", project_path(project) %></li>

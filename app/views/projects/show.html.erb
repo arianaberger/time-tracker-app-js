@@ -1,8 +1,8 @@
+<h1>Project Name: <%= @project.name %></h1>
+
 <% if flash[:notice] %>
   <font color="green"><%= flash[:notice] %></font>
 <% end %>
-
-<h1>Project Name: <%= @project.name %></h1>
 
 <ul>
 	<li>Client: <%= link_to "#{@project.client.name}", @client %></li>

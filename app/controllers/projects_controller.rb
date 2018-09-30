@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
       if @project.valid? #this doesn't even have any validations yet!
         @project.save
-        flash[:notice] = "Project successfully created"
+        flash[:notice] = "Project successfully created!"
         redirect_to @project
       else
         render :new
@@ -31,6 +31,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     current_project.destroy
+    flash[:notice] = "Project successfully deleted!"
     redirect_to user_projects_path(current_user)
   end
 
