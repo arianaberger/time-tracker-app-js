@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_09_12_141430) do
     t.string "password"
     t.string "title"
     t.string "password_digest"
+    t.integer "uid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
