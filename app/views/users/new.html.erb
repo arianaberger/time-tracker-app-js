@@ -1,5 +1,9 @@
 <h1>Sign Up</h1>
 
+<% if flash[:notice] %>
+  <font color="red"><%= flash[:notice] %></font>
+<% end %>
+
 <div>
   <%= form_for :user, url: '/signup' do |f| %>
     Name: <%= f.text_field :name %> </br>

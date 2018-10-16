@@ -1,6 +1,5 @@
 Questions:
-- Correct DB setup?
-- ApplicationRecord?
+- Flash messages or using the inherit rails error messages?
 
 ------------
 
@@ -72,22 +71,37 @@ Add Time Entry
 - form: choose project to add entry (can this be dynamic?)
 
 
+---------------
+My Progress
+---------------
+
 27.09.18
 + added partial for edit & new forms for projects
 
 29.09.18
-+ added delete function for projcets and client, flash message when successful
++ added delete function for projects and client, flash message when successful
 
-- add dynamic route redirect for deleting project from user or client route?
-- add new project from client route -> not showing client in dropdown?
-- Display total hours for entries? Add model method
+08.10.18
++ added redirect for root page if user logged in and user#show if not logged in
++ removed extra #show action in users controller
++ fixed routing for project show page links in client show page and projects index page
++ current client selected from dropdown in new project form (from client or projects page!) using :select => 
++ added flash notice for signup/login pages and when logging out
++ added date and time select to new entry form
 
+09.10.18
++ updated date format for deadline on projects show page
++ added status dropdown incl. method helper and datetime for deadline
+
+- working on method to search for entries in the last week or so (most recent entries)
 
 To-Do:
+- add class method tests? check oo ruby
+- add validation errors to partial
+- add class method for total hours work per entry / one for "yesterday's time entries"
 - FB login
-- scope method? - add one for displaying top 5 entries on dashboard
-- validations
 - validations that appear in views for creating and updating things (double check)
 - have status for projects be a dropdown
-- Show total time for projects, weekly time, etc
+- Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
+- date and time formatting > move into model as a helper method?
 

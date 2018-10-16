@@ -21,7 +21,7 @@ Specs:
   > User, client, and project all have validations
 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
- > desc_order method for entries model in '/entries'
+ > working on one for entries
 
 - [x] Include signup (how e.g. Devise)
 - [x] Include login (how e.g. Devise)
@@ -35,6 +35,7 @@ Specs:
   > /users/1/projects/new  
 
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
+  > currently only have them as flash messages, is this sufficient?
 
 Confirm:
 - [ ] The application is pretty DRY

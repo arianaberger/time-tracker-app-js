@@ -7,7 +7,7 @@
 <ul>
 	<li>Client: <%= link_to "#{@project.client.name}", @client %></li>
 	<li>Status: <%= @project.status %></li>
-	<li>Deadline: <%= @project.deadline %></li>
+	<li>Deadline: <%= @project.deadline.strftime("%b %d, %Y") %></li>
 </ul>
 
 <p>

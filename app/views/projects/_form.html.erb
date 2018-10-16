@@ -1,7 +1,7 @@
 <%= form_for project do |f| %>
 
   <%= f.label "Choose Client:" %>
-  <%= f.collection_select :client_id, Client.all, :id, :name %>
+  <%= f.collection_select :client_id, Client.all, :id, :name, :selected => project.client_id || params[:client_id] %>
 
   <br>
 
@@ -10,9 +10,9 @@
   <%= f.label "Project Name:" %>
   <%= f.text_field :name %></br>
   <%= f.label "Deadline:" %>
-  <%= f.text_field :deadline %></br>
+  <%= f.date_select :deadline %></br>
   <%= f.label "Status:" %>
-  <%= f.text_field :status %>
+  <%= f.select :status, project.statuses %>
 
   <p><%= f.submit %></p>
 <% end %>

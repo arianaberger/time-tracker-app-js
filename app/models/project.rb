@@ -6,4 +6,13 @@ class Project < ApplicationRecord
   validates :name, presence: true
   validates :status, presence: true
 
+  def statuses
+  	[	"Just Started", 
+  		"In Progress", 
+  		"Almost Complete", 
+  		"Complete", 
+  		"Total Failure"
+  	]
+  end
+
 end

@@ -6,4 +6,8 @@ class Entry < ApplicationRecord
   	order(date: :desc)
   end
 
+  def self.latest
+ 	desc_order.limit(3)
+   end
+
 end

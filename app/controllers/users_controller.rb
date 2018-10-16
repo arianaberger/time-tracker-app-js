@@ -1,19 +1,26 @@
 class UsersController < ApplicationController
 
-  def create
-    @user = User.new(user_params)
-    if @user.valid?
-      @user.save
-      session[:user_id] = @user.id
-      redirect_to '/dashboard'
+  def show
+    if current_user
+      @user = current_user
+      @entries = Entry.latest
     else
-      redirect_to '/signup' #add error message to form if fields are missing
+      redirect_to root_path
     end
   end
 
-  def show
-    @user = current_user
+  def create
+      @user = User.new(user_params)
+      if @user.valid?
+        @user.save
+        session[:user_id] = @user.id
+        redirect_to '/dashboard'
+      else
+        flash[:notice] = "Please fill out all fields."
+        redirect_to '/signup' 
+      end
   end
+
 
   private
 

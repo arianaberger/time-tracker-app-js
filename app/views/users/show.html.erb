@@ -3,4 +3,14 @@
 
 
 <hr>
-<%= link_to "+ Add new time entry", new_entry_path %> | <%= link_to "View All", entries_path %> | Display most recent time entries here 
+Your most recent time entries: 
+
+<% @entries.each do |entry| %>
+	<p>
+		<strong><%= entry.project.name %> | <%= entry.date.strftime("%b %d, %Y") %></strong> <br>
+		<strong>Hours:</strong> <%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %> | 
+		<strong>Notes:</strong> <%= entry.notes %> <br>
+	</p>
+<% end %>
+
+<%= link_to "View All", entries_path %>
