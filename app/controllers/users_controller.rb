@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     if current_user
       @user = current_user
-      @entries = Entry.latest
+      @entries = current_user.entries.latest
     else
       redirect_to root_path
     end
