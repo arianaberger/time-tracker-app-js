@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
 
 	def index
-		@entries = Entry.desc_order
+		@entries = current_user.entries.desc_order
 	end
 
 	def new
