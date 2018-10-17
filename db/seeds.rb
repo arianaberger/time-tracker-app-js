@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 ariana = User.create(:name => "Ariana", :title => "CEO", :email => "a@a.com", :password => "pwd")
+kitty = User.create(:name => "Kitty", :title => "CFO", :email => "k@k.com", :password => "pwd")
 
 versace = Client.create(:name => "Versace")
 prada = Client.create(:name => "Prada")

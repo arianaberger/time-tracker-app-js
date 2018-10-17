@@ -93,15 +93,21 @@ My Progress
 + updated date format for deadline on projects show page
 + added status dropdown incl. method helper and datetime for deadline
 
-- working on method to search for entries in the last week or so (most recent entries)
++ added last 3 time entries on dashboard - change to perhaps projects with top hours?
+
+16.10.18
++ got FB login working - position is blank though, remove?
+
+- fix entries: only display the user's entries
+- what is wrong with projects? and clients
+- just make clients and projects belong to 1 user!!
 
 To-Do:
 - add class method tests? check oo ruby
 - add validation errors to partial
-- add class method for total hours work per entry / one for "yesterday's time entries"
+- add class method for total hours worked per entry / one for "yesterday's time entries"
 - FB login
 - validations that appear in views for creating and updating things (double check)
-- have status for projects be a dropdown
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
 - date and time formatting > move into model as a helper method?
 
