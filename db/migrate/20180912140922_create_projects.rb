@@ -6,7 +6,6 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.datetime :deadline
 
       t.belongs_to :client, index: true, foreign_key: true
-      t.belongs_to :user, index: true, foreign_key: true    
 
       t.timestamps
     end

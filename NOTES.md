@@ -1,15 +1,40 @@
 Questions:
-- Flash messages or using the inherit rails error messages?
+- Flash messages or use rails error messages?
 
 ------------
+
+
+[USER] 			 					[CLIENT]
+- has many Clients                  - belongs to a User
+- has many Projects                 - has many Projects
+- has many Entries                  - has many Entries through Projects
+
+
+[PROJECT]
+- belongs to a Client
+- belongs to a User
+- each project has many Entries -> is this a separate row or as an array?
+
+[ENTRY]
+- belongs to a Project
+- belongs to a User
+
+
+
+
+
+
+
+--------------------------------
 
 USER
 - name
 - email
 - password
-- title
+- position
 - password_digest (schema)
 - has_secure_password (model)
+- uid
 
 has_many :projects
 has_many :clients, through: :projects
@@ -99,7 +124,6 @@ My Progress
 + got FB login working - position is blank though, remove?
 
 - fix entries: only display the user's entries
-- what is wrong with projects? and clients
 - just make clients and projects belong to 1 user!!
 
 To-Do:

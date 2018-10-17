@@ -11,11 +11,10 @@ Specs:
   > Entry belongs_to a projects
 
 - [x] Include at least one has_many through relationship (x has_many y through z e.g. Recipe has_many Items through Ingredients)
-  > Client has_many users through projects
-  > User has_many clients through projects  
+  > Client has_many entries through projects
 
 - [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. ingredients.quantity)
-  > Project has 3 attributes: name, deadline, status
+  > Entry has 4 attributes: date, start/end time, notes
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
   > User, client, and project all have validations
