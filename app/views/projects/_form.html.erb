@@ -1,7 +1,7 @@
 <%= form_for project do |f| %>
 
   <%= f.label "Choose Client:" %>
-  <%= f.collection_select :client_id, Client.all, :id, :name, :selected => project.client_id || params[:client_id] %>
+  <%= f.collection_select :client_id, current_user.clients, :id, :name, :selected => project.client_id || params[:client_id] %>
 
   <br>
 
