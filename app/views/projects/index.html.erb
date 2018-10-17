@@ -5,9 +5,10 @@
 <% end %>
 
 <ul>
-<% @user.projects.each do |project| %>
-  <li><%= link_to "#{project.name}", project_path(project) %></li>
-
+  <% @user.clients.each do |client| %>
+	<% client.projects.each do |project| %>
+	  <li><%= link_to "#{project.name}", project_path(project) %></li>
+	 <% end %>
   <% end %>
 </ul>
 

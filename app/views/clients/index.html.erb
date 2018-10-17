@@ -5,7 +5,7 @@
 	<strong>There are currently no clients saved.</strong>
 <% else %>
 	<ul>
-	<% @clients.each do |client| %>
+	<% @user.clients.each do |client| %>
 	  <li><%= link_to "#{client.name}", client_path(client) %></li>
 	<% end %>
 	</ul>
