@@ -1,5 +1,4 @@
 Questions:
-- Flash messages or use rails error messages?
 
 ------------
 
@@ -18,57 +17,18 @@ Questions:
 [ENTRY]
 - belongs to a Project
 - belongs to a User
+- has_many tags through entry_tags
+- belongs_to entry_tags
 
+[TAGS]
+- has_many entries through entry_tags
+- belongs_to entry_tags
 
+id  entry_id  tag
+1	1			fashion
+1	2			fashion
+2	1			runway
 
-
-
-
-
---------------------------------
-
-USER
-- name
-- email
-- password
-- position
-- password_digest (schema)
-- has_secure_password (model)
-- uid
-
-has_many :projects
-has_many :clients, through: :projects
-
-
-CLIENT
-already clients
-create new
-
-- name
-
-- has_many :projects
-- has_many :users, through: :projects
-*add location along with maps view*
-
-PROJECT (JOIN)
-- name
-- deadline
-- status
-
-- has_many :entries
-- belongs_to :client (schema, model)
-- belongs_to :user (schema, model)
-
-
-ENTRY
-- date
-- time
-- notes
-
-time: start_time
-end_time:
-
-- belongs_to :project (needs foreign key)
 
 --------------
 Nested routes
@@ -117,21 +77,24 @@ My Progress
 09.10.18
 + updated date format for deadline on projects show page
 + added status dropdown incl. method helper and datetime for deadline
-
-+ added last 3 time entries on dashboard - change to perhaps projects with top hours?
++ added last 3 time entries on dashboard
 
 16.10.18
 + got FB login working - position is blank though, remove?
 
-- fix entries: only display the user's entries
-- just make clients and projects belong to 1 user!!
+17.10.18
++ re-did table and associations!
++ entries, clients, and projects are displaying only for that user
++ only show last 2 entries on dashboard
+
+- how to display projects for the current user only when creating a time entry??
+- make sure there are checks that you can't change other user's info!
+
 
 To-Do:
 - add class method tests? check oo ruby
-- add validation errors to partial
+- add validation errors to partial form to display the errors
 - add class method for total hours worked per entry / one for "yesterday's time entries"
-- FB login
-- validations that appear in views for creating and updating things (double check)
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
 - date and time formatting > move into model as a helper method?
 

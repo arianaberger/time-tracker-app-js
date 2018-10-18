@@ -6,6 +6,8 @@ class EntriesController < ApplicationController
 
 	def new
 		@entry = Entry.new
+				raise @projects.inspect
+		@projects = Project.user_projects
 	end
 
 	def create
