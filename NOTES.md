@@ -9,25 +9,32 @@ Questions:
 - has many Entries                  - has many Entries through Projects
 
 
-[PROJECT]
+[PROJECT] 
 - belongs to a Client
 - belongs to a User
-- each project has many Entries -> is this a separate row or as an array?
+- has many Entries
+- has_many entries through tags
+- has_many tags
 
-[ENTRY]
+[ENTRY] #rails #debug have to create tag
 - belongs to a Project
 - belongs to a User
-- has_many tags through entry_tags
-- belongs_to entry_tags
+- has_many projects through tags
+- has_many tags
 
-[TAGS]
-- has_many entries through entry_tags
-- belongs_to entry_tags
+[TAGS] *join table*
+- belongs to project
+- belongs to entry
 
-id  entry_id  tag
-1	1			fashion
-1	2			fashion
-2	1			runway
+TAGS
+id 	project_id entry_id hashtag
+1	1			1		#rails
+1	2			2		#rails
+
+
+
+
+
 
 
 --------------

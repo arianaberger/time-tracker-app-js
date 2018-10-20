@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
 	def current_user
       @current_user ||= User.find(session[:user_id]) if session[:user_id]
-      rescue ActiveRecord::RecordNotFound #having issues with session properly clearing
+      rescue ActiveRecord::RecordNotFound      #was having issues with session properly clearing while testing
       session[:user_id] = nil
     end
 

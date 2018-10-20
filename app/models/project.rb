@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   has_many :entries
+  has_many :entries, through: :tags
   belongs_to :client
 
   validates :name, presence: true
