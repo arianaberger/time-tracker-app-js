@@ -94,7 +94,12 @@ My Progress
 + entries, clients, and projects are displaying only for that user
 + only show last 2 entries on dashboard
 
-- how to display projects for the current user only when creating a time entry??
+
+20.10.18
++ new tags join model
+
+- ***klass error on user entries??
+- ***how to display projects for the current user only when creating a time entry?? see client model > #user_projects
 - make sure there are checks that you can't change other user's info!
 
 
