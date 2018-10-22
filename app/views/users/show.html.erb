@@ -11,18 +11,18 @@
 - 
 
 
+<h3>Project Collaboration</h3>
+Most recent time entries: 
 
-Your most recent time entries: 
-
-<% if @entries.empty? %>
-You have no recent entries.
+<% if Entry.all.empty? %>
+There are no recent entries.
 
 <% else %>
-	<% @entries.each do |entry| %>
+	<% Entry.all.each do |entry| %>
 		<p>
 			<strong><%= entry.project.name %> | <%= entry.date.strftime("%b %d, %Y") %></strong> <br>
-			<strong>Hours:</strong> <%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %> | 
-			<strong>Notes:</strong> <%= entry.notes %> <br>
+			<strong><%= entry.user.name %></strong> worked from <%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %> |  
+			<i>"<%= entry.notes %>"</i> <br>
 		</p>
 	<% end %>
 <% end %>
