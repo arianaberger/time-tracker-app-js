@@ -18,7 +18,7 @@ Most recent time entries:
 There are no recent entries.
 
 <% else %>
-	<% Entry.all.each do |entry| %>
+	<% Entry.all.latest.each do |entry| %>
 		<p>
 			<strong><%= entry.project.name %> | <%= entry.date.strftime("%b %d, %Y") %></strong> <br>
 			<strong><%= entry.user.name %></strong> worked from <%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %> |  
