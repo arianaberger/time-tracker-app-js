@@ -8,8 +8,9 @@
 
 <% @entries.each do |entry| %>
 	<p>
-		<strong><%= entry.project.name %> | <%= entry.date.strftime("%b %d, %Y") %></strong> <br>
+		<strong><%= entry.project.name %> | <%= entry.date.strftime("%b %d, %Y") %></strong> 
+		<%= link_to "[delete entry]", "/entries/#{entry.id}", method: :delete %><br>
 		<strong>Hours:</strong> <%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %> | 
-		<strong>Notes:</strong> <%= entry.notes %> <br>
+		<strong>Notes:</strong> <%= entry.notes %> 
 	</p>
 <% end %>
