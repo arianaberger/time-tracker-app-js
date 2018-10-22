@@ -7,6 +7,7 @@ class CreateEntries < ActiveRecord::Migration[5.2]
       t.string :notes
       
       t.belongs_to :project, index: true, foreign_key: true
+      t.belongs_to :user, index: true, foreign_key: true
 
       t.timestamps
     end

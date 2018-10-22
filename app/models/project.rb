@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
-  has_many :entries
-  has_many :entries, through: :tags
   belongs_to :client
+  has_many :entries
+  has_many :users, through: :entries
 
   validates :name, presence: true
   validates :status, presence: true
@@ -17,3 +17,4 @@ class Project < ApplicationRecord
 
 
 end
+

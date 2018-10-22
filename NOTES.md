@@ -5,31 +5,26 @@ Questions:
 
 [USER] 			 					[CLIENT]
 - has many Clients                  - belongs to a User
-- has many Projects                 - has many Projects
-- has many Entries                  - has many Entries through Projects
+- has m                 			- has many Projects
+- has many                   		
 
+User has many projects, through: :entries
+Project has many users, through: :entries
+both have many :entries (join table)
+entry belongs to both (needs foreign key)
 
 [PROJECT] 
 - belongs to a Client
-- belongs to a User
 - has many Entries
-- has_many entries through tags
-- has_many tags
+- has many users through entries
 
-[ENTRY] #rails #debug have to create tag
+[ENTRY] + user is assigned to a project when adding an entry
 - belongs to a Project
 - belongs to a User
-- has_many projects through tags
-- has_many tags
 
-[TAGS] *join table*
+*[TAGS]*
 - belongs to project
 - belongs to entry
-
-TAGS
-id 	project_id entry_id hashtag
-1	1			1		#rails
-1	2			2		#rails
 
 
 
@@ -98,8 +93,8 @@ My Progress
 20.10.18
 + new tags join model
 
-- ***klass error on user entries??
-- ***how to display projects for the current user only when creating a time entry?? see client model > #user_projects
+22.10.18
++ 
 - make sure there are checks that you can't change other user's info!
 
 
@@ -109,4 +104,13 @@ To-Do:
 - add class method for total hours worked per entry / one for "yesterday's time entries"
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
 - date and time formatting > move into model as a helper method?
+
+
+
+
+
+
+
+
+
 

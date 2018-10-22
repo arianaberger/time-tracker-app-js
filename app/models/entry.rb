@@ -1,7 +1,6 @@
 class Entry < ApplicationRecord
+  belongs_to :user
   belongs_to :project
-  belongs_to :tags
-  has_many :projects, through: :tags
 
   def self.desc_order
   	order(date: :desc)
@@ -12,3 +11,4 @@ class Entry < ApplicationRecord
    end
 
 end
+

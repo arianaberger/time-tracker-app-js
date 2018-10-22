@@ -1,8 +1,7 @@
 class User < ApplicationRecord
-  has_many :projects, through: :clients
+  has_many :entries
+  has_many :projects, through: :entries
   has_many :clients
-  has_many :entries, through: :projects
-  has_many :entries #do I need this?
   has_secure_password
 
   validates :name, presence: true
