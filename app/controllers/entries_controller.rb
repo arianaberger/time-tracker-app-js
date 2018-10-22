@@ -6,7 +6,6 @@ class EntriesController < ApplicationController
 
 	def new
 		@entry = Entry.new
-		@projects = Project.user_projects
 	end
 
 	def create

@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   def show
     if current_user
       @user = current_user
-      # raise @user.inspect
       @entries = current_user.entries.latest 
     else
       redirect_to root_path
