@@ -95,6 +95,7 @@ My Progress
 
 22.10.18
 + 
+- flash message when deleting client (client show page) not showing up
 - make sure there are checks that you can't change other user's info!
 
 
