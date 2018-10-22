@@ -15,8 +15,8 @@ burberry = Client.create(:name => "Burberry", :user_id => 2)
 
 hipster = Project.create(:name => "Hipster Fashion Show", :status => "In Progress", :deadline => "Dec 12", :client_id => 1)
 couture = Project.create(:name => "Couture Fashion Show", :status => "Just Started", :deadline => "Nov 22", :client_id => 2)
-kat = Project.create(:name => "Kitty Kat Fashion Show", :status => "Just Started", :deadline => "Sep 22", :client_id => 3)
-space = Project.create(:name => "Space Fashion Show", :status => "In Progress", :deadline => "Nov 15", :client_id => 3)
+kat = Project.create(:name => "Kitty Kat Fashion Show", :status => "Just Started", :deadline => "Sep 22", :client_id => 2)
+space = Project.create(:name => "Space Fashion Show", :status => "In Progress", :deadline => "Nov 15", :client_id => 2)
 
 entry_1 = Entry.create(:date => "Sep 25", :start_time => "09:00", :end_time => "14:00", :notes => "Drew sketches for sack bag", :project_id => 1, :user_id => 1)
 entry_2 = Entry.create(:date => "Sep 26", :start_time => "15:00", :end_time => "17:00", :notes => "Sewed together the sack bag", :project_id => 1, :user_id => 1)
