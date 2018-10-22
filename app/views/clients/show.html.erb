@@ -18,5 +18,6 @@
 
 <p>
 	<%= link_to "+ Add a Project", new_client_project_path(@client) %> |
-	<%= link_to "Delete Client", "/clients/#{@client.id}", method: :delete %>
+	<%= link_to "Delete Client", "/clients/#{@client.id}", method: :delete, :onclick=> "return confirm('Warning! All projects associated with this client will also be deleted.')" %>
 </p>
+

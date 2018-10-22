@@ -94,7 +94,9 @@ My Progress
 + new tags join model
 
 22.10.18
-+ 
++ deleted tags and updated join table to be Entries
++ you can delete a client and it will delete the assoc. projects
+
 - flash message when deleting client (client show page) not showing up
 - make sure there are checks that you can't change other user's info!
 
