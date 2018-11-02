@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_09_12_141430) do
 
-  create_table "clients", force: :cascade do |t|
-    t.string "name"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_clients_on_user_id"
-  end
-
   create_table "entries", force: :cascade do |t|
     t.datetime "date"
     t.time "start_time"
@@ -37,10 +29,9 @@ ActiveRecord::Schema.define(version: 2018_09_12_141430) do
     t.string "name"
     t.string "status"
     t.datetime "deadline"
-    t.integer "client_id"
+    t.integer "owner"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
   create_table "users", force: :cascade do |t|

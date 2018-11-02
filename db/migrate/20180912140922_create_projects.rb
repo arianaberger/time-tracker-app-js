@@ -4,8 +4,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :status
       t.datetime :deadline
-
-      t.belongs_to :client, index: true, foreign_key: true
+      t.integer :owner
 
       t.timestamps
     end

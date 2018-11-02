@@ -98,8 +98,18 @@ My Progress
 + you can delete a client and it will delete the assoc. projects
 + added warning message when deleting client!
 
+
+02.11.18
++ deleted clients
+- can't delete projects??
+- project has an owner and collaborators (use STI)
+- user can have an avatar (paperclip gem?)
+
+- add an entry which adds that project to your list > client is not correct for project!
+- time of entries doesn't seem to be in proper order
 - flash message when deleting client (client show page) not showing up
 - make sure there are checks that you can't change other user's info!
+
 
 
 To-Do:
