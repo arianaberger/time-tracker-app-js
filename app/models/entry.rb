@@ -7,7 +7,7 @@ class Entry < ApplicationRecord
   end
 
   def self.latest
- 	desc_order.limit(3)
+ 	desc_order.limit(4)
    end
 
 end
