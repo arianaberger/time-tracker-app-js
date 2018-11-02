@@ -1,5 +1,4 @@
 class Project < ApplicationRecord
-  belongs_to :client
   has_many :entries
   has_many :users, through: :entries
 
