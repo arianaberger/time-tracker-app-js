@@ -54,3 +54,7 @@ body {
     padding: 4px;
     padding-right: 20px;
   }
+
+.table_total {
+  border-top: 2px solid #ccc;
+}

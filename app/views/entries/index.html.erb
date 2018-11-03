@@ -24,8 +24,14 @@
 			<td><%= link_to "delete entry", "/entries/#{entry.id}", method: :delete, class: "form_button" %></td>
 		</tr>
 	<% end %>
+	<tr>
+		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
+		</td><td class="table_total">123</td>
+	</tr>
 </table>
 
+<p>
+</p>
 
 <p>
 	<%= link_to "+ Add entry", new_entry_path, class: "form_button" %>
