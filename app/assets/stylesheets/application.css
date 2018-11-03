@@ -30,7 +30,7 @@ body {
 }
 
 .header-nav {
-	background-color: #eee;
+	background-color: #ABEBC6;
 	padding-bottom: 10px;
 	padding-top: 10px;
 	padding-left: 10px;
@@ -43,7 +43,7 @@ body {
       height: 23px;
       border:2px solid #ccc;
       background-color: #eee;
-      font-size: 12px;
+      font-size: 14px;
   }
 
  #table {
@@ -52,4 +52,5 @@ body {
 
   #table th, td {
     padding: 4px;
+    padding-right: 20px;
   }
