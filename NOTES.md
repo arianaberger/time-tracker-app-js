@@ -100,11 +100,14 @@ My Progress
 
 
 02.11.18
-+ deleted clients
-- can't delete projects??
++ deleted clients from DB! and added owner to project
++ added owner to projects
+
+
 - project has an owner and collaborators (use STI)
 - user can have an avatar (paperclip gem?)
 
+- add total hours worked to project show page
 - add an entry which adds that project to your list > client is not correct for project!
 - time of entries doesn't seem to be in proper order
 - flash message when deleting client (client show page) not showing up

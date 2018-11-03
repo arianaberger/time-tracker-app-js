@@ -21,14 +21,35 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #fff;
+  color: #333;
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 18px;
+
 }
 
 .header-nav {
-	background-color: #ffcccc;
+	background-color: #eee;
 	padding-bottom: 10px;
 	padding-top: 10px;
 	padding-left: 10px;
 }
 
+.form_button {
+      padding:2px;
+      float: center;
+      width: auto;
+      height: 23px;
+      border:2px solid #ccc;
+      background-color: #eee;
+      font-size: 12px;
+  }
 
+ #table {
+    margin: 0 0 10px;
+  }
 
+  #table th, td {
+    padding: 4px;
+  }

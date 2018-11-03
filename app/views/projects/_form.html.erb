@@ -1,16 +1,39 @@
 <%= form_for project do |f| %>
 
-  <%= f.label "Project Owner:" %>
-  <%= f.collection_select :owner, User.all, :id, :name, :selected => current_user.id %>
+  <table>
+    <tr>
+      <td>
+        <%= f.label "Project Owner:" %>
+      </td>
+      <td>
+        <%= f.collection_select :owner, User.all, :id, :name, :selected => current_user.id %>
+      </td>
+    </tr>
 
-  <br>
+      <td>
+        <%= f.label "Project Name:" %>
+      </td>
+      <td>
+        <%= f.text_field :name %>
+      </td>
 
-  <%= f.label "Project Name:" %>
-  <%= f.text_field :name %></br>
-  <%= f.label "Deadline:" %>
-  <%= f.date_select :deadline %></br>
-  <%= f.label "Status:" %>
-  <%= f.select :status, project.statuses %>
+    <tr>
+      <td>
+        <%= f.label "Deadline:" %>
+      </td>
+      <td>
+        <%= f.date_select :deadline %>
+      </td>
+    </tr>
 
-  <p><%= f.submit %></p>
+      <td>
+        <%= f.label "Status:" %>
+      </td>
+      <td>
+        <%= f.select :status, project.statuses %>
+      </td>
+  </table>
+
+    <p><%= f.submit  %></p>
+
 <% end %>
