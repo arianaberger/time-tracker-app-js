@@ -21,7 +21,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @client = @project.client
+    @owner = User.find(@project.owner)
   end
 
   def update
@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :deadline, :status, :client_id)
+    params.require(:project).permit(:name, :deadline, :status, :owner)
   end
 
 end

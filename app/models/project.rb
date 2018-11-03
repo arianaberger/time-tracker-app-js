@@ -14,6 +14,10 @@ class Project < ApplicationRecord
   	]
   end
 
+  def self.project_owner(project)
+    User.find(project.owner).name
+  end
+
 
 end
 

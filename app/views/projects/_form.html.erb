@@ -1,11 +1,9 @@
 <%= form_for project do |f| %>
 
-  <%= f.label "Choose Client:" %>
-  <%= f.collection_select :client_id, current_user.clients, :id, :name, :selected => project.client_id || params[:client_id] %>
+  <%= f.label "Project Owner:" %>
+  <%= f.collection_select :owner, User.all, :id, :name, :selected => current_user.id %>
 
   <br>
-
-  <%= f.hidden_field :user_id, value: session[:user_id] %>
 
   <%= f.label "Project Name:" %>
   <%= f.text_field :name %></br>
