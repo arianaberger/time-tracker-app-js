@@ -58,3 +58,29 @@ body {
 .table_total {
   border-top: 2px solid #ccc;
 }
+
+a:link, a:active, a:visited {
+    text-decoration: none;
+    color: #333399;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #333399;
+}
+
+
+
+/*a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: red;
+}
+*/
