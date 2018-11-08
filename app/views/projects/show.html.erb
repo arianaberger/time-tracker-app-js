@@ -4,13 +4,20 @@
   <font color="green"><%= flash[:notice] %></font>
 <% end %>
 
-<ul>
-	<li>Owner: <%= @owner.name %></li>
-	<li>Status: <%= @project.status %></li>
-	<li>Deadline: <%= @project.deadline.strftime("%b %d, %Y") %></li>
-</ul>
+<table>
+	<tr>
+		<th>Owner</th>
+		<th>Status</th>
+		<th>Deadline</th>
+	</tr>
+	<tr>
+		<td><%= @owner.name %></td>
+		<td><%= @project.status %></td>
+		<td><%= @project.deadline.strftime("%b %d, %Y") %></td>
+		<td><%= link_to 'Edit Project', edit_project_path(@project), class: "form_button" %></td>
+		<td><%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete, class: "form_button" %></td>
+	</tr>
+</table>
 
-<p>
-	<%= link_to 'Edit Project', edit_project_path(@project) %> | 
-	<%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete %>
-</p>
+<hr>
+
