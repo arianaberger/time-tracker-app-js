@@ -12,8 +12,10 @@
 	<tr><td><strong>Status:</strong></td><td> <%= @project.status %></td></tr>
 	<tr><td><strong>Deadline:</strong></td><td> <%= @project.deadline.strftime("%b %d, %Y") %></td></tr>
 
+<% if @owner.name == current_user.name %>
 	<td><%= link_to 'Edit Project', edit_project_path(@project), class: "form_button" %></td>
 	<td><%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete, class: "form_button" %></td>
+<% end %>
 </table>
 
 
