@@ -4,20 +4,56 @@
   <font color="green"><%= flash[:notice] %></font>
 <% end %>
 
+<hr>
+
+
 <table>
-	<tr>
-		<th>Owner</th>
-		<th>Status</th>
-		<th>Deadline</th>
-	</tr>
-	<tr>
-		<td><%= @owner.name %></td>
-		<td><%= @project.status %></td>
-		<td><%= @project.deadline.strftime("%b %d, %Y") %></td>
-		<td><%= link_to 'Edit Project', edit_project_path(@project), class: "form_button" %></td>
-		<td><%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete, class: "form_button" %></td>
-	</tr>
+	<tr><td><strong>Owner:</strong></td><td> <%= @owner.name %></td></tr>
+	<tr><td><strong>Status:</strong></td><td> <%= @project.status %></td></tr>
+	<tr><td><strong>Deadline:</strong></td><td> <%= @project.deadline.strftime("%b %d, %Y") %></td></tr>
+
+	<td><%= link_to 'Edit Project', edit_project_path(@project), class: "form_button" %></td>
+	<td><%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete, class: "form_button" %></td>
 </table>
+
 
 <hr>
 
+<h3>Project Activity:</h3>
+
+
+<% if @entries.empty? %>
+	No activity has been recorded for this project yet. Click below to add an entry:
+<% else %>
+
+	<table>
+		<tr>
+			<th>Date</th>
+			<th>Contributor</th>
+			<th>Hours</th>
+			<th>Notes</th>
+		</tr>
+
+		<% @entries.each do |entry| %>
+			<tr>
+				<td><%= entry.date.strftime("%b %d, %Y") %></strong> </td>
+				<td><strong><%= entry.user.name %></strong></td>
+				<td><%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %></td>
+				<td><i><%= entry.notes %></i></td>
+				<td><% if entry.user.name == current_user.name %> <%= link_to "delete entry", "/entries/#{entry.id}", method: :delete, class: "form_button" %><% end %></td>
+			</tr>
+		<% end %>
+		<tr>
+			<td></td><td class="table_total"><strong>Total hours :</strong> 
+			</td><td class="table_total">XYZ</td>
+		</tr>
+	</table>
+
+	<p>
+	</p>
+
+<% end %>
+
+<p>
+	<%= link_to "+ Add entry", new_entry_path, class: "form_button" %>
+</p>

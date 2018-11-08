@@ -22,6 +22,7 @@ class ProjectsController < ApplicationController
 
   def show
     @owner = User.find(@project.owner)
+    @entries = Project.find(params[:id]).entries
   end
 
   def update

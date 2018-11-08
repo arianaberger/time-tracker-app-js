@@ -10,5 +10,6 @@ class Entry < ApplicationRecord
  	desc_order.limit(3)
    end
 
+
 end
 
