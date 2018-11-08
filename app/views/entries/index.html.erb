@@ -20,7 +20,7 @@
 	<% @entries.each do |entry| %>
 		<tr>
 			<td><%= entry.date.strftime("%b %d, %Y") %></strong> </td>
-			<td><strong><%= entry.project.name %></strong></td>
+			<td><strong><%= link_to entry.project.name, project_path(entry.project) %></strong></td>
 			<td><%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %></td>
 			<td><i><%= entry.notes %></i></td>
 			<td><%= link_to "delete entry", "/entries/#{entry.id}", method: :delete, class: "form_button" %></td>
