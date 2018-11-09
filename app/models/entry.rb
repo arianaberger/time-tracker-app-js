@@ -10,6 +10,14 @@ class Entry < ApplicationRecord
  	desc_order.limit(3)
    end
 
+   def calc_time(time)
+	time.strftime("%H:%M")    
+   end
+
+   def calc_hours
+   end
+
+
 
 end
 
