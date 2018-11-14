@@ -18,7 +18,6 @@ Specs:
   > Entry has 4 attributes: date, start/end time, notes
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
-  **check enough validations are working**
   > User: name, email, pwd
   > Project: name
   > Entries: notes
@@ -39,8 +38,10 @@ Specs:
   > /users/1/projects/new  
   > /users/1/entries/new
 
-- [ ] Include form display of validation errors (form URL e.g. /recipes/new)
-  **update to include with forms**
+- [x] Include form display of validation errors (form URL e.g. /recipes/new)
+  > Signup form (all fields)
+  > New project form (name)
+  > New entry form (notes)
 
 Confirm:
 - [ ] The application is pretty DRY

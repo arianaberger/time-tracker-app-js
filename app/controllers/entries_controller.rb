@@ -9,14 +9,13 @@ class EntriesController < ApplicationController
 	end
 
 	def create
-		entry = Entry.new(entry_params)
-		if entry.valid?
-			entry.save
+		@entry = Entry.new(entry_params)
+		if @entry.valid?
+			@entry.save
 			flash[:notice] = "Time entry successfully saved."
 			redirect_to user_entries_path(current_user)
 		else
-	        flash[:notice] = "Please include a note with your time entry."
-	        redirect_to new_user_entry_path(current_user)
+	        render :new
 	    end
 	end
 

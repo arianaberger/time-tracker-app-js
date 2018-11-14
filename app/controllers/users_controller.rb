@@ -16,8 +16,7 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
         redirect_to '/dashboard'
       else
-        flash[:notice] = "Please fill out all fields."
-        redirect_to '/signup' 
+        render :new 
       end
   end
 

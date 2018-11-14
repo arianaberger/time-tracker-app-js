@@ -1,10 +1,6 @@
 <h2>Create a new time entry</h2>
 
-<p>
-<% if flash[:notice] %>
-  <font color="red"><%= flash[:notice] %></font>
-<% end %>
-</p>
+<p><font color="red"><%= @entry.errors.full_messages.first if @entry.errors.any? %></font></p>
 
 <%= render partial: "form", locals: {entry: @entry} %>
 

@@ -1,20 +1,58 @@
 <h1>Sign Up</h1>
 
 <p>
-<% if flash[:notice] %>
-  <font color="red"><%= flash[:notice] %></font>
-<% end %>
+	<font color="red">
+	<ul>
+	<% if @user && @user.errors.any? %>
+		<% @user.errors.full_messages.each do |error| %>
+			<li><%= error%></li>
+		<% end %>
+	<% end %>
+	</ul>
+	</font>
 </p>
+
+
+	</font></p>
 
 <div>
   <%= form_for :user, url: '/signup' do |f| %>
-    Name: <%= f.text_field :name %> </br>
-    Email: <%= f.text_field :email %> </br>
 
-    </p>
-    Password: <%= f.password_field :password %> </br>
-    Password Confirmation: <%= f.password_field :password_confirmation %>
+  <table>
+    <tr>
+      <td>
+        <%= f.label "Your Name:" %>
+      </td>
+      <td>
+        <%= f.text_field :name %>
+      </td>
+    </tr>
+
+      <td>
+        <%= f.label "Your Email:" %>
+      </td>
+      <td>
+        <%= f.text_field :email %>
+      </td>
+
+    <tr>
+      <td>
+        <%= f.label "Password:" %>
+      </td>
+      <td>
+        <%= f.password_field :password %>
+      </td>
+    </tr>
+
+      <td>
+        <%= f.label "Password Confirmation:" %>
+      </td>
+      <td>
+        <%= f.password_field :password_confirmation %>
+      </td>
+  </table>
 
     <p><%= f.submit "Signup" %></p>
+
   <% end %>
 </div>
