@@ -11,7 +11,6 @@ class Entry < ApplicationRecord
    end
 
    def calc_time(time)
-   	raise inspect	
 	time.strftime("%H:%M")    
    end
 
@@ -21,6 +20,8 @@ class Entry < ApplicationRecord
    	#convert each using calc_time and then subtract to get the total time
    	#collect in an array and add together array.sum
    	#add error when creating new time entry that it has to be on the same day??
+
+   	#move method to the user and project models?
 
    	time_array = array.new
    	user_or_project.entries.each do |entry|

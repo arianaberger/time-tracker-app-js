@@ -21,8 +21,8 @@ Rails.application.routes.draw do
     resources :projects
   end
 
-  resources :clients do
-    resources :projects
+  resources :users, only: [:index, :create, :show] do 
+    resources :entries
   end
 
 
