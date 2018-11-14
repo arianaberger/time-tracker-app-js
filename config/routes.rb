@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   post "/logout", to: "sessions#destroy"
 
-  get '/signup' => 'users#new'
+  get '/signup' => 'users#new', as: 'signup'
   post '/signup' => 'users#create'
   get '/dashboard' => 'users#show', as: 'dashboard'
 

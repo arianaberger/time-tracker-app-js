@@ -1,12 +1,27 @@
 <h1>Log In</h1>
 
 
+<p>
 <% if flash[:notice] %>
   <font color="red"><%= flash[:notice] %></font>
 <% end %>
+</p>
+
 
 <%= form_for :user, url: '/login' do |f| %>
-  <p>Email: <%= f.text_field :email %></p>
-  <p>Password: <%= f.password_field :password %></p>
+<table>
+	<tr><td>
+			<%= f.label "Email:" %>
+		</td><td>
+			<%= f.text_field :email %>
+		</td></tr>
+		<tr><td>
+		    <%= f.label "Password:" %>
+		</td><td>
+			<%= f.password_field :password %></p>
+		</td></tr>
+	</table>
+
   <p><%= f.submit "Login" %></p>
+
 <% end %>

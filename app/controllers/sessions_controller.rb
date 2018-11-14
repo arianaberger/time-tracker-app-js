@@ -10,10 +10,10 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user
     else
-      user = User.find_by(email: params[:user][:email])
+      @user = User.find_by(email: params[:user][:email])
 
-      if user && user.authenticate(params[:user][:password])
-        session[:user_id] = user.id
+      if @user && @user.authenticate(params[:user][:password])
+        session[:user_id] = @user.id
         redirect_to '/dashboard'
       else
         flash[:notice] = "Please make sure your email and password are entered correctly."
