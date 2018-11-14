@@ -28,6 +28,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project.update(project_params)
+    flash[:notice] = "Project successfully updated!"
     redirect_to @project
   end
 

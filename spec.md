@@ -19,8 +19,9 @@ Specs:
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
   **check enough validations are working**
-  > User: (name, email, pwd)
-  > Project: (name)
+  > User: name, email, pwd
+  > Project: name
+  > Entries: notes
 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
  **working on one for entries**
@@ -45,4 +46,4 @@ Confirm:
 - [ ] The application is pretty DRY
 - [ ] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
+- [x] Views use partials if appropriate
