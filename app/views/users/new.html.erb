@@ -1,16 +1,17 @@
 <h1>Sign Up</h1>
 
+<p>
 <% if flash[:notice] %>
   <font color="red"><%= flash[:notice] %></font>
 <% end %>
+</p>
 
 <div>
   <%= form_for :user, url: '/signup' do |f| %>
     Name: <%= f.text_field :name %> </br>
-    Job Title: <%= f.text_field :title %>
+    Email: <%= f.text_field :email %> </br>
 
     </p>
-    Email: <%= f.text_field :email %> </br>
     Password: <%= f.password_field :password %> </br>
     Password Confirmation: <%= f.password_field :password_confirmation %>
 

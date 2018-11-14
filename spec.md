@@ -18,7 +18,11 @@ Specs:
   > Entry has 4 attributes: date, start/end time, notes
 
 - [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
-  **Work on this!!**
+  **check enough validations are working**
+  User:
+  > Login error
+  > Sign up error
+  
 
 - [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
  **working on one for entries**
@@ -37,7 +41,7 @@ Specs:
   > /users/1/entries/new
 
 - [ ] Include form display of validation errors (form URL e.g. /recipes/new)
-  > currently only have them as flash messages, is this sufficient?
+  **update to include with forms**
 
 Confirm:
 - [ ] The application is pretty DRY
