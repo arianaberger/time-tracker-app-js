@@ -11,11 +11,12 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-      if @project.valid? #this doesn't even have any validations yet!
+      if @project.valid? 
         @project.save
         flash[:notice] = "Project successfully created!"
         redirect_to @project
       else
+        flash[:notice] = "Please give your project a name."
         render :new
       end
   end

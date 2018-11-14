@@ -3,7 +3,6 @@ class Project < ApplicationRecord
   has_many :users, through: :entries
 
   validates :name, presence: true
-  validates :status, presence: true
 
   def statuses
   	[	"Just Started", 

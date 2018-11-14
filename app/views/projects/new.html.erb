@@ -1,4 +1,11 @@
 <h1>Create a Project</h1>
 
+<p>
+<% if flash[:notice] %>
+  <font color="red"><%= flash[:notice] %></font>
+<% end %>
+</p>
+
+
 <%= render partial: "form", locals: {project: @project} %>
 

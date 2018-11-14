@@ -2,6 +2,8 @@ class Entry < ApplicationRecord
   belongs_to :user
   belongs_to :project
 
+  validates :notes, presence: true
+
   def self.desc_order
   	order(date: :desc)
   end
