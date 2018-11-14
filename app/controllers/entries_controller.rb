@@ -22,6 +22,7 @@ class EntriesController < ApplicationController
 
 	def destroy
 		Entry.find(params[:id]).destroy
+        flash[:notice] = "Time entry successfully deleted."
 		redirect_to entries_path
 	end
 
