@@ -1,3 +1,7 @@
 <h1>Edit Project</h1>
 
+<p><font color="red"><%= @project.errors.full_messages.first if @project.errors.any? %></font></p>
+
+<p><font color="red"><%= flash[:notice] if flash[:notice]%></font></p>
+
 <%= render partial: "form", locals: {project: @project} %>

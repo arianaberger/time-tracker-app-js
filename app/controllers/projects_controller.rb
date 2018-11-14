@@ -11,14 +11,13 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-      if @project.valid? 
-        @project.save
-        flash[:notice] = "Project successfully created!"
-        redirect_to @project
-      else
-        flash[:notice] = "Please give your project a name."
-        render :new
-      end
+    if @project.valid? 
+      @project.save
+      flash[:notice] = "Project successfully created!"
+      redirect_to @project
+    else
+      render :new
+    end
   end
 
   def show
@@ -27,9 +26,15 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    @project.update(project_params)
-    flash[:notice] = "Project successfully updated!"
-    redirect_to @project
+    @project.attributes = (project_params)
+    if @project.valid?
+      @project.save
+      flash[:notice] = "Project successfully updated!"
+      redirect_to @project
+    else
+      flash[:notice] = "Project name cannot be blank."
+      redirect_to edit_project_path(@project)
+    end
   end
 
   def destroy
