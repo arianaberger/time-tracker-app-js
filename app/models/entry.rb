@@ -16,6 +16,11 @@ class Entry < ApplicationRecord
   	time.strftime("%H:%M")    
    end
 
+#I want to move this into a module/concern:
+   def calc_date(date)
+    date.strftime("%b %d, %Y")
+   end
+
    def self.sort_by_project(project_id)
     where(project: project_id)
    end
