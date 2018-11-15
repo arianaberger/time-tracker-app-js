@@ -22,8 +22,8 @@ Specs:
   > Project: name
   > Entries: notes
 
-- [ ] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
- **working on one for entries**
+- [x] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
+  > Created sort_by_project for entries to filter on index page
 
 - [x] Include signup (how e.g. Devise)
 - [x] Include login (how e.g. Devise)

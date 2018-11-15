@@ -109,6 +109,8 @@ My Progress
 14.11.18
 + scope method and filtering for time entries page by project
 
+
+
 - project has an owner and collaborators (use STI)
 - user can have an avatar (paperclip gem?)
 
@@ -122,7 +124,7 @@ My Progress
 To-Do:
 - add class method tests? check oo ruby
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
-
+- move date formatting into concern/module
 
 
 
