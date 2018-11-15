@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   post '/projects' => 'projects#create'
 
+  resources :users
   resources :entries
   resources :projects
 

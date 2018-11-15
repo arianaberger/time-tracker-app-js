@@ -108,10 +108,10 @@ My Progress
 
 14.11.18
 + scope method and filtering for time entries page by project
++ separate show page for users
 
 not working:
 - omniauth login because of user validations
-- login isn't displaying errors
 
 
 

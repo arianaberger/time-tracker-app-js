@@ -21,6 +21,16 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user
+      @user = current_user
+    else
+      redirect_to root_path
+    end 
+  end
+
+  def update
+    @user = current_user.update(:image => params[:image])
+    redirect_to user_path(@user)
   end
 
 
