@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to '/dashboard'
       else
-        flash[:notice] = "Please make sure your email and password are entered correctly."
+        flash[:alert] = "Please make sure your email and password are entered correctly."
         redirect_to '/login'
       end
     end
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session.delete :user_id
-    flash[:notice] = "You have successfully logged out!"
+    flash[:success] = "You have successfully logged out!"
     redirect_to '/'
   end
 

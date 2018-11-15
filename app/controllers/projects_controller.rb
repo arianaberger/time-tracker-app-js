@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.valid? 
       @project.save
-      flash[:notice] = "Project successfully created!"
+      flash[:success] = "Project successfully created!"
       redirect_to @project
     else
       render :new
@@ -29,17 +29,17 @@ class ProjectsController < ApplicationController
     @project.attributes = (project_params)
     if @project.valid?
       @project.save
-      flash[:notice] = "Project successfully updated!"
+      flash[:success] = "Project successfully updated!"
       redirect_to @project
     else
-      flash[:notice] = "Project name cannot be blank."
+      flash[:alert] = "Project name cannot be blank."
       redirect_to edit_project_path(@project)
     end
   end
 
   def destroy
     @project.destroy
-    flash[:notice] = "Project successfully deleted!"
+    flash[:success] = "Project successfully deleted!"
     redirect_to user_projects_path(current_user)
   end
 

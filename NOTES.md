@@ -109,6 +109,11 @@ My Progress
 14.11.18
 + scope method and filtering for time entries page by project
 
+not working:
+- omniauth login because of user validations
+- login isn't displaying errors
+
+
 
 
 - project has an owner and collaborators (use STI)

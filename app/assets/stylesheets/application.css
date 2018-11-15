@@ -17,6 +17,8 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
+
 
 body {
   padding-top: 20px;
@@ -35,6 +37,19 @@ body {
 	padding-top: 10px;
 	padding-left: 10px;
 }
+
+footer.footer {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-color: #F8F8F8;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
 
 .form_button {
       padding:2px;

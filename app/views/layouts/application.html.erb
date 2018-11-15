@@ -11,17 +11,15 @@
 
   <body>
 
-    <% if flash[:message] %>
-    <div class="alert alert-danger text-center"> <%= flash[:message] %></div>
+    <%= render "/layouts/navigation" %>
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger text-center"> <%= flash[:message] %></div>
     <% end %>
-    </div>
 
     <% if flash[:success] %>
-    <div class="alert alert-success text-center"> <%= flash[:success] %></div>
+      <div class="alert alert-success text-center"> <%= flash[:success] %></div>
     <% end %>
-    </div>
-
-    <%= render "/layouts/navigation" %>
 
     <div class="container" role="main">
       <%= yield %>
@@ -29,8 +27,8 @@
 
 
     <div class="container">
-      <footer class="branding text-center">
-          <small>&copy; 2018 <strong>TimeTracker App</strong></small>
+      <footer class="footer">
+          <small><strong>&copy; 2018 TimeTracker App</strong></small>
         </footer>
     </div>
 
