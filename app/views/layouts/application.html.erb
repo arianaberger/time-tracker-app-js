@@ -11,19 +11,21 @@
 
   <body>
 
+    <% if flash[:alert] %>
+      <div class="alert alert-danger text-center"> <%= flash[:alert] %></div>
+    <% end %>
+
+    <% if flash[:success] %>
+      <div class="alert alert-success text-center"> <%= flash[:success] %></div>
+    <% end %>
+
+
     <% if current_user %>
       <%= render "/layouts/navigation" %>
     <% else %>
       <%= render "/layouts/welcomenav" %>
     <% end %>
 
-    <% if flash[:alert] %>
-      <div class="alert alert-danger text-center"> <%= flash[:message] %></div>
-    <% end %>
-
-    <% if flash[:success] %>
-      <div class="alert alert-success text-center"> <%= flash[:success] %></div>
-    <% end %>
 
     <div class="container" role="main">
       <%= yield %>

@@ -1,13 +1,6 @@
 <h1>Log In</h1>
 
 
-<p>
-<% if flash[:alert] %>
-  <font color="red"><%= flash[:alert] %></font>
-<% end %>
-</p>
-
-
 <%= form_for :user, url: '/login' do |f| %>
 <table>
 	<tr><td>
@@ -23,5 +16,4 @@
 	</table>
 
   <p><%= f.submit "Login" %></p>
-
 <% end %>

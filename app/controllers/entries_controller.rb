@@ -17,7 +17,7 @@ class EntriesController < ApplicationController
 		@entry = Entry.new(entry_params)
 		if @entry.valid?
 			@entry.save
-			flash[:notice] = "Time entry successfully saved."
+			flash[:success] = "Time entry successfully saved."
 			redirect_to user_entries_path(current_user)
 		else
 	        render :new
