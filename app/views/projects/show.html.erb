@@ -47,7 +47,7 @@
 		<% end %>
 		<tr>
 			<td></td><td class="table_total"><strong>Total hours:</strong> 
-			</td><td class="table_total">XYZ</td>
+			</td><td class="table_total"><strong><%= Entry.calc_hours(@entries) %></strong></td>
 		</tr>
 	</table>
 

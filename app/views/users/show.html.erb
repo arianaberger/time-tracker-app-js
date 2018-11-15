@@ -12,7 +12,7 @@ There are no recent entries.
 <% else %>
 	<% Entry.all.latest.each do |entry| %>
 		<p>
-			<i><strong><%= entry.user.name %></strong> spent X hours working on <strong><%= entry.project.name %></strong></i>
+			<i><strong><%= entry.user.name %></strong> spent <%= Entry.calc_hours_entry(entry) %> hours working on <strong><%= entry.project.name %></strong></i>
 		</p>
 	<% end %>
 <% end %>

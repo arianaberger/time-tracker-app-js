@@ -26,12 +26,16 @@ class Entry < ApplicationRecord
    end
 
    def self.calc_hours(entries)
-   	time_array = []
-   	entries.each do |entry|
-   	  time_array << entry.hours_to_i(entry.end_time) - entry.hours_to_i(entry.start_time)
-    end
-   	time_array.sum
+     	time_array = []
+     	entries.each do |entry|
+     	  time_array << entry.hours_to_i(entry.end_time) - entry.hours_to_i(entry.start_time)
+      end
+     	time_array.sum
    end
+
+   def self.calc_hours_entry(entry)
+    entry.hours_to_i(entry.end_time) - entry.hours_to_i(entry.start_time)
+  end
 
    def hours_to_i(time)
     calc_time(time).slice(0,2).to_i
