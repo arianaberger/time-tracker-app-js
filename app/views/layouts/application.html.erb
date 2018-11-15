@@ -11,7 +11,11 @@
 
   <body>
 
-    <%= render "/layouts/navigation" %>
+    <% if current_user %>
+      <%= render "/layouts/navigation" %>
+    <% else %>
+      <%= render "/layouts/welcomenav" %>
+    <% end %>
 
     <% if flash[:alert] %>
       <div class="alert alert-danger text-center"> <%= flash[:message] %></div>
@@ -24,7 +28,6 @@
     <div class="container" role="main">
       <%= yield %>
     </div>
-
 
     <div class="container">
       <footer class="footer">
