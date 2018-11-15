@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         u.password= SecureRandom.hex
       end
       session[:user_id] = @user.id
-      redirect_to @user
+      redirect_to '/dashboard'
     else
       @user = User.find_by(email: params[:user][:email])
 
