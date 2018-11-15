@@ -9,7 +9,7 @@ class Entry < ApplicationRecord
   end
 
    def self.latest
-   	desc_order.limit(4)
+   	desc_order.limit(3)
    end
 
    def calc_time(time)
