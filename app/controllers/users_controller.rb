@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  def show
+  def index
     if current_user
       @user = current_user
       @entries = current_user.entries.latest 
@@ -18,6 +18,9 @@ class UsersController < ApplicationController
       else
         render :new 
       end
+  end
+
+  def show
   end
 
 

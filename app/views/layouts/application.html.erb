@@ -33,7 +33,8 @@
 
     <div class="container">
       <footer class="footer">
-          <small><strong>&copy; 2018 TimeTracker</strong></small>
+          <small><strong><% if current_user %>Logged in as: <%= current_user.name %> &nbsp; | &nbsp; <% end %>
+          &copy; 2018 TimeTracker</strong></small>
         </footer>
     </div>
 

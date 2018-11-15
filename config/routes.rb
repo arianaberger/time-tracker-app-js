@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new', as: 'signup'
   post '/signup' => 'users#create'
-  get '/dashboard' => 'users#show', as: 'dashboard'
+  get '/dashboard' => 'users#index', as: 'dashboard'
 
   post '/projects' => 'projects#create'
 

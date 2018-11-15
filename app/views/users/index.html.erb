@@ -1,0 +1,26 @@
+<h2>Welcome <%= @user.name %>!</h2>
+
+
+<hr>
+
+
+<h3>Recent activity:</h3>
+
+<% if Entry.all.empty? %>
+There are no recent entries.
+
+<% else %>
+<ul>
+	<% Entry.all.latest.each do |entry| %>
+	<li>
+		<% hour = Entry.calc_hours_entry(entry) %>
+		<% if hour > 1 %>
+		<%= entry.user.name %> spent <%= hour%> hours working on <%= link_to entry.project.name, project_path(entry.project) %>
+		<% else %>
+		<%= entry.user.name %> spent <%= hour %> hour working on <%= link_to entry.project.name, project_path(entry.project) %>
+		<% end %>
+	</li>
+	<% end %>
+</ul>
+<% end %>
+
