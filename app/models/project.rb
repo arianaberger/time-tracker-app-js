@@ -9,9 +9,10 @@ class Project < ApplicationRecord
   def statuses
   	[	"Just Started", 
   		"In Progress", 
-  		"Almost Complete", 
+  		"Almost Finished", 
   		"Complete", 
-  		"Total Failure"
+  		"Total Failure",
+      "Losing Money"
   	]
   end
 
