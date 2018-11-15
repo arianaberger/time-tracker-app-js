@@ -4,6 +4,8 @@ class Project < ApplicationRecord
 
   validates :name, presence: true
 
+  include FormatDate
+
   def statuses
   	[	"Just Started", 
   		"In Progress", 

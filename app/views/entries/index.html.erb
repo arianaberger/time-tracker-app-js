@@ -29,7 +29,7 @@
 
 	<% @entries.each do |entry| %>
 		<tr>
-			<td><%= entry.date.strftime("%b %d, %Y") %></strong> </td>
+			<td><%= entry.calc_date(entry.date) %></strong> </td>
 			<td><strong><%= link_to entry.project.name, project_path(entry.project) %></strong></td>
 			<td><%= entry.calc_time(entry.start_time) %> to <%= entry.calc_time(entry.end_time) %></td>
 			<td><i><%= entry.notes %></i></td>

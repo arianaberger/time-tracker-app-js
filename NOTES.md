@@ -106,6 +106,8 @@ My Progress
 07.11.18
 + changed some formatting for projects page and added time entries for that project
 
+14.11.18
++ scope method and filtering for time entries page by project
 
 - project has an owner and collaborators (use STI)
 - user can have an avatar (paperclip gem?)
@@ -114,17 +116,12 @@ My Progress
 - add total hours worked to project show page
 - add an entry which adds that project to your list > client is not correct for project!
 - time of entries doesn't seem to be in proper order
-- flash message when deleting client (client show page) not showing up
-- make sure there are checks that you can't change other user's info!
 
 
 
 To-Do:
 - add class method tests? check oo ruby
-- add validation errors to partial form to display the errors
-- add class method for total hours worked per entry / one for "yesterday's time entries"
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
-- date and time formatting > move into model as a helper method?
 
 
 

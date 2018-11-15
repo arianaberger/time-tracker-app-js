@@ -10,7 +10,7 @@
 <table>
 	<tr><td><strong>Owner:</strong></td><td> <%= @owner.name %></td></tr>
 	<tr><td><strong>Status:</strong></td><td> <%= @project.status %></td></tr>
-	<tr><td><strong>Deadline:</strong></td><td> <%= @project.deadline.strftime("%b %d, %Y") %></td></tr>
+	<tr><td><strong>Deadline:</strong></td><td> <%= @project.calc_date(@project.deadline) %></td></tr>
 
 <% if @owner.name == current_user.name %>
 	<td><%= link_to 'Edit Project', edit_project_path(@project), class: "form_button" %></td>
@@ -38,9 +38,9 @@
 
 		<% @entries.each do |entry| %>
 			<tr>
-				<td><%= entry.date.strftime("%b %d, %Y") %></strong> </td>
+				<td><%= entry.calc_date(entry.date) %></strong> </td>
 				<td><strong><%= entry.user.name %></strong></td>
-				<td><%= entry.start_time.strftime("%H:%M") %> to <%= entry.end_time.strftime("%H:%M") %></td>
+				<td><%= entry.calc_time(entry.start_time) %> to <%= entry.calc_time(entry.end_time) %></td>
 				<td><i><%= entry.notes %></i></td>
 				<td><% if entry.user.name == current_user.name %> <%= link_to "delete entry", "/entries/#{entry.id}", method: :delete, class: "form_button" %><% end %></td>
 			</tr>
