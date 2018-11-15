@@ -9,6 +9,16 @@
 
 <hr>
 
+<!-- filter for entries -->
+<p>
+ <%= form_tag(user_entries_path(current_user), method: "get") do %>
+    <%= select_tag "project", options_from_collection_for_select(@project, "id", "name"), prompt: "Filter by project:" %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</p>
+
+ <!-- end filter -->
+
 <table>
 	<tr>
 		<th>Date</th>
@@ -27,8 +37,8 @@
 		</tr>
 	<% end %>
 	<tr>
-		<td></td><td class="table_total"><strong>Total hours worked: XYZ</strong> 
-		</td><td class="table_total"></td>
+		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
+		</td><td class="table_total">XYZ</td>
 	</tr>
 </table>
 

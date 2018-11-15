@@ -1,7 +1,12 @@
 class EntriesController < ApplicationController
 
 	def index
-		@entries = current_user.entries.desc_order
+		if !params[:project].blank?
+		  @entries = Entry.sort_by_project(params[:project])
+		else
+		  @entries = current_user.entries.desc_order
+		end
+		@project = Project.all
 	end
 
 	def new

@@ -9,12 +9,19 @@ class Entry < ApplicationRecord
   end
 
   def self.latest
- 	desc_order.limit(3)
+   	desc_order.limit(3)
    end
 
    def calc_time(time)
-	time.strftime("%H:%M")    
+  	time.strftime("%H:%M")    
    end
+
+   def self.sort_by_project(project_id)
+    where(project: project_id)
+   end
+
+
+
 
    def calc_hours(user_or_project)
    	#get the entries.all for each user/project 
