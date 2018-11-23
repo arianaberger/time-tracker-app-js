@@ -110,17 +110,16 @@ My Progress
 + scope method and filtering for time entries page by project
 + separate show page for users
 
+
+
 not working:
 - omniauth login because of user validations
 
 
 
-
-- user can have an avatar (paperclip gem?)
-
-
-
 To-Do:
+- user can have an avatar (paperclip gem?)
+- flexbox on dashboard
 - add class method tests? check oo ruby
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
 - move date formatting into concern/module
