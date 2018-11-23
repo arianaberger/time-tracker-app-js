@@ -17,7 +17,7 @@ class Project < ApplicationRecord
   end
 
   def self.project_owner(project)
-    User.find(project.owner).name
+    User.find(project.owner)
   end
 
 #I want to move this into a module/concern:

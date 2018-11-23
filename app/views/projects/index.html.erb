@@ -8,9 +8,11 @@
 
 <ul>
   <% Project.all.each do |project| %>
-  	<li><%= link_to "#{project.name}", project_path(project) %> | Owner: <%= Project.project_owner(project) %></li>
+  	<li><strong><%= link_to "#{project.name}", project_path(project) %></strong>
+  		Created by: <%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></li>
   <% end %>
 </ul>
 
+<hr>
 
-	<%= link_to "+ Add project", new_user_project_path(@user), class: "form_button" %>
+<%= link_to "+ Add project", new_user_project_path(@user), class: "btn btn-primary btn-sm" %>

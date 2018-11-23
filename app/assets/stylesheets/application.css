@@ -65,7 +65,8 @@ footer.footer {
     position: absolute;
 }
 
-.form_button {
+
+/*.form_button {
       padding:2px;
       float: center;
       width: auto;
@@ -74,7 +75,7 @@ footer.footer {
       background-color: #eee;
       font-size: 14px;
   }
-
+*/
   .field_with_errors {
   	border: 1px solid red;
   	width: 154px;
