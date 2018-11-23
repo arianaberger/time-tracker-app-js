@@ -6,12 +6,18 @@
 
 <hr>
 
-<ul>
-  <% Project.all.each do |project| %>
-  	<li><strong><%= link_to "#{project.name}", project_path(project) %></strong>
-  		Created by: <%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></li>
-  <% end %>
-</ul>
+
+<table>
+	<tr>
+		<th>Project Name</th>
+		<th>Project Owner</th>
+	</tr>
+	
+	  <% Project.all.each do |project| %>
+	  	<tr><td><strong><%= link_to "#{project.name}", project_path(project) %></strong></td>
+	  	<td><%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></td></tr>
+	  <% end %>
+</table>
 
 <hr>
 

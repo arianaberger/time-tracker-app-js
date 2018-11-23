@@ -20,6 +20,10 @@ class Project < ApplicationRecord
     User.find(project.owner)
   end
 
+  def self.user_projects(user)
+    where(owner: user)
+  end
+
 #I want to move this into a module/concern:
    def calc_date(date)
     date.strftime("%b %d, %Y")

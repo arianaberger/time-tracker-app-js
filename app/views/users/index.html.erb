@@ -1,10 +1,11 @@
 <h2>Welcome <%= @user.name %>!</h2>
 
-
 <hr>
 
+        <div class="col-md-offset-1 col-md-5">
 
 <h3>Recent activity:</h3>
+
 
 <% if Entry.all.empty? %>
 	There are no recent entries.
@@ -22,5 +23,28 @@
 		</li>
 		<% end %>
 	</ul>
+
 <% end %>
 
+<p>
+	<%= link_to "+ Add entry", new_user_entry_path(current_user), class: "btn btn-primary btn-sm btn-block" %>
+</p>
+
+</div>
+
+        <div class="col-md-offset-1 col-md-5" height="100px">
+
+
+<h3>Your Projects:</h3>
+	<ul>
+		<% Project.user_projects(current_user).each do |project| %>
+		<li>
+			<%= link_to project.name, project_path(project) %> 
+		</li>
+		<% end %>
+	</ul>
+<p>
+	<%= link_to "+ Create project", new_user_project_path(current_user), class: "btn btn-primary btn-sm btn-block" %>
+</p>
+
+</div>
