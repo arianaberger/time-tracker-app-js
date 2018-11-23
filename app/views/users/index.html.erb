@@ -7,20 +7,20 @@
 <h3>Recent activity:</h3>
 
 <% if Entry.all.empty? %>
-There are no recent entries.
+	There are no recent entries.
 
 <% else %>
-<ul>
-	<% Entry.all.latest.each do |entry| %>
-	<li>
-		<% hour = Entry.calc_hours_entry(entry) %>
-		<% if hour > 1 %>
-		<%= entry.user.name %> spent <%= hour%> hours working on <%= link_to entry.project.name, project_path(entry.project) %>
-		<% else %>
-		<%= entry.user.name %> spent <%= hour %> hour working on <%= link_to entry.project.name, project_path(entry.project) %>
+	<ul>
+		<% Entry.all.latest.each do |entry| %>
+		<li>
+			<% hour = Entry.calc_hours_entry(entry) %>
+			<% if hour > 1 %>
+			<%= link_to entry.user.name, user_path(entry.user) %> spent <%= hour%> hours working on <%= link_to entry.project.name, project_path(entry.project) %>
+			<% else %>
+			<%= link_to entry.user.name, user_path(entry.user) %> spent <%= hour %> hour working on <%= link_to entry.project.name, project_path(entry.project) %>
+			<% end %>
+		</li>
 		<% end %>
-	</li>
-	<% end %>
-</ul>
+	</ul>
 <% end %>
 

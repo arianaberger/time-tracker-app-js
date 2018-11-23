@@ -116,13 +116,7 @@ not working:
 
 
 
-- project has an owner and collaborators (use STI)
 - user can have an avatar (paperclip gem?)
-
-- add CSS for errors/notifications
-- add total hours worked to project show page
-- add an entry which adds that project to your list > client is not correct for project!
-- time of entries doesn't seem to be in proper order
 
 
 

@@ -93,7 +93,7 @@ footer.footer {
   border-top: 2px solid #ccc;
 }
 
-a:link, a:active, a:visited {
+/*a:link, a:active, a:visited {
     text-decoration: none;
     color: #333399;
 }
@@ -101,7 +101,7 @@ a:link, a:active, a:visited {
 a:hover {
     text-decoration: underline;
     color: #333399;
-}
+}*/
 
 
 /*a:link, a:visited {

@@ -1,3 +1,4 @@
+# This migration comes from active_storage (originally 20170806125915)
 class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
   def change
     create_table :active_storage_blobs do |t|
@@ -14,14 +15,12 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
 
     create_table :active_storage_attachments do |t|
       t.string     :name,     null: false
-      t.references :user,     null: false, polymorphic: true, index: false
+      t.references :record,   null: false, polymorphic: true, index: false
       t.references :blob,     null: false
 
       t.datetime :created_at, null: false
 
-      t.index [ :user_type, :user_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
+      t.index [ :record_type, :record_id, :name, :blob_id ], name: "index_active_storage_attachments_uniqueness", unique: true
     end
   end
 end
-
-

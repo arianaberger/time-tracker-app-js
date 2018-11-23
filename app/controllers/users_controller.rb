@@ -21,16 +21,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user
-      @user = current_user
-    else
-      redirect_to root_path
-    end 
+    @user = User.find(params[:id])
   end
 
-  def update
-    @user = current_user.update(:image => params[:image])
-    redirect_to user_path(@user)
+  def update #trying to get image upload working from user show page
+    if current_user
+      @user = current_user
+      @user.image.attach(params[:image])
+      @user.save
+      redirect_to user_path(@user)
+    else
+      render root_path
+    end
   end
 
 

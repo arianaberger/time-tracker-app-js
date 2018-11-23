@@ -11,7 +11,13 @@
 
   <body>
 
-    <% if flash[:alert] %>
+    <% if current_user %>
+      <%= render "/layouts/navigation" %>
+    <% else %>
+      <%= render "/layouts/welcomenav" %>
+    <% end %>
+
+        <% if flash[:alert] %>
       <div class="alert alert-danger text-center"> <%= flash[:alert] %></div>
     <% end %>
 
@@ -20,15 +26,12 @@
     <% end %>
 
 
-    <% if current_user %>
-      <%= render "/layouts/navigation" %>
-    <% else %>
-      <%= render "/layouts/welcomenav" %>
-    <% end %>
-
-
     <div class="container" role="main">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
       <%= yield %>
+        </div>
+      </div>
     </div>
 
     <div class="container">
