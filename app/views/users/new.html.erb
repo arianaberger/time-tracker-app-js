@@ -1,23 +1,21 @@
 <div class="signup_header">
+  <h1>Sign Up</h1>
+</div>
 
-<h1>Sign Up</h1>
+<div class="col-md-offset-4 col-md-5">
 
-<p>
-	<font color="red">
-	<ul>
-	<% if @user && @user.errors.any? %>
-		<% @user.errors.full_messages.each do |error| %>
-			<li><%= error%></li>
-		<% end %>
-	<% end %>
-	</ul>
-	</font>
+  <p>
+  <font color="red">
+  <ul>
+  <% if @user && @user.errors.any? %>
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error%></li>
+    <% end %>
+  <% end %>
+  </ul>
+  </font>
 </p>
 
-
-	</font></p>
-</div>
-<div class="col-md-offset-4 col-md-5">
   <%= form_for :user, url: '/signup' do |f| %>
 
   <table>
