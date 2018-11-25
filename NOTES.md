@@ -114,7 +114,8 @@ My Progress
 
 not working:
 - omniauth login because of user validations
-
+- after creating time entry > redirect to project page
+- correct project doesn't show up in time entry new form
 
 
 To-Do:

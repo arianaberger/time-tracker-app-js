@@ -36,6 +36,19 @@ html, body {
   text-align: center;
 }
 
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  position: relative;
+}
+
+.bottom-div {
+  position: absolute;
+  bottom: -40px;
+}
+
 h1 {
   font-size: 4.8rem;
   -webkit-font-smoothing: antialiased;
@@ -63,7 +76,7 @@ footer.footer {
     background-color: #F8F8F8;
     text-align: center;
     width: 100%;
-    bottom: 0;
+    bottom: 10;
     left: 0;
     right: 0;
     position: absolute;
