@@ -24,7 +24,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def update #trying to get image upload working from user show page
+########trying to get image upload working from user show page
+  def update 
     if current_user
       @user = current_user
       @user.image.attach(params[:image])
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
       render root_path
     end
   end
-
+########
 
   private
 

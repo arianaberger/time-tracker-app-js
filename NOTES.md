@@ -112,19 +112,19 @@ My Progress
 
 
 
-not working:
+[x] Not working:
 - omniauth login because of user validations
 - after creating time entry > redirect to project page
 - correct project doesn't show up in time entry new form
+- move date formatting into concern/module (formatdate.rb)
+- active storage for user to have an avatar (paperclip gem?)
 
 
-To-Do:
-- user can have an avatar (paperclip gem?)
+[~] To-Do:
 - test for new user sign up (no entries/projects)
 - flexbox on dashboard
 - add class method tests? check oo ruby
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
-- move date formatting into concern/module
 
 
 

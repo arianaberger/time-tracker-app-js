@@ -1,8 +1,0 @@
-<h1>Add New Client</h1>
-
-<%= form_for :client, url: "/clients" do |f| %>
-  <%= f.hidden_field :user_id, value: session[:user_id] %>
-  <p>Name: <%= f.text_field :name %></p>
-  <p><%= f.submit "Create Client" %></p>
-<% end %>
-
