@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+  def create
     if auth_hash
       @user = User.find_or_create_by(uid: auth_hash['uid']) do |u|
         u.name= auth_hash['info']['name']
@@ -19,24 +20,6 @@ class SessionsController < ApplicationController
       end
     end
   end
-
-# def create
-#       if params[:provider] == "facebook_oauth2"
-          
-#         user = User.from_omniauth(request.env["omniauth.auth"])
-#         session[:user_id] = user.id
-#         redirect_to '/dashboard'
-#      else
-#         @user = User.find_by(email: params[:user][:email])
-#         if @user && @user.authenticate(params[:user][:password])
-#           session[:user_id] = @user.id
-#           redirect_to '/dashboard'
-#         else
-#           flash[:alert] = "Please make sure your email and password are entered correctly."
-#           redirect_to '/login'
-#         end
-#       end
-#     end
 
   def destroy
     session.delete :user_id
