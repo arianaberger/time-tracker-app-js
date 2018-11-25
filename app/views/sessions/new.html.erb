@@ -1,23 +1,22 @@
+<div class="signup_header">
+	<h1>Log In</h1>
+</div>
+
 <div class="col-md-offset-4 col-md-5">
-
-
-<h1>Log In</h1>
-
-
-<%= form_for :user, url: '/login' do |f| %>
-<table>
-	<tr><td>
-			<%= f.label "Email:" %>
-		</td><td>
-			<%= f.text_field :email %>
-		</td></tr>
+	<%= form_for :user, url: '/login' do |f| %>
+	<table>
 		<tr><td>
-		    <%= f.label "Password:" %>
-		</td><td>
-			<%= f.password_field :password %></p>
-		</td></tr>
-	</table>
+				<%= f.label "Email:" %>
+			</td><td>
+				<%= f.text_field :email %>
+			</td></tr>
+			<tr><td>
+			    <%= f.label "Password:" %>
+			</td><td>
+				<%= f.password_field :password %></p>
+			</td></tr>
+		</table>
 
-  <p><%= f.submit "Login", class: "btn btn-primary btn-sm" %></p>
-<% end %>
+	  <p><%= f.submit "Login", class: "btn btn-primary btn-sm" %></p>
+	<% end %>
 </div>
