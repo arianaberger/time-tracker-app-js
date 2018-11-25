@@ -119,6 +119,7 @@ not working:
 
 To-Do:
 - user can have an avatar (paperclip gem?)
+- test for new user sign up (no entries/projects)
 - flexbox on dashboard
 - add class method tests? check oo ruby
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
