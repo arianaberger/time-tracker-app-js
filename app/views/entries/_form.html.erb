@@ -5,7 +5,7 @@
         <%= f.label "Choose Project:" %>
       </td>
       <td>
-        <%= f.collection_select :project_id, Project.all, :id, :name %>
+        <%= f.collection_select :project_id, Project.all, :id, :name, :selected => @selected %>
       </td>
     </tr>
 

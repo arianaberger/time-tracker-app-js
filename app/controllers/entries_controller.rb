@@ -11,6 +11,11 @@ class EntriesController < ApplicationController
 
 	def new
 		@entry = Entry.new
+		if params[:project_id]
+			@selected = Project.find(params[:project_id]).id
+		else
+			@selected = Project.first.id
+		end
 	end
 
 	def create
