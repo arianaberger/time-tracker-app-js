@@ -122,7 +122,6 @@ My Progress
 
 [~] To-Do:
 - test for new user sign up (no entries/projects)
-- flexbox on dashboard
 - add class method tests? check oo ruby
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
 

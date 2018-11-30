@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
         u.name= auth_hash['info']['name']
         u.email= auth_hash['info']['email']
         u.password= SecureRandom.hex
+        # u.password_confirmation = u.password
       end
       session[:user_id] = @user.id
       redirect_to '/dashboard'

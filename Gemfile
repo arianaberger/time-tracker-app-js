@@ -24,6 +24,7 @@ gem 'dotenv-rails'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'activestorage'
+gem 'thin'
 
 
 # bootstrap

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root "welcome#home"
 
+  # match 'auth/failure', to: redirect('/'), via: [:get, :post]
   get '/auth/facebook/callback' => 'sessions#create'
 
   get "/login", to: "sessions#new"
@@ -23,6 +24,10 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:index, :create, :show] do 
+    resources :entries
+  end
+
+  resources :project, only: [:show] do
     resources :entries
   end
 
