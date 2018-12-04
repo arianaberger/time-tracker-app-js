@@ -115,7 +115,6 @@ My Progress
 [x] Not working:
 - omniauth login because of user validations
 - after creating time entry > redirect to project page
-- correct project doesn't show up in time entry new form
 - move date formatting into concern/module (formatdate.rb)
 - active storage for user to have an avatar (paperclip gem?)
 

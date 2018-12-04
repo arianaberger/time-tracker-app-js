@@ -23,16 +23,17 @@ class EntriesController < ApplicationController
 		if @entry.valid?
 			@entry.save
 			flash[:success] = "Time entry successfully saved."
-			redirect_to user_entries_path(current_user)
+			redirect_to project_path(params[:entry][:project_id])
 		else
 	        render :new
 	    end
 	end
 
 	def destroy
-		Entry.find(params[:id]).destroy
+		entry = Entry.find(params[:id])
+		entry.destroy
         flash[:success] = "Time entry successfully deleted."
-		redirect_to entries_path
+		redirect_to project_path(entry.project.id)
 	end
 
 	private
