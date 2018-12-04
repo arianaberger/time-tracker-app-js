@@ -30,6 +30,7 @@ class EntriesController < ApplicationController
 	end
 
 	def destroy
+		#perhaps a different route when deleting from entries index page? (link current removed)
 		entry = Entry.find(params[:id])
 		entry.destroy
         flash[:success] = "Time entry successfully deleted."
