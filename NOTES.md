@@ -3,10 +3,6 @@ Questions:
 ------------
 
 
-[USER] 			 					[CLIENT]
-- has many Clients                  - belongs to a User
-- has m                 			- has many Projects
-- has many                   		
 
 User has many projects, through: :entries
 Project has many users, through: :entries
@@ -14,7 +10,6 @@ both have many :entries (join table)
 entry belongs to both (needs foreign key)
 
 [PROJECT] 
-- belongs to a Client
 - has many Entries
 - has many users through entries
 
@@ -22,24 +17,6 @@ entry belongs to both (needs foreign key)
 - belongs to a Project
 - belongs to a User
 
-*[TAGS]*
-- belongs to project
-- belongs to entry
-
-
-
-
-
-
-
---------------
-Nested routes
-
-users/1/projects -> show (index) + link to create a new project
--> post to /projects
-
-clients/1/projects/new 
--> post to /projects
 
 
 --------------
@@ -114,7 +91,6 @@ My Progress
 
 [x] Not working:
 - omniauth login because of user validations
-- after creating time entry > redirect to project page
 - move date formatting into concern/module (formatdate.rb)
 - active storage for user to have an avatar (paperclip gem?)
 
@@ -126,7 +102,31 @@ My Progress
 
 
 
+-----------------------
+Rails Project Checklist of Requirements
 
+A summary of the application
+
+What will your models and associations be and why? You will need a has_many and belongs_to relationship as well as a many to many relationship.
+
+How will you implement a user submittable attribute on the join table of the many to many relationship?
+> entry: notes and time
+
+What it is an ActiveRecord scope method and what is your implementation plan?
+> Created sort_by_project for entries to filter on index page (Entry model)
+
+What validations will you have for your models?
+> Signup form (all fields)
+> New project form (name)
+> New entry form (notes)
+
+How will you implement an authentication system?
+> using password_digest and has secure password
+
+What 3rd party login service will you use?
+> FB via omniauth
+
+With the way your models are setup what nested routes will you use to meet the requirement?
 
 
 

@@ -4,7 +4,7 @@ class Project < ApplicationRecord
 
   validates :name, presence: true
 
-  # include FormatDate::InstanceMethods
+  include FormatDate::InstanceMethods
 
   def statuses
   	[	"Just Started", 
@@ -23,11 +23,6 @@ class Project < ApplicationRecord
   def self.user_projects(user)
     where(owner: user)
   end
-
-#I want to move this into a module/concern:
-   def calc_date(date)
-    date.strftime("%b %d, %Y")
-   end
 
 end
 

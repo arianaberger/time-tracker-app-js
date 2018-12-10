@@ -4,6 +4,8 @@ class Entry < ApplicationRecord
 
   validates :notes, presence: true
 
+  include FormatDate::InstanceMethods
+
   def self.desc_order
   	order(date: :desc)
   end
@@ -14,11 +16,6 @@ class Entry < ApplicationRecord
 
    def calc_time(time)
   	time.strftime("%H:%M")    
-   end
-
-#I want to move this into a module/concern:
-   def calc_date(date)
-    date.strftime("%b %d, %Y")
    end
 
    def self.sort_by_project(project_id)
