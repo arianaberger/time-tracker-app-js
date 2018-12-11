@@ -91,7 +91,6 @@ My Progress
 
 [x] Not working:
 - omniauth login because of user validations
-- move date formatting into concern/module (formatdate.rb)
 - active storage for user to have an avatar (paperclip gem?)
 
 
@@ -127,7 +126,7 @@ What 3rd party login service will you use?
 > FB via omniauth
 
 With the way your models are setup what nested routes will you use to meet the requirement?
-
+> users/projects, users/entries, projects/entries (so that you can add an entry from main page or from project page)
 
 
 
