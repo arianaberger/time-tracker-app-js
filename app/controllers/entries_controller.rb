@@ -7,10 +7,11 @@ class EntriesController < ApplicationController
 		  @entries = current_user.entries.desc_order
 		end
 		@project = Project.all
-	end
+	end 
 
 	def new
 		@entry = Entry.new
+		#could be added as a view helper?
 		if params[:project_id]
 			@selected = Project.find(params[:project_id]).id
 		else

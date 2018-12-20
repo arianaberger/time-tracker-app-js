@@ -24,5 +24,9 @@ class Project < ApplicationRecord
     where(owner: user)
   end
 
+  def self.status
+    where(status: "In Progress")
+  end
+
 end
 

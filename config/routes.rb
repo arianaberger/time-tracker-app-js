@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :entries
   resources :projects
 
-  resources :users, only: [:index, :create, :show] do 
+  resources :users, only: [:create, :show] do 
     resources :projects
   end
 
@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   resources :project, only: [:show] do
     resources :entries, only: [:new, :create]
   end
+
+  get '/status' => 'projects#status'
 
 
 end

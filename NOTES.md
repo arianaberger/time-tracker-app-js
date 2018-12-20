@@ -90,7 +90,6 @@ My Progress
 
 
 [x] Not working:
-- omniauth login because of user validations
 - active storage for user to have an avatar (paperclip gem?)
 
 
@@ -98,36 +97,6 @@ My Progress
 - test for new user sign up (no entries/projects)
 - add class method tests? check oo ruby
 - Show total time for projects, weekly time, etc (add filter/search function on entries index page?)
-
-
-
------------------------
-Rails Project Checklist of Requirements
-
-A summary of the application
-
-What will your models and associations be and why? You will need a has_many and belongs_to relationship as well as a many to many relationship.
-
-How will you implement a user submittable attribute on the join table of the many to many relationship?
-> entry: notes and time
-
-What it is an ActiveRecord scope method and what is your implementation plan?
-> Created sort_by_project for entries to filter on index page (Entry model)
-
-What validations will you have for your models?
-> Signup form (all fields)
-> New project form (name)
-> New entry form (notes)
-
-How will you implement an authentication system?
-> using password_digest and has secure password
-
-What 3rd party login service will you use?
-> FB via omniauth
-
-With the way your models are setup what nested routes will you use to meet the requirement?
-> users/projects, users/entries, projects/entries (so that you can add an entry from main page or from project page)
-
 
 
 

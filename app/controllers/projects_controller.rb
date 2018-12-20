@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :current_project, except: [:index, :create, :new]
+  before_action :current_project, except: [:index, :create, :new, :status]
 
   def index
     @user = User.find(session[:user_id])
@@ -11,8 +11,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    if @project.valid? 
-      @project.save
+    if @project.save  #don't need separate .valid? 
       flash[:success] = "Project successfully created!"
       redirect_to @project
     else
@@ -27,8 +26,7 @@ class ProjectsController < ApplicationController
 
   def update
     @project.attributes = (project_params)
-    if @project.valid?
-      @project.save
+    if @project.save
       flash[:success] = "Project successfully updated!"
       redirect_to @project
     else
@@ -41,6 +39,11 @@ class ProjectsController < ApplicationController
     @project.destroy
     flash[:success] = "Project successfully deleted!"
     redirect_to user_projects_path(current_user)
+  end
+
+  def status
+    @projects = Project.all.status
+    raise @projects.inspect
   end
 
   private
