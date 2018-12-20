@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :projects
   end
 
-  resources :users, only: [:index, :create, :show] do 
+  resources :users, only: [:create] do 
     resources :entries
   end
 
