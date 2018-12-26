@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   end
 
   get '/status' => 'projects#status'
-  get '/your-projects' => 'projects#userprojects'
+  get '/all-projects' => 'projects#allprojects'
 
 
 end

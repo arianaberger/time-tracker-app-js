@@ -1,0 +1,35 @@
+<h2>All Projects</h2>
+
+<hr>
+
+<!-- filter for project status -->
+
+<table>
+<tr><td>View stats on projects that are currently:</td><td>
+	<%= form_tag(status_path, method: "get") do %>
+    <%= select_tag "status", options_for_select(@statuses), prompt: "Choose status:" %>
+    <%= submit_tag "View" %>
+	  <% end %>
+</td></tr>
+</table>
+
+ <!-- end filter -->
+
+<hr>
+
+<table>
+	<tr>
+		<th>Project Name</th>
+		<th>Project Owner</th>
+	</tr>
+	
+	  <% Project.all.each do |project| %>
+	  	<tr><td><strong><%= link_to "#{project.name}", project_path(project) %></strong></td>
+	  	<td><%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></td></tr>
+	  <% end %>
+</table>
+
+<hr>
+
+
+<%= link_to "+ Add project", new_user_project_path(current_user), class: "btn btn-primary btn-sm" %>
