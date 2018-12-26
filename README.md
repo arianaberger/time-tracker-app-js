@@ -13,4 +13,9 @@ TimeTracker
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://user-images.githubusercontent.com/26906993/50450150-0e85b280-08fa-11e9-9043-2980c9b0250b.png)
+
+<img src= "https://user-images.githubusercontent.com/26906993/50450150-0e85b280-08fa-11e9-9043-2980c9b0250b.png" align="center" width="60%" height="60%">
+
+<p align="center">
+	![screenshot2](https://user-images.githubusercontent.com/26906993/50450202-51478a80-08fa-11e9-8c75-d40d72bb3daa.png)
+</p>
