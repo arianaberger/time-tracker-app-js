@@ -1,4 +1,4 @@
-<h2>Current Projects</h2>
+<h2>Your Projects</h2>
 
 <hr>
 
@@ -6,34 +6,21 @@
 	<tr>
 		<th>Project Name</th>
 		<th>Project Owner</th>
+		<th>Current Status</th>
+		<th>Total Hours</th>
+
 	</tr>
 	
-	  <% Project.all.each do |project| %>
+	  <% @projects.each do |project| %>
 	  	<tr><td><strong><%= link_to "#{project.name}", project_path(project) %></strong></td>
-	  	<td><%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></td></tr>
+	  	<td><%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></td>
+	  	<td><%= project.status %></td>
+	  	<td><%= Entry.calc_hours(project.entries.desc_order) %></td>
+	  	</tr>
 	  <% end %>
 </table>
 
 <hr>
 
-<!-- filter for project status -->
-
-<table>
-<tr><td>View stats on projects that are currently:</td><td>
-	<%= form_tag(status_path, method: "get") do %>
-    <%= select_tag "status", options_for_select(@statuses), prompt: "Choose status:" %>
-    <%= submit_tag "View" %>
-	  <% end %>
-</td></tr>
-<tr><td>
-	View <strong><%= link_to "stats", your_projects_path %></strong> on your projects only
-</td></tr>
-</table>
-
-
- <!-- end filter -->
-
-
-<hr>
-
-<%= link_to "+ Add project", new_user_project_path(@user), class: "btn btn-primary btn-sm" %>
+<%= link_to "+ Add project", new_user_project_path(@current_user), class: "btn btn-primary btn-sm" %>
+<%= link_to "View all projects", all_projects_path, class: "btn btn-success btn-sm" %>

@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :current_project, except: [:index, :create, :new, :status, :allprojects]
 
   def index
+    @projects = Project.user_projects(params[:user_id])
   end
 
   def new
@@ -45,7 +46,6 @@ class ProjectsController < ApplicationController
   end
 
   def allprojects
-    #like the index page for all projects
     @statuses = Project.new.statuses
   end
 
