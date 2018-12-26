@@ -32,6 +32,12 @@
 
 	<div class="col-md-offset-0 col-md-6">
 		<h3>Your Projects:</h3>
+
+		<% if Project.user_projects(current_user).empty? %>
+			
+			You currently do not have any projects.
+
+		<% else %>
 			<ul>
 				<% Project.user_projects(current_user).each do |project| %>
 				<li><%= link_to project.name, project_path(project) %> </li>
@@ -40,5 +46,6 @@
 		<div class="bottom-div">
 			<%= link_to "+ Create project", new_user_project_path(current_user), class: "btn btn-success btn-sm btn-block" %>
 		</div>
+		<% end %>
 	</div>
 </div>
