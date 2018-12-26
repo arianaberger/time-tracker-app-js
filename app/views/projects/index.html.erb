@@ -2,6 +2,17 @@
 
 <hr>
 
+<!-- filter for project status -->
+<p>View stats on projects that are currently:</p>
+
+ <%= form_tag(status_path, method: "get") do %>
+    <%= select_tag "status", options_for_select(@statuses), prompt: "Choose status:" %>
+    <%= submit_tag "View" %>
+  <% end %>
+
+ <!-- end filter -->
+
+<hr>
 
 <table>
 	<tr>

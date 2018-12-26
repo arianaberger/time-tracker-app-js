@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def index
     @user = User.find(session[:user_id])
+    @statuses = Project.new.statuses
   end
 
   def new
