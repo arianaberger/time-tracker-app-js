@@ -43,7 +43,7 @@ $ bundle install
 $ thin start --ssl
 ```
 
-Then go to http://localhost:3000/ or wherever your server is ported.
+Then go to https://localhost:3000/ or wherever your server is ported.
 
 
 ## App Demo
