@@ -2,19 +2,6 @@
 
 <hr>
 
-<!-- filter for project status -->
-
-<p>View stats on projects that are currently:</p>
-
- <%= form_tag(status_path, method: "get") do %>
-    <%= select_tag "status", options_for_select(@statuses), prompt: "Choose status:" %>
-    <%= submit_tag "View" %>
-  <% end %>
-
- <!-- end filter -->
-
-<hr>
-
 <table>
 	<tr>
 		<th>Project Name</th>
@@ -26,6 +13,26 @@
 	  	<td><%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></td></tr>
 	  <% end %>
 </table>
+
+<hr>
+
+<!-- filter for project status -->
+
+<table>
+<tr><td>View stats on projects that are currently:</td><td>
+	<%= form_tag(status_path, method: "get") do %>
+    <%= select_tag "status", options_for_select(@statuses), prompt: "Choose status:" %>
+    <%= submit_tag "View" %>
+	  <% end %>
+</td></tr>
+<tr><td>
+	View <strong><%= link_to "stats", your_projects_path %></strong> on your projects only
+</td></tr>
+</table>
+
+
+ <!-- end filter -->
+
 
 <hr>
 

@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :current_project, except: [:index, :create, :new, :status]
+  before_action :current_project, except: [:index, :create, :new, :status, :userprojects]
 
   def index
     @user = User.find(session[:user_id])
@@ -44,6 +44,9 @@ class ProjectsController < ApplicationController
 
   def status
     @projects = Project.all.status(params[:status])
+  end
+
+  def userprojects
   end
 
   private
