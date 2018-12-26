@@ -13,4 +13,4 @@ TimeTracker
   <a href="#license">License</a>
 </p>
 
-![screenshot](.../app/images/screenshot1.png)
+![screenshot](https://user-images.githubusercontent.com/26906993/50450150-0e85b280-08fa-11e9-9043-2980c9b0250b.png)
