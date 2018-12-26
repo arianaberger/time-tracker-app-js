@@ -17,13 +17,14 @@ TimeTracker
 
 ## Key Features
 
-* Create multiple user accounts and login using Facebook
+* Create multiple user accounts with the option to also login using Facebook
 * Create and share projects with colleagues
 * Show your contribution to a project by submitting a time entry
 * See your total hours worked on specific projects 
+* Filter projects by status
 
 <p align="center">
-	<img src= "https://user-images.githubusercontent.com/26906993/50450202-51478a80-08fa-11e9-8c75-d40d72bb3daa.png" align="middle" width="80%" height="80%">
+	<img src= "https://user-images.githubusercontent.com/26906993/50454297-924c9880-0914-11e9-9d8a-1416826e61aa.png" align="middle" width="80%" height="80%">
 </p>
 
 ## How To Use
@@ -47,7 +48,7 @@ Then go to http://localhost:3000/ or wherever your server is ported.
 
 ## App Demo
 
-You can view an overview of this app that I recorded on [youtube](https://youtu.be/JS2rF5X9bI0).
+You can watch an overview of this app that I recorded on [youtube](https://youtu.be/JS2rF5X9bI0).
 
 ## License
 
