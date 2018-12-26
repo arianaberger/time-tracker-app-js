@@ -9,11 +9,10 @@ TimeTracker
   <a href="#how-to-use">How To Use</a> •
   <a href="#app-demo">App Demo</a> •
   <a href="#license">License</a>
+
+
+<img src= "https://user-images.githubusercontent.com/26906993/50450150-0e85b280-08fa-11e9-9043-2980c9b0250b.png" align="middle" width="40%" height="40%">
 </p>
-
-
-<img src= "https://user-images.githubusercontent.com/26906993/50450150-0e85b280-08fa-11e9-9043-2980c9b0250b.png" align="middle" width="60%" height="60%">
-
 
 ## Key Features
 
@@ -22,8 +21,9 @@ TimeTracker
 * Show your contribution to a project by submitting a time entry
 * See your total hours worked on specific projects 
 
-<img src= "https://user-images.githubusercontent.com/26906993/50450202-51478a80-08fa-11e9-8c75-d40d72bb3daa.png" align="middle" width="60%" height="60%">
-
+<p align="center">
+<img src= "https://user-images.githubusercontent.com/26906993/50450202-51478a80-08fa-11e9-8c75-d40d72bb3daa.png" align="middle" width="75%" height="75%">
+</p>
 
 ## How To Use
 
@@ -39,13 +39,14 @@ $ bundle install
 
 # Run the app
 $ thin start --ssl
-
-#Go to http://localhost:3000/ or wherever your server is ported
 ```
+
+Then go to http://localhost:3000/ or wherever your server is ported.
+
 
 ## App Demo
 
-You can view an overview of this app that I recorded on [youtube](https://youtu.be/JS2rF5X9bI0)
+You can view an overview of this app that I recorded on [youtube](https://youtu.be/JS2rF5X9bI0).
 
 ## License
 
