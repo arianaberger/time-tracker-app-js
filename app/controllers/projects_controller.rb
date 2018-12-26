@@ -43,8 +43,7 @@ class ProjectsController < ApplicationController
   end
 
   def status
-    @projects = Project.all.status
-    raise @projects.inspect
+    @projects = Project.all.status(params[:status])
   end
 
   private

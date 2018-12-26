@@ -1,2 +1,34 @@
-This will display projects
+<h2>Filter by Status</h2>
+
+<hr>
+
+<% if @projects.empty? %>
+
+	There are currently no projects with that status.
+
+<% else %>
+
+	<table>
+		<tr>
+			<th>Project Name</th>
+			<th>Project Owner</th>
+			<th>Current Status</th>
+			<th>Total Hours</th>
+
+		</tr>
+		
+		  <% @projects.each do |project| %>
+		  	<tr><td><strong><%= link_to "#{project.name}", project_path(project) %></strong></td>
+		  	<td><%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></td>
+		  	<td><%= project.status %></td>
+		  	<td><%= Entry.calc_hours(project.entries.desc_order) %></td>
+		  	</tr>
+		  <% end %>
+	</table>
+
+<% end %>
+
+<hr>
+
+<%= link_to "< View All Projects", projects_path, class: "btn btn-primary btn-sm" %>
 
