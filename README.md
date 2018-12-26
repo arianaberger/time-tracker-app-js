@@ -9,9 +9,10 @@ TimeTracker
   <a href="#how-to-use">How To Use</a> •
   <a href="#app-demo">App Demo</a> •
   <a href="#license">License</a>
+</p>
 
-
-<img src= "https://user-images.githubusercontent.com/26906993/50450150-0e85b280-08fa-11e9-9043-2980c9b0250b.png" align="middle" width="40%" height="40%">
+<p align="center">
+	<img src= "https://user-images.githubusercontent.com/26906993/50450150-0e85b280-08fa-11e9-9043-2980c9b0250b.png" align="middle" width="45%" height="45%">
 </p>
 
 ## Key Features
@@ -22,7 +23,7 @@ TimeTracker
 * See your total hours worked on specific projects 
 
 <p align="center">
-<img src= "https://user-images.githubusercontent.com/26906993/50450202-51478a80-08fa-11e9-8c75-d40d72bb3daa.png" align="middle" width="75%" height="75%">
+	<img src= "https://user-images.githubusercontent.com/26906993/50450202-51478a80-08fa-11e9-8c75-d40d72bb3daa.png" align="middle" width="80%" height="80%">
 </p>
 
 ## How To Use
