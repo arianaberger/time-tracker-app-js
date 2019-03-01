@@ -8,17 +8,17 @@
 
 karl = User.create!(:name => "Karl Lagerfeld", :email => "kl@kl.com", :password => "pwd", :password_confirmation => "pwd")
 kitty = User.create!(:name => "Kitty", :email => "k@k.com", :password => "pwd", :password_confirmation => "pwd")
-stella = User.create!(:name => "Stella McCartney", :email => "s@s.com", :password => "pwd", :password_confirmation => "pwd")
+chanel = User.create!(:name => "Coco Chanel", :email => "c@c.com", :password => "pwd", :password_confirmation => "pwd")
 
 
 hipster = Project.create(:name => "Hipster Fashion Show", :status => "In Progress", :deadline => "Dec 12", :owner => 3)
-couture = Project.create(:name => "Couture Fashion Show", :status => "Just Started", :deadline => "Nov 22", :owner => 1)
+couture = Project.create(:name => "Couture Fashion Show", :status => "Just Started", :deadline => "Nov 05", :owner => 1)
 kat = Project.create(:name => "Kitty Kat Fashion Show", :status => "Just Started", :deadline => "Sep 22", :owner => 2)
-space = Project.create(:name => "Space Fashion Show", :status => "In Progress", :deadline => "Nov 15", :owner => 1)
+space = Project.create(:name => "Space Fashion Show", :status => "In Progress", :deadline => "Sep 18", :owner => 1)
 
 entry_1 = Entry.create(:date => "Sep 25", :start_time => "09:00", :end_time => "14:00", :notes => "Drew sketches for sack bag", :project_id => 1, :user_id => 1)
-entry_2 = Entry.create(:date => "Sep 26", :start_time => "15:00", :end_time => "17:00", :notes => "Sewed together the sack bag", :project_id => 1, :user_id => 1)
-entry_3 = Entry.create(:date => "Sep 27", :start_time => "10:00", :end_time => "16:00", :notes => "Made models practice runway walk in sack bag", :project_id => 1, :user_id => 1)
+entry_2 = Entry.create(:date => "Sep 26", :start_time => "15:00", :end_time => "17:00", :notes => "Sewed together the sack bags", :project_id => 1, :user_id => 1)
+entry_3 = Entry.create(:date => "Sep 27", :start_time => "10:00", :end_time => "16:00", :notes => "Made models practice runway walk in sack bags", :project_id => 1, :user_id => 1)
 
 entry_4 = Entry.create(:date => "Oct 1", :start_time => "10:00", :end_time => "16:00", :notes => "Stiched up kitty dresses", :project_id => 3, :user_id => 2)
 entry_5 = Entry.create(:date => "Oct 2", :start_time => "15:00", :end_time => "17:00", :notes => "Fitted kitties for high heels", :project_id => 3, :user_id => 2)

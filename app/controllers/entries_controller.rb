@@ -7,6 +7,12 @@ class EntriesController < ApplicationController
 		  @entries = current_user.entries.desc_order
 		end
 		@project = Project.all
+
+######## JS code
+		respond_to do |f|
+			f.html {render :index}
+			f.json {render json: @entries}
+		end
 	end 
 
 	def new

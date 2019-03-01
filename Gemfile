@@ -25,6 +25,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'pry'
 gem 'activestorage'
 gem 'thin'
+gem 'active_model_serializers'
 
 
 # bootstrap

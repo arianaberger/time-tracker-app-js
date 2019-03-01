@@ -8,7 +8,7 @@ Remove turbolinks
 
 28.02
 - copied app on github
-- removed turbolinks gem
+- removed turbolinks gem/from js manifest
 
 
 
