@@ -15,8 +15,8 @@
  */
 
 @import "bootstrap-sprockets";
-@import "bootstrap-custom";
-@import "variables";
+/*@import "bootstrap-custom";
+*//*@import "variables";*/
 
 
 html, body {
