@@ -6,4 +6,9 @@ Remove turbolinks
 	- manifest file (should have //= require_tree .)
 
 
+28.02
+- copied app on github
+- removed turbolinks gem
+
+
 
