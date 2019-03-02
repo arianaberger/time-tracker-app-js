@@ -12,8 +12,9 @@ function loadEntries() {
 		dataType: 'json',
 	}).done(function (data) {
 		console.log("the data is", data);
-		let entry = new Entry(data[0]);
-		debugger
+		let entries = createEntriesArray(data);
+		let entryHTML = entriesHTML(entries);
+		document.getElementById('entries-list').innerHTML += entryHTML
 	});
 };
 
@@ -25,4 +26,28 @@ class Entry {
 		this.project = obj.project.name
 		this.user = obj.user.name
 	}
+}
+
+function entriesHTML(entries) {
+	let entriesHTML = []
+	let entryHTML = entries.forEach(function(e) {
+		let html = (`
+			<p>
+			<strong>${e.notes}</strong>
+			${e.user} - ${e.project}</br>
+			${e.end_time} - ${e.start_time}	
+			</p>
+		`)
+		entriesHTML.push(html)
+	})
+	return entriesHTML.join("")
+}
+
+function createEntriesArray(data) {
+	let entries = [];
+	data.forEach(function(e) {
+		let entry = new Entry(e);
+		entries.push(entry);
+	});
+	return entries;
 }
