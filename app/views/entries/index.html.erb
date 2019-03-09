@@ -1,2 +1,50 @@
 <div id="entries-list">
 </div>
+
+
+
+<h2>Time Entries: <%= current_user.name %></h2>
+
+<hr>
+
+<!-- filter for entries -->
+<p>
+ <%= form_tag(user_entries_path(current_user), method: "get") do %>
+    <%= select_tag "project", options_from_collection_for_select(@project, "id", "name"), prompt: "Filter by project:" %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</p>
+
+ <!-- end filter -->
+
+<hr>
+
+<table>
+	<tr>
+		<th>Date</th>
+		<th>Project</th>
+		<th>Hours</th>
+		<th>Notes</th>
+	</tr>
+
+	<% @entries.each do |entry| %>
+		<tr>
+			<td><%= entry.calc_date(entry.date) %></strong> </td>
+			<td><strong><%= link_to entry.project.name, project_path(entry.project) %></strong></td>
+			<td><%= entry.calc_time(entry.start_time) %> to <%= entry.calc_time(entry.end_time) %></td>
+			<td><i><%= entry.notes %></i></td>
+			<td><%#= link_to "delete entry", "/entries/#{entry.id}", method: :delete, class: "form_button" %></td>
+		 </tr>
+	<% end %>
+	<tr>
+		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
+		</td><td class="table_total"><strong><%= Entry.calc_hours(@entries) %></strong></td>
+	</tr>
+</table>
+
+<p>
+</p>
+
+<p>
+	<%= link_to "+ Add entry", new_user_entry_path(current_user), class: "btn btn-primary btn-sm" %>
+</p>
