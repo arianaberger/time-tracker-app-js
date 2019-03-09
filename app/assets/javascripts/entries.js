@@ -28,16 +28,8 @@ class Entry {
 		this.notes = obj.notes
 		this.project = obj.project.name
 		this.user = obj.user.name
+		this.projectId = obj.project.id
 	}
-}
-
-
-//Properly formats time
-function addZero(i) {
-  if (i < 10) {
-    i = "0" + i;
-  }
-  return i;
 }
 
 //Sets entries HTML using Entry data to display on the DOM
@@ -50,7 +42,7 @@ function entriesHTML(entries) {
 
 		let html = (`
 			<td>${date}</td>
-			<td><strong>${e.project}</strong></td>
+			<td><strong><a href="/projects/${e.projectId}">${e.project}</a></strong></td>
 			<td>${timeStart} to ${timeEnd}</td>
 			<td><i>${e.notes}</i></td>
 			</tr>
@@ -72,7 +64,7 @@ function entriesHTML(entries) {
 	let tableEndHTML = (`
 		<tr>
 		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
-		</td><td class="table_total"><strong>Total Hours worked here</strong></td>
+		</td><td class="table_total"><strong>*CALC TOTAL HOURS*</strong></td>
 		</tr>
 		</table>
 	`)
@@ -100,7 +92,15 @@ function formatDate(e) {
 	return date;
 }
 
-//Both time functions could be turned into one, how to this best?
+//Used to format time
+function addZero(i) {
+  if (i < 10) {
+    i = "0" + i;
+  }
+  return i;
+}
+
+//Both time functions could be turned into one, how to do this best?
 function formatStartTime(e) {
 	let start_time = new Date(e.start_time);
 	let hStart = addZero(start_time.getHours());
