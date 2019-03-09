@@ -16,7 +16,8 @@ function loadEntries() {
 		let entries = createEntriesArray(data);
 		let entryHTML = entriesHTML(entries);
 		let userHTML = currentUserHTML(entries)
-		document.getElementById('entries-list').innerHTML += userHTML + entryHTML
+		document.getElementById('username').innerHTML += userHTML	
+		document.getElementById('entries-list').innerHTML += entryHTML
 	});
 };
 
@@ -30,6 +31,16 @@ class Entry {
 		this.user = obj.user.name
 		this.projectId = obj.project.id
 	}
+}
+
+//Create an array of Entry objects using the JSON data grabbed with ajax request
+function createEntriesArray(data) {
+	let entries = [];
+	data.forEach(function(e) {
+		let entry = new Entry(e);
+		entries.push(entry);
+	});
+	return entries;
 }
 
 //Sets entries HTML using Entry data to display on the DOM
@@ -127,13 +138,3 @@ function formatEndTime(e) {
 // 	return timeString;
 // }
 
-
-//Create an array of Entry objects using the JSON data grabbed with ajax request
-function createEntriesArray(data) {
-	let entries = [];
-	data.forEach(function(e) {
-		let entry = new Entry(e);
-		entries.push(entry);
-	});
-	return entries;
-}
