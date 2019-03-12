@@ -1,6 +1,6 @@
 //When document is ready, load the following:
 $(document).ready(function () {
-	console.log('JS is working!');
+	console.log('JS is working for entries!');
 
 	//Execute function to display data when page is done loading
 	loadEntries();
@@ -12,7 +12,7 @@ function loadEntries() {
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
-		console.log("the data is", data);
+		// console.log("the data is", data);
 		let entries = createEntriesArray(data);
 		let entryHTML = entriesHTML(entries);
 		let userHTML = currentUserHTML(entries)

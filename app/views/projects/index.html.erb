@@ -22,5 +22,8 @@
 
 <hr>
 
-<%= link_to "+ Add project", new_user_project_path(@current_user), class: "btn btn-primary btn-sm" %>
+<%#= link_to "+ Add project", new_user_project_path(@current_user), class: "btn btn-primary btn-sm" %>
+<%= link_to "+ Add project", "#", class: "btn btn-primary btn-sm", id: "js-add-project" %>
 <%= link_to "View all projects", all_projects_path, class: "btn btn-success btn-sm" %>
+
+<div id="new-post-form"></div>
