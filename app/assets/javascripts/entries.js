@@ -12,7 +12,7 @@ function loadEntries() {
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
-		// console.log("the data is", data);
+		console.log("the data is", data);
 		let entries = createEntriesArray(data);
 		let entryHTML = entriesHTML(entries);
 		let userHTML = currentUserHTML(entries)
