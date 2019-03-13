@@ -24,7 +24,6 @@ function loadEntries() {
 //An Entry class is used to create an Entry object used in createEntriesArray
 class Entry {
 	constructor(obj) {
-		debugger
 		this.start_time = obj.start_time
 		this.end_time = obj.end_time
 		this.notes = obj.notes
@@ -76,7 +75,7 @@ function entriesHTML(entries) {
 	let tableEndHTML = (`
 		<tr>
 		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
-		</td><td class="table_total"><strong>${entry_hours}</strong></td>
+		</td><td class="table_total"><strong>*insert entry hours*</strong></td>
 		</tr>
 		</table>
 	`)

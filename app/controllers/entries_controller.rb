@@ -6,7 +6,7 @@ class EntriesController < ApplicationController
 		# else
 		#   @entries = current_user.entries.desc_order
 		# end
-		# @project = Project.all
+		@project = Project.all
 
 ######## JS code
 		@entries = current_user.entries.desc_order
@@ -14,10 +14,10 @@ class EntriesController < ApplicationController
 
 		respond_to do |f|
 			f.html {render :index}
-			f.json {render :json => {:entries => @entries, :entry_hours => @entry_hours}}
-			# f.json {render json: @entries}
+			# f.json {render :json => {:entries => @entries, :entry_hours => @entry_hours}}
+			f.json {render json: @entries}
 			# render json: @entries.as_json(:include => {:projects => {:include => :name}}), @entry_hours.as_json
-end
+		end
 	end 
 
 	def new
