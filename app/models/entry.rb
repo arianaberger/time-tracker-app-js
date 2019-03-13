@@ -25,7 +25,7 @@ class Entry < ApplicationRecord
    def self.calc_hours(entries)
      	time_array = []
      	entries.each do |entry|
-     	  time_array << entry.hours_to_i(entry.end_time) - entry.hours_to_i(entry.start_time)
+     	  time_array << calc_hours_entry(entry)
       end
      	time_array.sum
    end

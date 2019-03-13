@@ -1,18 +1,23 @@
 class EntriesController < ApplicationController
 
 	def index
-		if !params[:project].blank?
-		  @entries = current_user.entries.sort_by_project(params[:project])
-		else
-		  @entries = current_user.entries.desc_order
-		end
-		@project = Project.all
+		# if !params[:project].blank?
+		#   @entries = current_user.entries.sort_by_project(params[:project])
+		# else
+		#   @entries = current_user.entries.desc_order
+		# end
+		# @project = Project.all
 
 ######## JS code
+		@entries = current_user.entries.desc_order
+		@entry_hours = Entry.calc_hours(@entries)
+
 		respond_to do |f|
 			f.html {render :index}
-			f.json {render json: @entries}
-		end
+			f.json {render :json => {:entries => @entries, :entry_hours => @entry_hours}}
+			# f.json {render json: @entries}
+			# render json: @entries.as_json(:include => {:projects => {:include => :name}}), @entry_hours.as_json
+end
 	end 
 
 	def new
