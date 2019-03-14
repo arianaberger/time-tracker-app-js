@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :current_project, except: [:index, :create, :new, :status, :allprojects]
 
   def index
-    @projects = Project.user_projects(params[:user_id])
+    @projects = Project.user_projects(current_user)
 
 ######## JS code
     respond_to do |f|

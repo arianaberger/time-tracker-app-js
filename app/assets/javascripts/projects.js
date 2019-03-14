@@ -16,4 +16,13 @@ function newProjectForm() {
 		$.get("/projects/new", function(projectForm) {
 			document.getElementById('js-new-project-form').innerHTML = projectForm;
 		})
+		listenerSaveProject();
+}
+
+function listenerSaveProject() {
+	$('#project-submit').submit(function(event) {
+		debugger
+		event.preventDefault();
+		console.log("it worksssss");
+	})
 }
