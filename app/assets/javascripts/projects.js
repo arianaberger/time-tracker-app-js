@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 	//Execute function to display data when page is done loading
 	listenerNewProject();
-	listenerSaveProject();
+	// listenerSaveProject();
 });
 
 function listenerNewProject() {
@@ -16,11 +16,13 @@ function listenerNewProject() {
 function newProjectForm() {
 		$.get("/projects/new", function(projectForm) {
 			document.getElementById('js-new-project-form').innerHTML = projectForm;
+		}).done(function() {
+			listenerSaveProject();
 		})
 }
 
 function listenerSaveProject() {
-	$("form").submit(function(event) {
+	$('#project-submit').on('click', function(event) {
 		event.preventDefault();
 		debugger
 		console.log("it worksssss");
