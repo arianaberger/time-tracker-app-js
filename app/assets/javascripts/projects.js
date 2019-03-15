@@ -22,6 +22,10 @@ function newProjectForm() {
 }
 
 function listenerSaveProject() {
+	$('select')[0].value //'kitty'
+	$('select')[1].value //'Complete'
+
+
 	$('#project-submit').on('click', function(event) {
 		event.preventDefault();
 		debugger
