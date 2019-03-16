@@ -22,12 +22,15 @@ function newProjectForm() {
 }
 
 function listenerSaveProject() {
-	$('select')[0].value //'kitty'
-	$('select')[1].value //'Complete'
-
-
 	$('#project-submit').on('click', function(event) {
 		event.preventDefault();
+
+		let owner = $('select')[0].value;
+		let name = $('input#project-name')[0].value;
+		let deadline = $('input#project-deadline')[0].value
+		let status = $('select')[1].value;
+
+
 		debugger
 		console.log("it worksssss");
 	})

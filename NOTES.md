@@ -12,6 +12,9 @@
 	add entry button is still Ruby
 	date formatting/actual date isn't correct
 
+13.03
+- json data for entries not working when I want to also display entry_hours
+- submit function not working for new project form
 
 
 
