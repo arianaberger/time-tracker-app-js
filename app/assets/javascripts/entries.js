@@ -29,12 +29,11 @@ class Entry {
 	constructor(obj) {
 		//start and end times not working
 		this.start_time = obj.attributes["start-time"]
-		this.end_time = obj.attributes["end_time"]
+		this.end_time = obj.attributes["end-time"]
 		this.notes = obj.attributes.notes
 		this.project = obj.attributes.project.name
 		this.user = obj.relationships.user.data.name
 		this.projectId = obj.attributes.project.id
-		debugger
 	}
 }
 
