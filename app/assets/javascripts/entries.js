@@ -1,3 +1,5 @@
+
+
 //When document is ready, load the following:
 $(document).ready(function () {
 	console.log('JS is working for entries!');
@@ -12,8 +14,9 @@ function loadEntries() {
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
-		console.log("the data is", data);
-		let entries = createEntriesArray(data);
+		entryData = data.data
+		console.log("the data is", entryData);
+		let entries = createEntriesArray(entryData);
 		let entryHTML = entriesHTML(entries);
 		let userHTML = currentUserHTML(entries)
 		document.getElementById('username').innerHTML += userHTML	
@@ -24,12 +27,14 @@ function loadEntries() {
 //An Entry class is used to create an Entry object used in createEntriesArray
 class Entry {
 	constructor(obj) {
-		this.start_time = obj.start_time
-		this.end_time = obj.end_time
-		this.notes = obj.notes
-		this.project = obj.project.name
-		this.user = obj.user.name
-		this.projectId = obj.project.id
+		//start and end times not working
+		this.start_time = obj.attributes["start-time"]
+		this.end_time = obj.attributes["end_time"]
+		this.notes = obj.attributes.notes
+		this.project = obj.attributes.project.name
+		this.user = obj.relationships.user.data.name
+		this.projectId = obj.attributes.project.id
+		debugger
 	}
 }
 
@@ -101,6 +106,7 @@ function formatDate(e) {
 	let day = entryDate.getDate();
 	let date = month + " " + day + ", " + year 
 	return date;
+	debugger
 }
 
 //Used to format time
