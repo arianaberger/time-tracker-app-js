@@ -1,5 +1,3 @@
-
-
 //When document is ready, load the following:
 $(document).ready(function () {
 	console.log('JS is working for entries!');
@@ -91,6 +89,7 @@ function entriesHTML(entries) {
 
 
 function currentUserHTML(entries) {
+/////////Fix because if you have no entries it gives an error
 	let user = entries[0].user 
 	let userName = `
 		<h2>Time Entries: ${user}</h2>
