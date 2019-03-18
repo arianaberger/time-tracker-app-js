@@ -4,16 +4,17 @@ $(document).ready(function () {
 
 	//Execute function to display data when page is done loading
 	listenerNewProject();
+	listenerDisplayProjectData();
 });
 
 
-	//Added to try and fix 422 error
-	var token = $("meta[name='_token']").attr("content");
-	$.ajaxSetup({
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader('X-CSRF-TOKEN', token);
-    }
-	});
+//Added to try and fix 422 error
+var token = $("meta[name='_token']").attr("content");
+$.ajaxSetup({
+  beforeSend: function(xhr) {
+      xhr.setRequestHeader('X-CSRF-TOKEN', token);
+  }
+});
 
 
 //Listens for click to add new project
@@ -43,7 +44,8 @@ function listenerSaveProject() {
 		let name = $('input#project-name')[0].value;
 		let deadline = $('input#project-deadline')[0].value
 		let status = $('select')[1].value;
-		const newProject = {name: name, deadline: deadline, status: status, owner: owner, _token: {{ csrf_token() }} }
+		// const newProject = {name: name, deadline: deadline, status: status, owner: owner, _token: {{ csrf_token() }} }
+		const newProject = {name: name, deadline: deadline, status: status, owner: owner}
 
 		// if (name != "") {
 		// let project = $.post('/projects', newProject);
@@ -64,6 +66,21 @@ function listenerSaveProject() {
 		} else {
 			window.alert("Please give your project a name");
 		}
+	})
+}
+
+
+//Begin code for show page
+
+function listenerDisplayProjectData() {
+	const projectID = window.location.href.replace('http://localhost:3000/projects/', '')
+	url = `/projects/${projectID}`
+		$.ajax({
+		url: url,
+		method: 'get',
+		dataType: 'json',
+	}).done(function (data) {
+		console.log(data)
 	})
 }
 
