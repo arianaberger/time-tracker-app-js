@@ -1,6 +1,8 @@
 TODO:
 - filter for entries
 - json time data for entries is not correct
+- Posting ajax form:
+	added tags to header in application layout and messed with .js file, still no luck
 
 28.02
 - copied app on github
