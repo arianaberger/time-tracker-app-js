@@ -1,4 +1,6 @@
-- entries json data only shows id for project and user, how to display?
+TODO:
+- filter for entries
+- json time data for entries is not correct
 
 28.02
 - copied app on github
@@ -16,7 +18,18 @@
 - json data for entries not working when I want to also display entry_hours
 - submit function not working for new project form
 
+18.03
+- created a totalHours function for entries
 
+
+**********************
+
+REVIEW FOR ASSESSMENT:
+
+If you have Howard be prepared for a full review of your project and how it works, how it meets the requirments.  Then, he will ask for live coding based on your project to change/add some functionality.  I hear this varies per project.  After which, you will be live quizzed on javascript concepts - scope, hoisting, E6 stuff, etc.  It was pretty intense but a great learning experience. He reviews stuff and points out alternative concepts, etc.  All the dialog - it took 2 sessions.  But he said it was not a failing, just a continuation.  He is a pretty good teacher.  Good luck!
+
+
+**********************
 
 RAILS/JS Project
 

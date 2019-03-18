@@ -1,10 +1,21 @@
 //When document is ready, load the following:
 $(document).ready(function () {
+
+	//Added to try and fix 422 error
+	var token = $("meta[name='_csrf']").attr("content");
+	$.ajaxSetup({
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-CSRF-TOKEN', token);
+    }
+	});
+
 	console.log('JS is working for projects!');
 
 	//Execute function to display data when page is done loading
 	listenerNewProject();
 });
+
+
 
 //Listens for click to add new project
 function listenerNewProject() {
@@ -33,34 +44,26 @@ function listenerSaveProject() {
 		let name = $('input#project-name')[0].value;
 		let deadline = $('input#project-deadline')[0].value
 		let status = $('select')[1].value;
-		let csfr = getCSRFTokenValue();
-		const newProject = {name: name, deadline: deadline, status: status, owner: owner, CSFR: csfr}
-
-
-		let project = $.post('/projects', newProject);
-		posting.done(function(data){
-			debugger
-		})
+		const newProject = {name: name, deadline: deadline, status: status, owner: owner}
 
 		// if (name != "") {
-		// 	// getting 422 unprocessable entity
-		// 	$.ajax({
-	 //      type: 'POST',
-	 //      url: `/projects`,
-	 //      data: newProject,
-	 //      success: function (data) {
-  //       console.log(data);
-		//     },
-		//     error: function (data) {
-		//         console.log(data)
-  //   }
-  //   	});
-		// 	// $.post("/projects", newProject, function(project) {
-		// 	// 	debugger
-		// 	// })
+		// let project = $.post('/projects', newProject);
+		// project.done(function(data){
+		// 	debugger
+		// })
 		// } else {
 		// 	window.alert("Please give your project a name");
 		// }
+
+		if (name != "") {
+			$.ajax({
+	      type: 'POST',
+	      url: `/projects`,
+	      data: newProject,
+    	});
+		} else {
+			window.alert("Please give your project a name");
+		}
 	})
 }
 
