@@ -1,20 +1,19 @@
 //When document is ready, load the following:
 $(document).ready(function () {
-
-	//Added to try and fix 422 error
-	var token = $("meta[name='_csrf']").attr("content");
-	$.ajaxSetup({
-    beforeSend: function(xhr) {
-        xhr.setRequestHeader('X-CSRF-TOKEN', token);
-    }
-	});
-
 	console.log('JS is working for projects!');
 
 	//Execute function to display data when page is done loading
 	listenerNewProject();
 });
 
+
+	//Added to try and fix 422 error
+	var token = $("meta[name='_token']").attr("content");
+	$.ajaxSetup({
+    beforeSend: function(xhr) {
+        xhr.setRequestHeader('X-CSRF-TOKEN', token);
+    }
+	});
 
 
 //Listens for click to add new project
@@ -44,7 +43,7 @@ function listenerSaveProject() {
 		let name = $('input#project-name')[0].value;
 		let deadline = $('input#project-deadline')[0].value
 		let status = $('select')[1].value;
-		const newProject = {name: name, deadline: deadline, status: status, owner: owner}
+		const newProject = {name: name, deadline: deadline, status: status, owner: owner, _token: {{ csrf_token() }} }
 
 		// if (name != "") {
 		// let project = $.post('/projects', newProject);
@@ -58,6 +57,7 @@ function listenerSaveProject() {
 		if (name != "") {
 			$.ajax({
 	      type: 'POST',
+	      // datatype: "json",
 	      url: `/projects`,
 	      data: newProject,
     	});

@@ -1,0 +1,55 @@
+<h2>Project Name: <%= @project.name %></h2>
+
+<hr>
+
+<table>
+	<tr><td><strong>Owner:</strong></td><td> <%= link_to @owner.name, user_path(@owner) %></td></tr>
+	<tr><td><strong>Status:</strong></td><td> <%= @project.status %></td></tr>
+	<tr><td><strong>Deadline:</strong></td><td> <%= @project.calc_date(@project.deadline) %></td></tr>
+
+<% if @owner.name == current_user.name %>
+	<td><%= link_to 'Edit Project', edit_project_path(@project), class: "btn btn-primary btn-sm" %></td>
+	<td><%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete, data: {confirm: "NOTE: Deleting a project will delete all related time entries!"}, class: "btn btn-danger btn-sm" %></td>
+<% end %>
+</table>
+
+<hr>
+
+<h3>Project Activity:</h3>
+
+
+<% if @entries.empty? %>
+	<p><i>No activity has been recorded for this project yet. Click below to add an entry:</i></p>
+<% else %>
+
+	<table>
+		<tr>
+			<th>Date</th>
+			<th>Contributor</th>
+			<th>Hours</th>
+			<th>Notes</th>
+		</tr>
+
+		<% @entries.each do |entry| %>
+			<tr>
+				<td><%= entry.calc_date(entry.date) %></strong> </td>
+				<td><%= link_to entry.user.name, user_path(entry.user) %></td>
+				<td><%= entry.calc_time(entry.start_time) %> to <%= entry.calc_time(entry.end_time) %></td>
+				<td><i><%= entry.notes %></i></td>
+				<td><% if entry.user.name == current_user.name %> <%= link_to "delete entry", "/entries/#{entry.id}", method: :delete, class: "form_button" %><% end %></td>
+			</tr>
+		<% end %>
+		<tr>
+			<td></td><td class="table_total"><strong>Total hours:</strong> 
+			</td><td class="table_total"><strong><%= Entry.calc_hours(@entries) %></strong></td>
+		</tr>
+	</table>
+
+	<p>
+	</p>
+
+<% end %>
+
+<p>
+	<%= link_to "+ Add entry", new_project_entry_path(@project), class: "btn btn-primary btn-sm" %>
+</p>

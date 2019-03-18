@@ -31,6 +31,8 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @owner = User.find(@project.owner)
     @entries = @project.entries.desc_order
+
+######## JS code
     respond_to do |f|
       f.html {render :show}
       f.json {render :json => {:project => @project, :owner => @owner, :entries => @entries}}
