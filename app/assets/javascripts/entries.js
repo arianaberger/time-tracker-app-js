@@ -50,6 +50,7 @@ function createEntriesArray(data) {
 //Sets entries HTML using Entry data to display on the DOM
 function entriesHTML(entries) {
 	let entriesHTML = []
+	let totalHours = calculateHours(entries)
 	let entryHTML = entries.forEach(function(e) {
 		let date = formatDate(e);
 		let timeStart = formatStartTime(e);
@@ -79,7 +80,7 @@ function entriesHTML(entries) {
 	let tableEndHTML = (`
 		<tr>
 		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
-		</td><td class="table_total"><strong>*insert entry hours*</strong></td>
+		</td><td class="table_total"><strong>${totalHours}</strong></td>
 		</tr>
 		</table>
 	`)
@@ -105,7 +106,20 @@ function formatDate(e) {
 	let day = entryDate.getDate();
 	let date = month + " " + day + ", " + year 
 	return date;
-	debugger
+}
+
+
+//Calculate total hours worked
+function calculateHours(entries) {
+	hours = []
+	entries.forEach(function(e) {
+		let end_time = new Date(e.end_time).getHours();
+		let start_time = new Date(e.start_time).getHours();
+		let time = end_time - start_time;
+		hours.push(time);
+	})
+	const totalHours = hours.reduce(function(a, b) { return a + b; }, 0);
+	return totalHours;
 }
 
 //Used to format time
