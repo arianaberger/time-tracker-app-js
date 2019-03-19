@@ -34,13 +34,13 @@ function listenerSaveProject() {
 		let name = $('input#project-name')[0].value;
 		let deadline = $('input#project-deadline')[0].value
 		let status = $('select')[1].value;
-		let newProject = $(this).serialize();
-		// const newProject = {name: name, deadline: deadline, status: status, owner: owner}
+		// let newProject = $(this).serialize();
+		const newProject = {name: name, deadline: deadline, status: status, owner: owner}
+		// let newProject = "name=M&deadline=2019-03-27&owner=Karl&deadline=2019-03-25&status=Done"
 
 		if (name != "") {
 		let project = $.post('/projects', newProject);
 		project.done(function(data){
-			debugger
 		})
 		} else {
 			window.alert("Please give your project a name");

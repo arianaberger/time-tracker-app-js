@@ -26,12 +26,14 @@ function loadEntries() {
 class Entry {
 	constructor(obj) {
 		//start and end times not working
-		this.start_time = obj.attributes["start-time"]
-		this.end_time = obj.attributes["end-time"]
+		this.date = formatDate(obj)
+		this.startTime = formatStartTime(obj)
+		this.endTime = formatEndTime(obj)
 		this.notes = obj.attributes.notes
 		this.project = obj.attributes.project.name
 		this.user = obj.relationships.user.data.name
 		this.projectId = obj.attributes.project.id
+		// this.user = obj.relationships.user.data.name
 	}
 }
 
@@ -50,14 +52,14 @@ function entriesHTML(entries) {
 	let entriesHTML = []
 	let totalHours = calculateHours(entries)
 	let entryHTML = entries.forEach(function(e) {
-		let date = formatDate(e);
-		let timeStart = formatStartTime(e);
-		let timeEnd = formatEndTime(e);
+		// let date = formatDate(e);
+		// let timeStart = formatStartTime(e);
+		// let timeEnd = formatEndTime(e);
 
 		let html = (`
-			<td>${date}</td>
+			<td>${e.date}</td>
 			<td><strong><a href="/projects/${e.projectId}">${e.project}</a></strong></td>
-			<td>${timeStart} to ${timeEnd}</td>
+			<td>${e.startTime} to ${e.endTime}</td>
 			<td><i>${e.notes}</i></td>
 			</tr>
 		`)
@@ -97,16 +99,6 @@ function currentUserHTML(entries) {
 	return userName
 }
 
-function formatDate(e) {
-	let entryDate = new Date(e.start_time);
-	let year = entryDate.getFullYear();
-	let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	let month = months[entryDate.getMonth()];
-	let day = entryDate.getDate();
-	let date = month + " " + day + ", " + year 
-	return date;
-}
-
 
 //Calculate total hours worked
 function calculateHours(entries) {
@@ -121,6 +113,16 @@ function calculateHours(entries) {
 	return totalHours;
 }
 
+function formatDate(e) {
+	let entryDate = new Date(e["attributes"]["start-time"]);
+	let year = entryDate.getFullYear();
+	let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	let month = months[entryDate.getMonth()];
+	let day = entryDate.getDate();
+	let date = month + " " + day + ", " + year 
+	return date;
+}
+
 //Used to format time
 function addZero(i) {
   if (i < 10) {
@@ -131,7 +133,7 @@ function addZero(i) {
 
 //Both time functions could be turned into one, how to do this best?
 function formatStartTime(e) {
-	let start_time = new Date(e.start_time);
+	let start_time = new Date(e["attributes"]["start-time"]);
 	let hStart = addZero(start_time.getHours());
 	let mStart = addZero(start_time.getMinutes());
 	let timeStart = hStart + ":" + mStart;
@@ -139,7 +141,7 @@ function formatStartTime(e) {
 }
 
 function formatEndTime(e) {
-	let end_time = new Date(e.end_time);
+	let end_time = new Date(e["attributes"]["end-time"]);
 	let hEnd = addZero(end_time.getHours());
 	let mEnd = addZero(end_time.getMinutes());
 	let timeEnd = hEnd + ":" + mEnd;
