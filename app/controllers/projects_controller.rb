@@ -19,13 +19,12 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    raise params.inspect
     @project = Project.new(project_params)
-    if @project.save  #don't need separate .valid? 
+    if @project.save  
       flash[:success] = "Project successfully created!"
-      redirect_to @project
-    else
-      render :new
+      render json: @entry, status: 201
+    # else
+    #   render :new
     end
   end
 

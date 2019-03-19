@@ -18,7 +18,6 @@ function listenerNewProject() {
 //Get request to #new controller method to retrieve project form and append to the DOM
 function newProjectForm() {
 		$.get("/projects/new", function(projectForm) {
-			// debugger
 			document.getElementById('js-new-project-form').innerHTML = projectForm;
 		}).done(function() {
 			listenerSaveProject();
@@ -31,21 +30,35 @@ function listenerSaveProject() {
 	$('form').submit(function(event) {
 		event.preventDefault();
 
-		let owner = $('select')[0].value;
-		let name = $('input#project-name')[0].value;
-		let deadline = $('input#project-deadline')[0].value
-		let status = $('select')[1].value;
-		// let newProject = $(this).serialize();
-		const newProject = {name: name, deadline: deadline, status: status, owner: owner}
-		// let newProject = "name=M&deadline=2019-03-27&owner=Karl&deadline=2019-03-25&status=Done"
 
-		if (name != "") {
+		let newProject = $(this).serialize();
 		let project = $.post('/projects', newProject);
 		project.done(function(data){
+			const project = data 
+			console.log(project)
 		})
-		} else {
-			window.alert("Please give your project a name");
-		}
+		// 	var entry = data;
+		// 	// debugger
+  //       // $("#").text(post["title"]);
+  //       // $("#postBody").text(post["description"]);
+  //     });
+
+
+		// let owner = $('select')[0].value;
+		// let name = $('input#project-name')[0].value;
+		// let deadline = $('input#project-deadline')[0].value
+		// let status = $('select')[1].value;
+		// // let newProject = $(this).serialize();
+		// const newProject = {name: name, deadline: deadline, status: status, owner: owner}
+		// // let newProject = "name=M&deadline=2019-03-27&owner=Karl&deadline=2019-03-25&status=Done"
+
+		// if (name != "") {
+		// let project = $.post('/projects', newProject);
+		// project.done(function(data){
+		// })
+		// } else {
+		// 	window.alert("Please give your project a name");
+		// }
 
 		// if (name != "") {
 		// 	$.ajax({
