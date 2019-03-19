@@ -2,6 +2,8 @@ $(document).ready(function () {
 	console.log('JS is working for project show page!');
 
 	listenerDisplayShowPageData();
+
+	/////Test for getting form to work
 	listenerSaveEntry();
 });
 
@@ -53,8 +55,7 @@ function formatDeadline(p) {
 }
 
 
-
-
+//////////Test for getting form to work
 function listenerSaveEntry() {
 	$('form').submit(function(event) {
 		event.preventDefault();
@@ -65,7 +66,7 @@ function listenerSaveEntry() {
 		entry.done(function(data){
 			console.log(data)
 			var entry = data;
-			debugger
+			// debugger
         // $("#").text(post["title"]);
         // $("#postBody").text(post["description"]);
       });

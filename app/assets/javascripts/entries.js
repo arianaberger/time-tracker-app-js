@@ -52,10 +52,6 @@ function entriesHTML(entries) {
 	let entriesHTML = []
 	let totalHours = calculateHours(entries)
 	let entryHTML = entries.forEach(function(e) {
-		// let date = formatDate(e);
-		// let timeStart = formatStartTime(e);
-		// let timeEnd = formatEndTime(e);
-
 		let html = (`
 			<td>${e.date}</td>
 			<td><strong><a href="/projects/${e.projectId}">${e.project}</a></strong></td>
@@ -101,7 +97,6 @@ function currentUserHTML(entries) {
 
 
 //Calculate total hours worked
-
 function calculateHours(entries) {
 	hours = []
 	entries.forEach(function(e) {		

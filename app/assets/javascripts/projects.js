@@ -18,6 +18,7 @@ function listenerNewProject() {
 //Get request to #new controller method to retrieve project form and append to the DOM
 function newProjectForm() {
 		$.get("/projects/new", function(projectForm) {
+			// debugger
 			document.getElementById('js-new-project-form').innerHTML = projectForm;
 		}).done(function() {
 			listenerSaveProject();
@@ -27,8 +28,8 @@ function newProjectForm() {
 //Checks the user inputted a project name, then sends post request to #create controller method
 //Captures user input from form into a hash used to create new instance of a project
 function listenerSaveProject() {
-		$('form').submit(function(event) {
-				event.preventDefault();
+	$('form').submit(function(event) {
+		event.preventDefault();
 
 		let owner = $('select')[0].value;
 		let name = $('input#project-name')[0].value;
