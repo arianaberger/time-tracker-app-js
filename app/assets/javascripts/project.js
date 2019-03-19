@@ -2,6 +2,7 @@ $(document).ready(function () {
 	console.log('JS is working for project show page!');
 
 	listenerDisplayShowPageData();
+	listenerSaveEntry();
 });
 
 function listenerDisplayShowPageData() {
@@ -49,4 +50,22 @@ function formatDeadline(p) {
 	let day = projectDeadline.getDate();
 	let date = month + " " + day + ", " + year 
 	return date;
+}
+
+
+
+
+function listenerSaveEntry() {
+	$('form').submit(function(event) {
+		event.preventDefault();
+		console.log("IT WORKZZ")
+
+		let newEntry = $(this).serialize();
+		let entry = $.post('/entries', newEntry);
+		entry.done(function(data){
+					debugger
+
+		})
+
+	})
 }

@@ -47,3 +47,63 @@
 <p>
 	<%= link_to "+ Add entry", new_project_entry_path(@project), class: "btn btn-primary btn-sm" %>
 </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= form_for @entry do |f| %>
+  <table id="table">
+    <tr>
+      <td>
+        <%= f.label "Choose Project:" %>
+      </td>
+      <td>
+        <%= f.collection_select :project_id, Project.all, :id, :name, :selected => @selected %>
+      </td>
+    </tr>
+
+      <%= f.hidden_field :user_id, value: session[:user_id] %>
+
+    <tr>
+      <td>
+      <%= f.label "Date:" %>
+      </td>
+      <td>
+        <%= f.date_select :date %></br>
+      </td>
+    </tr>
+
+      <td>
+        <%= f.label "Start time:" %>
+      </td>
+      <td>
+        <%= f.time_select :start_time, :minute_step => 15 %>
+      </td>
+    <tr>
+      <td>
+        <%= f.label "End time:" %>
+      </td>
+      <td>
+        <%= f.time_select :end_time, :minute_step => 15 %>
+      </td>
+    </tr>
+      <td>
+        <%= f.label "Notes:" %>
+      </td>
+      <td>
+        <%= f.text_field :notes %>
+      </td>
+  </table>
+
+  <p><%= f.submit class: "btn btn-primary btn-sm" %></p>
+
+<% end %>
