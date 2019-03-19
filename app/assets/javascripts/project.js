@@ -63,9 +63,11 @@ function listenerSaveEntry() {
 		let newEntry = $(this).serialize();
 		let entry = $.post('/entries', newEntry);
 		entry.done(function(data){
-					debugger
-
-		})
-
+			console.log(data)
+			var entry = data;
+			debugger
+        // $("#").text(post["title"]);
+        // $("#postBody").text(post["description"]);
+      });
 	})
 }
