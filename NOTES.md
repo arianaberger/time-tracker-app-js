@@ -1,10 +1,11 @@
 TODO:
 - filter for entries (use window.location.search!)
 - json time data for entries is not correct
-- Posting ajax form:
+- *Posting ajax form:*
 	- added tags to header in application layout and messed with .js file, still no luck
 	- also added hidden field to form
 	- token added to project data hash but error is that there's an uexpected token
+- entries on project show page?
 
 28.02
 - copied app on github
@@ -24,7 +25,7 @@ TODO:
 
 18.03
 - created a totalHours function for entries
-
+- json data for project show page working
 
 **********************
 

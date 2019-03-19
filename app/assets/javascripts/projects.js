@@ -7,15 +7,6 @@ $(document).ready(function () {
 });
 
 
-// //Added to try and fix 422 error
-// var token = $("meta[name='_token']").attr("content");
-// $.ajaxSetup({
-//   beforeSend: function(xhr) {
-//       xhr.setRequestHeader('X-CSRF-TOKEN', token);
-//   }
-// });
-
-
 //Listens for click to add new project
 function listenerNewProject() {
 	$('a#js-add-project').on('click', function(event) {
@@ -43,28 +34,28 @@ function listenerSaveProject() {
 		let name = $('input#project-name')[0].value;
 		let deadline = $('input#project-deadline')[0].value
 		let status = $('select')[1].value;
-		// const newProject = {name: name, deadline: deadline, status: status, owner: owner, _token: {{ csrf_token() }} }
-		const newProject = {name: name, deadline: deadline, status: status, owner: owner}
-
-		// if (name != "") {
-		// let project = $.post('/projects', newProject);
-		// project.done(function(data){
-		// 	debugger
-		// })
-		// } else {
-		// 	window.alert("Please give your project a name");
-		// }
+		let newProject = $(this).serialize();
+		// const newProject = {name: name, deadline: deadline, status: status, owner: owner}
 
 		if (name != "") {
-			$.ajax({
-	      type: 'POST',
-	      // datatype: "json",
-	      url: `/projects`,
-	      data: newProject,
-    	});
+		let project = $.post('/projects', newProject);
+		project.done(function(data){
+			debugger
+		})
 		} else {
 			window.alert("Please give your project a name");
 		}
+
+		// if (name != "") {
+		// 	$.ajax({
+	 //      type: 'POST',
+	 //      // datatype: "json",
+	 //      url: `/projects`,
+	 //      data: newProject,
+  //   	});
+		// } else {
+		// 	window.alert("Please give your project a name");
+		// }
 	})
 }
 
