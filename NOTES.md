@@ -1,5 +1,5 @@
 TODO:
-- filter for entries
+- filter for entries (use window.location.search!)
 - json time data for entries is not correct
 - Posting ajax form:
 	- added tags to header in application layout and messed with .js file, still no luck

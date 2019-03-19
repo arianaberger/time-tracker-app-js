@@ -12,7 +12,9 @@ function listenerDisplayShowPageData() {
 		dataType: 'json',
 	}).done(function (data) {
 		console.log('project data is:', data)
-		let project = new Project(data)
+		let project = new Project(data);
+		let projectHTML = project.projectHTML();
+		document.getElementById('project-info').innerHTML += projectHTML
 	})
 }
 
@@ -21,7 +23,22 @@ class Project {
 		this.name = obj.project.name
 		this.status = obj.project.status
 		this.deadline = formatDeadline(obj.project.deadline)
+		this.owner = obj.owner.name
+		this.ownerID = obj.owner.id
 	}
+}
+
+Project.prototype.projectHTML = function () {
+	return (`
+		<h2>Project Name: ${this.name}</h2>
+		<hr>
+
+		<table>
+			<tr><td><strong>Owner:</strong></td><td><a href="/users/${this.ownerID}">${this.owner}</a></td></tr>
+			<tr><td><strong>Status:</strong></td><td>${this.status}</td></tr>
+			<tr><td><strong>Deadline:</strong></td><td>${this.deadline}</td></tr>
+		</table>
+	`)
 }
 
 function formatDeadline(p) {
