@@ -101,12 +101,11 @@ function currentUserHTML(entries) {
 
 
 //Calculate total hours worked
+
 function calculateHours(entries) {
 	hours = []
-	entries.forEach(function(e) {
-		let end_time = new Date(e.end_time).getHours();
-		let start_time = new Date(e.start_time).getHours();
-		let time = end_time - start_time;
+	entries.forEach(function(e) {		
+		let time = e.endTime.slice(0, 2) - e.startTime.slice(0, 2)
 		hours.push(time);
 	})
 	const totalHours = hours.reduce(function(a, b) { return a + b; }, 0);
