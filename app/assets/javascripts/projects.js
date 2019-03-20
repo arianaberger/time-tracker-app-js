@@ -34,7 +34,9 @@ function listenerSaveProject() {
 		project.done(function(data){
 			let project = new projectObject(data);
 			let projectHTML = createProjectHTML(project)
-			$('div#new-project')[0].innerHTML += projectHTML;
+			// $('div#new-project')[0].innerHTML += projectHTML;
+			debugger
+			$('#projects-table > tbody:last-child').append(projectHTML);
 		})
 
 
@@ -56,6 +58,8 @@ function listenerSaveProject() {
 
 class projectObject {
 	constructor(obj) {
+		this.id = obj.project.id
+		this.ownerID = obj.project.owner
 		this.name = obj.project.name
 		this.status = obj.project.status
 		this.owner = obj.owner.name
@@ -64,12 +68,12 @@ class projectObject {
 
 function createProjectHTML(project) {
 	let HTML = (`
-	  	<table><tr>
-	  	<td><strong><a href="">${project.name}</a></strong></td>
-	  	<td><a href="">${project.name}</a></td>
+	  	<tr>
+	  	<td><strong><a href="/project/${project.id}">${project.name}</a></strong></td>
+	  	<td><a href="/users/${project.ownerID}">${project.owner}</a></td>
 	  	<t${project.status}</td>
 	  	<td>0</td>
-	  	</tr></table>
+	  	</tr>
 	`)
 	return HTML
 }
