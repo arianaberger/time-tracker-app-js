@@ -1,11 +1,11 @@
 <div id="project-info"></div>
 
-<table><tr>
+<hr>
+
 <% if @owner.name == current_user.name %>
-	<td><%= link_to 'Edit Project', edit_project_path(@project), class: "btn btn-primary btn-sm" %></td>
-	<td><%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete, data: {confirm: "NOTE: Deleting a project will delete all related time entries!"}, class: "btn btn-danger btn-sm" %></td>
+	<%= link_to 'Edit Project', edit_project_path(@project), class: "btn btn-primary btn-sm" %>
+	<%= link_to "Delete Project", "/projects/#{@project.id}", method: :delete, data: {confirm: "NOTE: Deleting a project will delete all related time entries!"}, class: "btn btn-danger btn-sm" %>
 <% end %>
-</tr></table>
 
 <hr>
 
