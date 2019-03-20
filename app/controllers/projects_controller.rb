@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save  
       flash[:success] = "Project successfully created!"
-      render json: @entry, status: 201
+      render json: @project, status: 201
     # else
     #   render :new
     end

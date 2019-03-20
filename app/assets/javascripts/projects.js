@@ -24,54 +24,37 @@ function newProjectForm() {
 		})
 }
 
-//Checks the user inputted a project name, then sends post request to #create controller method
-//Captures user input from form into a hash used to create new instance of a project
+//Checks the user inputted a project name, then sends post request to #create controller method and appends new project to DOM
 function listenerSaveProject() {
 	$('form').submit(function(event) {
 		event.preventDefault();
-
-
-		let newProject = $(this).serialize();
-		let project = $.post('/projects', newProject);
-		project.done(function(data){
-			const project = data 
-			console.log(project)
-		})
-		// 	var entry = data;
-		// 	// debugger
-  //       // $("#").text(post["title"]);
-  //       // $("#postBody").text(post["description"]);
-  //     });
-
-
-		// let owner = $('select')[0].value;
-		// let name = $('input#project-name')[0].value;
-		// let deadline = $('input#project-deadline')[0].value
-		// let status = $('select')[1].value;
-		// // let newProject = $(this).serialize();
-		// const newProject = {name: name, deadline: deadline, status: status, owner: owner}
-		// // let newProject = "name=M&deadline=2019-03-27&owner=Karl&deadline=2019-03-25&status=Done"
-
-		// if (name != "") {
-		// let project = $.post('/projects', newProject);
-		// project.done(function(data){
-		// })
-		// } else {
-		// 	window.alert("Please give your project a name");
-		// }
-
-		// if (name != "") {
-		// 	$.ajax({
-	 //      type: 'POST',
-	 //      // datatype: "json",
-	 //      url: `/projects`,
-	 //      data: newProject,
-  //   	});
-		// } else {
-		// 	window.alert("Please give your project a name");
-		// }
+		let name = $('form')[0][3].value
+		if (name != "") {
+			let newProject = $(this).serialize();
+			let project = $.post('/projects', newProject);
+			project.done(function(data){
+				let project = new newProject(data);
+				$('#new-project').innerHTML += project;
+			})
+		} else
+			$('.btn btn-primary btn-sm').prop('disabled', false);
+			document.getElementsByClassName('input.btn btn-primary btn-sm').disabled = false;
+			window.alert("Please give your project a name");
+			// ELEMENT.classList.remove("CLASS_NAME");
 	})
 }
+
+
+class newProject {
+	constructor(data) {
+		this.name = data.data.attributes.name
+		this.status = data.data.attributes.status
+		// this.user = 
+	}
+}
+
+
+
 
 
 
