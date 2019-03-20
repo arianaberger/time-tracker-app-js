@@ -6,7 +6,6 @@ $(document).ready(function () {
 	listenerNewProject();
 });
 
-
 //Listens for click to add new project
 function listenerNewProject() {
 	$('a#js-add-project').on('click', function(event) {
@@ -28,30 +27,21 @@ function newProjectForm() {
 function listenerSaveProject() {
 	$('form').submit(function(event) {
 		event.preventDefault();
-
-		let newProject = $(this).serialize();
-		let project = $.post('/projects', newProject);
-		project.done(function(data){
-			let project = new projectObject(data);
-			let projectHTML = createProjectHTML(project);
-			$('table#projects-table tr:last').after(projectHTML);
-			successAlert();
-		})
-
-
-		// let name = $('form')[0][3].value
-		// if (name != "") {
-		// 	let newProject = $(this).serialize();
-		// 	let project = $.post('/projects', newProject);
-		// 	project.done(function(data){
-		// 		let project = new newProject(data);
-		// 		$('#new-project').innerHTML += project;
-		// 	})
-		// } else
-		// 	$('.btn btn-primary btn-sm').prop('disabled', false);
-		// 	document.getElementsByClassName('input.btn btn-primary btn-sm').disabled = false;
-		// 	window.alert("Please give your project a name");
-		// 	// ELEMENT.classList.remove("CLASS_NAME");
+		if ($('form')[0][3].value != "") {
+			let newProject = $(this).serialize();
+			let project = $.post('/projects', newProject);
+			project.done(function(data){
+				let project = new projectObject(data);
+				let projectHTML = createProjectHTML(project);
+				$('table#projects-table tr:last').after(projectHTML);
+				successAlert();
+				removeDisable();
+			});
+		} else {
+			window.alert("Please give your project a name");
+			removeDisable();
+			//button won't change to disabled: true even though it works in the console!
+		}
 	})
 }
 
@@ -77,12 +67,14 @@ function createProjectHTML(project) {
 	return HTML
 }
 
-
 function successAlert() {
 	$('#success').remove()
 	$('div#alert-js')[0].innerHTML = "Project successfully created!";
 	$('div#alert-js').addClass("alert alert-success text-center");
 }
 
+function removeDisable() {
+	$('input.btn.btn-primary.btn-sm').prop('disabled', false);
+}
 
 

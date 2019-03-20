@@ -3,7 +3,7 @@ TODO:
 - json time data for entries is not correct
 - entries on project show page?
 - project new form (HTML) vs. JS? How to display both? Removed link on dashboard to make things easier
-	- Also need to remove option to choose another project owner
+- remove disable not working when name is missing
 
 28.02
 - copied app on github
