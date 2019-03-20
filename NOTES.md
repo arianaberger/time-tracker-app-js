@@ -1,7 +1,6 @@
 TODO:
 - filter for entries (use window.location.search!)
 - json time data for entries is not correct
-- success class won't add to div when project created with ajax form
 - entries on project show page?
 
 28.02
