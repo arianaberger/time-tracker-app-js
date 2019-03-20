@@ -32,14 +32,13 @@ class EntriesController < ApplicationController
 
 	def create
 		@entry = Entry.new(entry_params)
-		render json: @entry, status: 201
-		# if @entry.valid?
-		# 	@entry.save
-		# 	flash[:success] = "Time entry successfully saved."
-			# redirect_to project_path(params[:entry][:project_id])
-		# else
-	 #        render :new
-	 #    end
+		if @entry.valid?
+			@entry.save
+			flash[:success] = "Time entry successfully saved."
+			redirect_to project_path(params[:entry][:project_id])
+		else
+	        render :new
+	    end
 	end
 
 	def destroy
