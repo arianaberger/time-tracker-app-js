@@ -30,10 +30,10 @@ function listenerSaveProject() {
 		event.preventDefault();
 
 		let newProject = $(this).serialize();
-		debugger
 		let project = $.post('/projects', newProject);
 		project.done(function(data){
 			let project = new projectObject(data);
+			debugger
 			$('div#new-project')[0].innerHTML += project.name;
 		})
 
@@ -56,10 +56,10 @@ function listenerSaveProject() {
 
 
 class projectObject {
-	constructor(data) {
-		this.name = data.data.attributes.name
-		this.status = data.data.attributes.status
-		// this.user = 
+	constructor(obj) {
+		this.name = obj.project.name
+		this.status = obj.project.status
+		this.owner = obj.owner.name
 	}
 }
 
