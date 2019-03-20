@@ -23,9 +23,11 @@
     <% end %>
 
     <% if flash[:success] %>
-      <div class="alert alert-success text-center"> <%= flash[:success] %></div>
+      <div class="alert alert-success text-center" id="success"> <%= flash[:success] %></div>
     <% end %>
 
+    <!-- div added for JS functionality -->
+    <div id="alert-js"></div>
 
     <div class="container" role="main">
       <div class="row">

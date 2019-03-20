@@ -22,10 +22,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @owner = User.find(@project.owner)
     if @project.save  
-      flash[:success] = "Project successfully created!"
+      # flash[:success] = "Project successfully created!"
       render :json => {:project => @project, :owner => @owner}, status: 201
-    else
-      render :new
+    # else
+    #   render :new
     end
   end
 

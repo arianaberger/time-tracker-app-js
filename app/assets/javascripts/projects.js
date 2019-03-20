@@ -33,10 +33,9 @@ function listenerSaveProject() {
 		let project = $.post('/projects', newProject);
 		project.done(function(data){
 			let project = new projectObject(data);
-			let projectHTML = createProjectHTML(project)
-			// $('div#new-project')[0].innerHTML += projectHTML;
-			debugger
-			$('#projects-table > tbody:last-child').append(projectHTML);
+			let projectHTML = createProjectHTML(project);
+			$('table#projects-table tr:last').after(projectHTML);
+			successAlert();
 		})
 
 
@@ -69,15 +68,21 @@ class projectObject {
 function createProjectHTML(project) {
 	let HTML = (`
 	  	<tr>
-	  	<td><strong><a href="/project/${project.id}">${project.name}</a></strong></td>
+	  	<td><strong><a href="/projects/${project.id}">${project.name}</a></strong></td>
 	  	<td><a href="/users/${project.ownerID}">${project.owner}</a></td>
-	  	<t${project.status}</td>
+	  	<td>${project.status}</td>
 	  	<td>0</td>
 	  	</tr>
 	`)
 	return HTML
 }
 
+
+function successAlert() {
+	$('#success').remove()
+	$('div#alert-js')[0].innerHTML = "Project successfully created!";
+	$('div#alert-js').addClass("alert alert-success text-center");
+}
 
 
 
