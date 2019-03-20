@@ -13,11 +13,17 @@ class ProjectsController < ApplicationController
     end
   end
 
+##Layout rendering with JS form, how to remove?
   def new
     @project = Project.new
-    render :new, layout: false
+    # render :new, layout: false
+    respond_to do |f|
+      f.html {render :new}
+      f.json {render :layout => false}
+  end
   end
 
+##How to create normally versus using JS?
   def create
     @project = Project.new(project_params)
     @owner = User.find(@project.owner)

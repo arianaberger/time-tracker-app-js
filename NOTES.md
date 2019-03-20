@@ -3,7 +3,8 @@ TODO:
 - json time data for entries is not correct
 - entries on project show page?
 - project new form (HTML) vs. JS? How to display both? Removed link on dashboard to make things easier
-- remove disable not working when name is missing
+- PROJECTS.JS: remove disable not working when name is missing
+- AllProjects: link to create new project -> how to get normal rails form working?
 
 28.02
 - copied app on github
