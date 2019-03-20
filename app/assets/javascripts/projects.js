@@ -33,8 +33,8 @@ function listenerSaveProject() {
 		let project = $.post('/projects', newProject);
 		project.done(function(data){
 			let project = new projectObject(data);
-			debugger
-			$('div#new-project')[0].innerHTML += project.name;
+			let projectHTML = createProjectHTML(project)
+			$('div#new-project')[0].innerHTML += projectHTML;
 		})
 
 
@@ -54,7 +54,6 @@ function listenerSaveProject() {
 	})
 }
 
-
 class projectObject {
 	constructor(obj) {
 		this.name = obj.project.name
@@ -63,8 +62,17 @@ class projectObject {
 	}
 }
 
-
-
+function createProjectHTML(project) {
+	let HTML = (`
+	  	<table><tr>
+	  	<td><strong><a href="">${project.name}</a></strong></td>
+	  	<td><a href="">${project.name}</a></td>
+	  	<t${project.status}</td>
+	  	<td>0</td>
+	  	</tr></table>
+	`)
+	return HTML
+}
 
 
 
