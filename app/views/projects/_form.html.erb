@@ -9,7 +9,7 @@
         <%= f.label "Project Owner:" %>
       </td>
       <td>
-        <%= f.collection_select :owner, User.all, :id, :name, :selected => current_user.id %>
+        <%= f.collection_select :owner, User.all, :name, :name, :selected => current_user.id %>
       </td>
     </tr>
 

@@ -28,24 +28,34 @@ function newProjectForm() {
 function listenerSaveProject() {
 	$('form').submit(function(event) {
 		event.preventDefault();
-		let name = $('form')[0][3].value
-		if (name != "") {
-			let newProject = $(this).serialize();
-			let project = $.post('/projects', newProject);
-			project.done(function(data){
-				let project = new newProject(data);
-				$('#new-project').innerHTML += project;
-			})
-		} else
-			$('.btn btn-primary btn-sm').prop('disabled', false);
-			document.getElementsByClassName('input.btn btn-primary btn-sm').disabled = false;
-			window.alert("Please give your project a name");
-			// ELEMENT.classList.remove("CLASS_NAME");
+
+		let newProject = $(this).serialize();
+		debugger
+		let project = $.post('/projects', newProject);
+		project.done(function(data){
+			let project = new projectObject(data);
+			$('div#new-project')[0].innerHTML += project.name;
+		})
+
+
+		// let name = $('form')[0][3].value
+		// if (name != "") {
+		// 	let newProject = $(this).serialize();
+		// 	let project = $.post('/projects', newProject);
+		// 	project.done(function(data){
+		// 		let project = new newProject(data);
+		// 		$('#new-project').innerHTML += project;
+		// 	})
+		// } else
+		// 	$('.btn btn-primary btn-sm').prop('disabled', false);
+		// 	document.getElementsByClassName('input.btn btn-primary btn-sm').disabled = false;
+		// 	window.alert("Please give your project a name");
+		// 	// ELEMENT.classList.remove("CLASS_NAME");
 	})
 }
 
 
-class newProject {
+class projectObject {
 	constructor(data) {
 		this.name = data.data.attributes.name
 		this.status = data.data.attributes.status
