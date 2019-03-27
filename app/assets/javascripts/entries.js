@@ -108,7 +108,7 @@ function calculateHours(entries) {
 }
 
 function formatDate(e) {
-	let entryDate = new Date(e["attributes"]["start-time"]);
+	let entryDate = new Date(e.attributes.date);
 	let year = entryDate.getFullYear();
 	let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	let month = months[entryDate.getMonth()];
