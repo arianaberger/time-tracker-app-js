@@ -2,14 +2,12 @@ class ProjectsController < ApplicationController
   before_action :current_project, except: [:index, :create, :new, :status, :allprojects]
 
   def index
-    # @project = Project.new
     @projects = Project.user_projects(current_user)
 
 ######## JS code
     respond_to do |f|
       f.html {render :index}
       f.json {render json: @projects}
-      # f.json {render :json => {:projects => @projects, :project => @project}}
     end
   end
 

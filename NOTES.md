@@ -1,4 +1,4 @@
-MAIN ISSUES:
+*MAIN ISSUES:*
 - if new project form is missing a name, the 'create' button is disabled and I can't un-disable it
 - having a new form page and ajax new form work together (layout displaying in ajax form and how to get create method to render html vs json?)
 - JSON dates for entries are incorrect
@@ -67,7 +67,7 @@ A summary of the application
 
 - Project show page - shows project details and time entries for that project
 
-[x] How will you implement rendering a has_many through relationship via JavaScript & JSON?
+[x] How will you implement rendering a has_many [through] relationship via JavaScript & JSON?
 
 - Can show contributors to a project (via entries) on the project show page - list of contributors on the top (or already included in the entries list?)
 
