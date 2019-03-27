@@ -37,10 +37,9 @@ function listenerSaveProject() {
 				successAlert();
 				removeDisable();
 			});
-		} else {
+		} else { 
 			window.alert("Please give your project a name");
 			removeDisable();
-			//button won't change to disabled: true even though it works in the console!
 		}
 	})
 }
@@ -74,7 +73,7 @@ function successAlert() {
 }
 
 function removeDisable() {
-	$('input.btn.btn-primary.btn-sm').prop('disabled', false);
+	$('input.btn.btn-primary.btn-sm').removeAttr('data-disable-with');
 }
 
 

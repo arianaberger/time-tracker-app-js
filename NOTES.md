@@ -1,7 +1,5 @@
 *MAIN ISSUES:*
-- if new project form is missing a name, the 'create' button is disabled and I can't un-disable it
 - having a new form page and ajax new form work together (layout displaying in ajax form and how to get create method to render html vs json?)
-- JSON dates for entries are incorrect (added 'date' to entry serializer, should be able to get it working)
 - Test for new users without entry/project data
 
 TODO:
