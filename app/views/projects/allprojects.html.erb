@@ -24,13 +24,9 @@
 	</tr>
 	
 	  <% Project.all.each do |project| %>
-	  <%# raise inspect %>
 	  	<tr><td><strong><%= link_to "#{project.name}", project_path(project) %></strong></td>
 	  	<td><%= link_to Project.project_owner(project).name, user_path(Project.project_owner(project)) %></td></tr>
 	  <% end %>
 </table>
 
 <hr>
-
-
-<%= link_to "+ Add project", new_user_project_path(current_user), class: "btn btn-primary btn-sm" %>

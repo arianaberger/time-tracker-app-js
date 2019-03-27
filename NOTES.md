@@ -1,10 +1,17 @@
+MAIN ISSUES:
+- if new project form is missing a name, the 'create' button is disabled and I can't un-disable it
+- having a new form page and ajax new form work together (layout displaying in ajax form and how to get create method to render html vs json?)
+- JSON dates for entries are incorrect
+- Test for new users without entry/project data
+
 TODO:
 - filter for entries (use window.location.search!)
 - json time data for entries is not correct
+- *Posting ajax form:*
+	- added tags to header in application layout and messed with .js file, still no luck
+	- also added hidden field to form
+	- token added to project data hash but error is that there's an uexpected token
 - entries on project show page?
-- project new form (HTML) vs. JS? How to display both? Removed link on dashboard to make things easier
-- PROJECTS.JS: remove disable not working when name is missing
-- AllProjects: link to create new project -> how to get normal rails form working?
 
 28.02
 - copied app on github
@@ -73,6 +80,7 @@ A summary of the application
 
 [ ] What is meant by JavaScript Model Objects and how will you implement them in your application?
 * Entry class created to gather an array of entry objects
+* Project class and prototype created in project.js
 
 - JS is object-based and based on prototypes, we don’t create classes with instances of objects but simply create objects. Initialization without persistence
 
