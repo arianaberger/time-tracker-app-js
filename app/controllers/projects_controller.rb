@@ -28,12 +28,13 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @owner = User.find(@project.owner)
     @entries = @project.entries.desc_order
-    @entry = Entry.new
 
 ######## JS code
     respond_to do |f|
       f.html {render :show}
+      # the line below originally provided all the data I need except I can't access the name of the user associated to the entry
       f.json {render :json => {:project => @project, :owner => @owner, :entries => @entries}}
+      # f.json {render json: @project}
     end
   end
 

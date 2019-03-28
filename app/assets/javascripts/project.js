@@ -20,6 +20,7 @@ function listenerDisplayShowPageData() {
 
 class Project {
 	constructor(obj) {
+		debugger
 		this.name = obj.project.name
 		this.status = obj.project.status
 		this.deadline = formatDeadline(obj.project.deadline)
