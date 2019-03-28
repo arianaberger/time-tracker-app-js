@@ -13,8 +13,11 @@ function listenerDisplayShowPageData() {
 	}).done(function (data) {
 		console.log('project data is:', data)
 		let project = new Project(data);
+		let entries = new Entries(data);
 		let projectHTML = project.projectHTML();
+		let entriesHTML = entries.entriesHTML();
 		document.getElementById('project-info').innerHTML += projectHTML
+		document.getElementById('entries-info').innerHTML += entriesHTML		
 	})
 }
 
@@ -24,8 +27,14 @@ class Project {
 		this.name = obj.project.name
 		this.status = obj.project.status
 		this.deadline = formatDeadline(obj.project.deadline)
-		this.owner = obj.owner.name
-		this.ownerID = obj.owner.id
+		this.owner = obj.project.users[0].name
+		this.ownerID = obj.project.owner
+	}
+}
+
+class Entries {
+	constructor(obj) {
+		
 	}
 }
 
@@ -42,6 +51,12 @@ Project.prototype.projectHTML = function () {
 	`)
 }
 
+Entries.prototype.entriesHTML = function () {
+	return (`
+		Hello
+	`)
+}
+
 function formatDeadline(p) {
 	let projectDeadline = new Date(p);
 	let year = projectDeadline.getFullYear();
@@ -51,3 +66,5 @@ function formatDeadline(p) {
 	let date = month + " " + day + ", " + year 
 	return date;
 }
+
+
