@@ -13,7 +13,7 @@ function listenerDisplayShowPageData() {
 	}).done(function (data) {
 		console.log('project data is:', data)
 		let project = new Project(data);
-		let entries = new Entries(data);
+		let entries = createEntriesArray(data);
 		let projectHTML = project.projectHTML();
 		let entriesHTML = entries.entriesHTML();
 		document.getElementById('project-info').innerHTML += projectHTML
@@ -23,7 +23,6 @@ function listenerDisplayShowPageData() {
 
 class Project {
 	constructor(obj) {
-		debugger
 		this.name = obj.project.name
 		this.status = obj.project.status
 		this.deadline = formatDeadline(obj.project.deadline)
@@ -34,7 +33,15 @@ class Project {
 
 class Entries {
 	constructor(obj) {
-		
+		debugger
+		// this.date = formatDate(obj)
+		// this.startTime = formatStartTime(obj)
+		// this.endTime = formatEndTime(obj)
+		// this.notes = obj.attributes.notes
+		// this.project = obj.attributes.project.name
+		// this.user = obj.relationships.user.data.name
+		// this.projectId = obj.attributes.project.id
+
 	}
 }
 
@@ -51,10 +58,55 @@ Project.prototype.projectHTML = function () {
 	`)
 }
 
-Entries.prototype.entriesHTML = function () {
-	return (`
-		Hello
+
+//Create an array of Entry objects using the JSON data grabbed with ajax request
+function createEntriesArray(data) {
+	let allEntries = [];
+	let entriesArr = data.project.entries
+	debugger
+	entriesArr.forEach(function(e) {
+		let entry = new Entry(e);
+		entries.push(entry);
+	});
+	return allEntries;
+}
+
+//Sets entries HTML using Entry data to display on the DOM
+function entriesHTML(entries) {
+	let entriesHTML = []
+	let totalHours = calculateHours(entries)
+	let entryHTML = entries.forEach(function(e) {
+		let html = (`
+			<td>${e.date}</td>
+			<td><strong><a href="/projects/${e.projectId}">${e.project}</a></strong></td>
+			<td>${e.startTime} to ${e.endTime}</td>
+			<td><i>${e.notes}</i></td>
+			</tr>
+		`)
+
+		entriesHTML.push(html) 
+	})
+
+	let tableStartHTML = (`
+			<table>
+			<tr>
+			<th>Date</th>
+			<th>Project</th>
+			<th>Hours</th>
+			<th>Notes</th>
+			</tr>
+		`);
+
+	let tableEndHTML = (`
+		<tr>
+		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
+		</td><td class="table_total"><strong>${totalHours}</strong></td>
+		</tr>
+		</table>
 	`)
+
+	let HTML = tableStartHTML + entriesHTML.join("") + tableEndHTML
+	return HTML
 }
 
 function formatDeadline(p) {
