@@ -24,15 +24,14 @@ function loadEntries() {
 //An Entry class is used to create an Entry object used in createEntriesArray
 class Entry {
 	constructor(obj) {
-		debugger
-		this.date = formatDate(obj)
-		this.startTime = formatStartTime(obj["attributes"]["start-time"])
-		this.endTime = formatEndTime(obj["attributes"]["end-time"])
-		this.notes = obj.attributes.notes
-		this.project = obj.attributes.project.name
-		this.user = obj.relationships.user.data.name
-		this.projectId = obj.attributes.project.id
-		// this.user = obj.relationships.user.data.name
+		this.id = obj.id 
+		this.date = formatDate(obj.date)
+		this.startTime = formatStartTime(obj.start_time)
+		this.endTime = formatEndTime(obj.end_time)
+		this.notes = obj.notes
+		this.project = obj.project.name 
+		this.projectID = obj.project.id
+		this.user = obj.user.name
 	}
 }
 
@@ -53,7 +52,7 @@ function entriesHTML(entries) {
 	let entryHTML = entries.forEach(function(e) {
 		let html = (`
 			<td>${e.date}</td>
-			<td><strong><a href="/projects/${e.projectId}">${e.project}</a></strong></td>
+			<td><strong><a href="/projects/${e.projectID}">${e.project}</a></strong></td>
 			<td>${e.startTime} to ${e.endTime}</td>
 			<td><i>${e.notes}</i></td>
 			</tr>

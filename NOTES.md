@@ -1,6 +1,7 @@
 *MAIN ISSUES:*
 - having a new form page and ajax new form work together (layout displaying in ajax form and how to get create method to render html vs json?)
 - Test for new users without entry/project data
+- Getting <No route matches [GET] "/projects/http:/localhost:3000/entries"> error despite page loading fine
 
 TODO:
 - filter for entries (use window.location.search!)

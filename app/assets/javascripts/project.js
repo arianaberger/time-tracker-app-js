@@ -30,16 +30,6 @@ class Project {
 	}
 }
 
-class Entries {
-	constructor(obj) {
-		this.date = formatDate(obj.date)
-		this.startTime = formatStartTime(obj.start_time)
-		this.endTime = formatEndTime(obj.end_time)
-		this.notes = obj.notes
-		this.id = obj.id 
-	}
-}
-
 Project.prototype.projectHTML = function () {
 	return (`
 		<h2>Project Name: ${this.name}</h2>
