@@ -2,7 +2,6 @@
 $(document).ready(function () {
 	console.log('JS is working for entries!');
 
-	//Execute function to display data when page is done loading
 	loadEntries();
 });
 
@@ -12,7 +11,7 @@ function loadEntries() {
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
-		entryData = data.data
+		entryData = data.entries
 		console.log("the data is", entryData);
 		let entries = createEntriesArray(entryData);
 		let entryHTML = entriesHTML(entries);
@@ -25,7 +24,7 @@ function loadEntries() {
 //An Entry class is used to create an Entry object used in createEntriesArray
 class Entry {
 	constructor(obj) {
-		//start and end times not working
+		debugger
 		this.date = formatDate(obj)
 		this.startTime = formatStartTime(obj["attributes"]["start-time"])
 		this.endTime = formatEndTime(obj["attributes"]["end-time"])
@@ -105,16 +104,6 @@ function calculateHours(entries) {
 	})
 	const totalHours = hours.reduce(function(a, b) { return a + b; }, 0);
 	return totalHours;
-}
-
-function formatDate(e) {
-	let entryDate = new Date(e.attributes.date);
-	let year = entryDate.getFullYear();
-	let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	let month = months[entryDate.getMonth()];
-	let day = entryDate.getDate();
-	let date = month + " " + day + ", " + year 
-	return date;
 }
 
 //Used to format time

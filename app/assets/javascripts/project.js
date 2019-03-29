@@ -11,19 +11,17 @@ function listenerDisplayShowPageData() {
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
-		console.log('project data is:', data)
 		// let project = new Project(data);
-		let entries = createEntriesArrayForProject(data);
-		let projectHTML = project.projectHTML();
-		let entriesHTML = entries.entriesHTML();
-		document.getElementById('project-info').innerHTML += projectHTML
-		document.getElementById('entries-info').innerHTML += entriesHTML		
+		// let entries = createEntriesArrayForProject(data);
+		// let projectHTML = project.projectHTML();
+		// let entriesProjectHTML = entries.entriesProjectHTML();
+		// document.getElementById('project-info').innerHTML += projectHTML
+		// document.getElementById('entries-info').innerHTML += entriesProjectHTML		
 	})
 }
 
 class Project {
 	constructor(obj) {
-		debugger
 		this.name = obj.project.name
 		this.status = obj.project.status
 		this.deadline = formatDate(obj.project.deadline)
@@ -34,15 +32,11 @@ class Project {
 
 class Entries {
 	constructor(obj) {
-		debugger
 		this.date = formatDate(obj.date)
 		this.startTime = formatStartTime(obj.start_time)
 		this.endTime = formatEndTime(obj.end_time)
-		// this.notes = obj.attributes.notes
-		// this.project = obj.attributes.project.name
-		// this.user = obj.relationships.user.data.name
-		// this.projectId = obj.attributes.project.id
-
+		this.notes = obj.notes
+		this.id = obj.id 
 	}
 }
 
@@ -71,7 +65,7 @@ function createEntriesArrayForProject(data) {
 }
 
 //Sets entries HTML using Entry data to display on the DOM
-function entriesHTML(entries) {
+function entriesProjectHTML(entries) {
 	let entriesHTML = []
 	let totalHours = calculateHours(entries)
 	let entryHTML = entries.forEach(function(e) {
