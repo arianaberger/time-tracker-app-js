@@ -11,12 +11,12 @@ function listenerDisplayShowPageData() {
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
-		// let project = new Project(data);
-		// let entries = createEntriesArrayForProject(data);
-		// let projectHTML = project.projectHTML();
-		// let entriesProjectHTML = entries.entriesProjectHTML();
-		// document.getElementById('project-info').innerHTML += projectHTML
-		// document.getElementById('entries-info').innerHTML += entriesProjectHTML		
+		let project = new Project(data);
+		let entries = createEntriesArrayForProject(data);
+		let projectHTML = project.projectHTML();
+		let entriesHTML = entriesProjectHTML(entries);
+		document.getElementById('project-info').innerHTML += projectHTML
+		document.getElementById('entries-info').innerHTML += entriesHTML		
 	})
 }
 
@@ -48,7 +48,7 @@ function createEntriesArrayForProject(data) {
 	let allEntries = [];
 	let entriesArr = data.project.entries
 	entriesArr.forEach(function(e) {
-		let entry = new Entries(e);
+		let entry = new Entry(e);
 		allEntries.push(entry);
 	});
 	return allEntries;
