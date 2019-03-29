@@ -12,8 +12,8 @@ function listenerDisplayShowPageData() {
 		dataType: 'json',
 	}).done(function (data) {
 		console.log('project data is:', data)
-		let project = new Project(data);
-		let entries = createEntriesArray(data);
+		// let project = new Project(data);
+		let entries = createEntriesArrayForProject(data);
 		let projectHTML = project.projectHTML();
 		let entriesHTML = entries.entriesHTML();
 		document.getElementById('project-info').innerHTML += projectHTML
@@ -23,6 +23,7 @@ function listenerDisplayShowPageData() {
 
 class Project {
 	constructor(obj) {
+		debugger
 		this.name = obj.project.name
 		this.status = obj.project.status
 		this.deadline = formatDeadline(obj.project.deadline)
@@ -60,13 +61,12 @@ Project.prototype.projectHTML = function () {
 
 
 //Create an array of Entry objects using the JSON data grabbed with ajax request
-function createEntriesArray(data) {
+function createEntriesArrayForProject(data) {
 	let allEntries = [];
 	let entriesArr = data.project.entries
-	debugger
 	entriesArr.forEach(function(e) {
-		let entry = new Entry(e);
-		entries.push(entry);
+		let entry = new Entries(e);
+		allEntries.push(entry);
 	});
 	return allEntries;
 }
