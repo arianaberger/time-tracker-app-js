@@ -27,8 +27,8 @@ class Entry {
 	constructor(obj) {
 		//start and end times not working
 		this.date = formatDate(obj)
-		this.startTime = formatStartTime(obj)
-		this.endTime = formatEndTime(obj)
+		this.startTime = formatStartTime(obj["attributes"]["start-time"])
+		this.endTime = formatEndTime(obj["attributes"]["end-time"])
 		this.notes = obj.attributes.notes
 		this.project = obj.attributes.project.name
 		this.user = obj.relationships.user.data.name
@@ -127,7 +127,7 @@ function addZero(i) {
 
 //Both time functions could be turned into one, how to do this best?
 function formatStartTime(e) {
-	let start_time = new Date(e["attributes"]["start-time"]);
+	let start_time = new Date(e);
 	let hStart = addZero(start_time.getHours());
 	let mStart = addZero(start_time.getMinutes());
 	let timeStart = hStart + ":" + mStart;
@@ -135,7 +135,7 @@ function formatStartTime(e) {
 }
 
 function formatEndTime(e) {
-	let end_time = new Date(e["attributes"]["end-time"]);
+	let end_time = new Date(e);
 	let hEnd = addZero(end_time.getHours());
 	let mEnd = addZero(end_time.getMinutes());
 	let timeEnd = hEnd + ":" + mEnd;

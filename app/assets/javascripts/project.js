@@ -26,7 +26,7 @@ class Project {
 		debugger
 		this.name = obj.project.name
 		this.status = obj.project.status
-		this.deadline = formatDeadline(obj.project.deadline)
+		this.deadline = formatDate(obj.project.deadline)
 		this.owner = obj.project.users[0].name
 		this.ownerID = obj.project.owner
 	}
@@ -35,9 +35,9 @@ class Project {
 class Entries {
 	constructor(obj) {
 		debugger
-		// this.date = formatDate(obj)
-		// this.startTime = formatStartTime(obj)
-		// this.endTime = formatEndTime(obj)
+		this.date = formatDate(obj.date)
+		this.startTime = formatStartTime(obj.start_time)
+		this.endTime = formatEndTime(obj.end_time)
 		// this.notes = obj.attributes.notes
 		// this.project = obj.attributes.project.name
 		// this.user = obj.relationships.user.data.name
@@ -58,7 +58,6 @@ Project.prototype.projectHTML = function () {
 		</table>
 	`)
 }
-
 
 //Create an array of Entry objects using the JSON data grabbed with ajax request
 function createEntriesArrayForProject(data) {
@@ -109,12 +108,12 @@ function entriesHTML(entries) {
 	return HTML
 }
 
-function formatDeadline(p) {
-	let projectDeadline = new Date(p);
-	let year = projectDeadline.getFullYear();
+function formatDate(p) {
+	let newDate = new Date(p);
+	let year = newDate.getFullYear();
 	let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	let month = months[projectDeadline.getMonth()];
-	let day = projectDeadline.getDate();
+	let month = months[newDate.getMonth()];
+	let day = newDate.getDate();
 	let date = month + " " + day + ", " + year 
 	return date;
 }
