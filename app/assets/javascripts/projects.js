@@ -75,8 +75,8 @@ function successAlert() {
 }
 
 function removeDisable() {
-	$('.input.btn.btn-primary.btn-sm').prop("disabled", false);
-	// $('input.btn.btn-primary.btn-sm').removeAttr('data-disable-with');
+	// $('.input.btn.btn-primary.btn-sm').prop("disabled", false);
+	$('input.btn.btn-primary.btn-sm').removeAttr('data-disable-with');
 }
 
 

@@ -11,12 +11,15 @@ function listenerDisplayShowPageData() {
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
-		let project = new Project(data);
-		let entries = createEntriesArrayForProject(data);
+		let project = new Project(data);		
 		let projectHTML = project.projectHTML();
-		let entriesHTML = entriesProjectHTML(entries);
 		document.getElementById('project-info').innerHTML += projectHTML
-		document.getElementById('entries-info').innerHTML += entriesHTML		
+
+		let entries = createEntriesArrayForProject(data);
+		if (entries) {
+			let entriesHTML = entriesProjectHTML(entries);
+			document.getElementById('entries-info').innerHTML += entriesHTML		
+		}
 	})
 }
 
@@ -47,11 +50,15 @@ Project.prototype.projectHTML = function () {
 function createEntriesArrayForProject(data) {
 	let allEntries = [];
 	let entriesArr = data.project.entries
-	entriesArr.forEach(function(e) {
-		let entry = new Entry(e);
-		allEntries.push(entry);
-	});
-	return allEntries;
+	if (!!entriesArr) {
+		entriesArr.forEach(function(e) {
+			let entry = new Entry(e);
+			allEntries.push(entry);
+		});
+		return allEntries;
+	} else {
+		return null
+	}
 }
 
 //Sets entries HTML using Entry data to display on the DOM
