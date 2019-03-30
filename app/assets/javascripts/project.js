@@ -26,7 +26,7 @@ class Project {
 		this.status = obj.project.status
 		this.deadline = formatDate(obj.project.deadline)
 		this.ownerID = obj.project.owner
-		obj.project.users[0] ? this.owner = obj.project.users[0].name : this.owner = obj.project.owner
+		obj.project.users ? this.owner = obj.project.users[0].name : this.owner = obj.owner.name
 	}
 }
 
