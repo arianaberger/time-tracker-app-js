@@ -35,7 +35,7 @@ function listenerSaveProject() {
 				let projectHTML = createProjectHTML(project);
 				$('table#projects-table tr:last').after(projectHTML);
 				successAlert();
-				removeDisable();
+				removeDisable(); //No longer working?
 				$('input#project_name').val('');
 			});
 		} else { 
@@ -47,6 +47,7 @@ function listenerSaveProject() {
 
 class projectObject {
 	constructor(obj) {
+		debugger
 		this.id = obj.project.id
 		this.ownerID = obj.project.owner
 		this.name = obj.project.name
