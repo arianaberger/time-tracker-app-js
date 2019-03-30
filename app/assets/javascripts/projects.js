@@ -47,7 +47,6 @@ function listenerSaveProject() {
 
 class projectObject {
 	constructor(obj) {
-		debugger
 		this.id = obj.project.id
 		this.ownerID = obj.project.owner
 		this.name = obj.project.name
