@@ -50,6 +50,7 @@ Project.prototype.projectHTML = function () {
 function createEntriesArrayForProject(data) {
 	let allEntries = [];
 	let entriesArr = data.project.entries
+	debugger
 	if (!!entriesArr) {
 		entriesArr.forEach(function(e) {
 			let entry = new Entry(e);
