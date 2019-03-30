@@ -36,6 +36,7 @@ function listenerSaveProject() {
 				$('table#projects-table tr:last').after(projectHTML);
 				successAlert();
 				removeDisable();
+				$('input#project_name').val('');
 			});
 		} else { 
 			window.alert("Please give your project a name");
@@ -73,7 +74,8 @@ function successAlert() {
 }
 
 function removeDisable() {
-	$('input.btn.btn-primary.btn-sm').removeAttr('data-disable-with');
+	$('.input.btn.btn-primary.btn-sm').prop("disabled", false);
+	// $('input.btn.btn-primary.btn-sm').removeAttr('data-disable-with');
 }
 
 
