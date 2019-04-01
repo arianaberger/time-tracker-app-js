@@ -68,7 +68,6 @@ function entriesProjectHTML(entries) {
 	let entryHTML = entries.forEach(function(e) {
 		let html = (`
 			<td>${e.date}</td>
-			<td><strong><a href="/projects/${e.projectId}">${e.project}</a></strong></td>
 			<td>${e.startTime} to ${e.endTime}</td>
 			<td><i>${e.notes}</i></td>
 			</tr>
@@ -81,7 +80,6 @@ function entriesProjectHTML(entries) {
 			<table>
 			<tr>
 			<th>Date</th>
-			<th>Project</th>
 			<th>Hours</th>
 			<th>Notes</th>
 			</tr>
@@ -89,7 +87,7 @@ function entriesProjectHTML(entries) {
 
 	let tableEndHTML = (`
 		<tr>
-		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
+		<td class="table_total"><strong>Total hours worked:</strong> 
 		</td><td class="table_total"><strong>${totalHours}</strong></td>
 		</tr>
 		</table>
