@@ -29,8 +29,7 @@ class Project {
 		this.status = obj.project.status
 		this.deadline = formatDate(obj.project.deadline)
 		this.ownerID = obj.project.owner
-		// How to get correct user name?
-		// obj.project.users ? this.owner = obj.project.users[0].name : this.owner = obj.owner.name
+		this.owner = obj.owner.name
 	}
 }
 
@@ -51,8 +50,7 @@ Project.prototype.projectHTML = function () {
 function createEntriesArrayForProject(data) {
 	let allEntries = [];
 	let entriesArr = data.project.entries
-	debugger
-	if (!!entriesArr) {
+	if (entriesArr.length != 0) {
 		entriesArr.forEach(function(e) {
 			let entry = new Entry(e);
 			allEntries.push(entry);
