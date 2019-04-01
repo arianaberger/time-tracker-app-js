@@ -1,17 +1,17 @@
 <div id="username">
 </div>
 
-<!-- filter for entries -->
+<!-- filter for entries
 <p>
- <%= form_tag(user_entries_path(current_user), method: "get") do %>
-    <%= select_tag "project", options_from_collection_for_select(@project, "id", "name"), prompt: "Filter by project:" %>
-    <%= submit_tag "Filter" %>
-  <% end %>
+ <%#= form_tag(user_entries_path(current_user), method: "get") do %>
+    <%#= select_tag "project", options_from_collection_for_select(@project, "id", "name"), prompt: "Filter by project:" %>
+    <%#= submit_tag "Filter" %>
+  <%# end %>
 </p>
 
 <hr>
 
- <!-- end filter -->
+ end filter -->
 
 
  <div id="entries-list">
