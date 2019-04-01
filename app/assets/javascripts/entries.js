@@ -29,9 +29,9 @@ class Entry {
 		this.startTime = formatStartTime(obj.start_time)
 		this.endTime = formatEndTime(obj.end_time)
 		this.notes = obj.notes
-		this.project = obj.project.name 
-		this.projectID = obj.project.id
-		this.user = obj.user.name
+		obj.project ? this.project = obj.project.name : null
+		obj.project ? this.projectID = obj.project.id : null
+		obj.user ? this.user = obj.user.name : null
 	}
 }
 

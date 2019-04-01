@@ -49,7 +49,7 @@ Project.prototype.projectHTML = function () {
 //Create an array of Entry objects using the JSON data grabbed with ajax request
 function createEntriesArrayForProject(data) {
 	let allEntries = [];
-	let entriesArr = data.project.entries
+	let entriesArr = data.entries
 	if (entriesArr.length != 0) {
 		entriesArr.forEach(function(e) {
 			let entry = new Entry(e);
