@@ -7,7 +7,7 @@ $(document).ready(function () {
 
 function loadEntries() {
 	$.ajax({
-		url: 'http://localhost:3000/entries',
+		url: 'https://localhost:3000/entries',
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
@@ -17,7 +17,7 @@ function loadEntries() {
 		let entries = createEntriesArray(entryData);
 		let entryHTML = entriesHTML(entries);
 		let userHTML = currentUserHTML(entries)
-		document.getElementById('username').innerHTML += userHTML	
+		document.getElementById('username').innerHTML += userHTML
 		document.getElementById('entries-list').innerHTML += entryHTML
 	});
 };
@@ -25,7 +25,7 @@ function loadEntries() {
 //An Entry class is used to create an Entry object used in createEntriesArray
 class Entry {
 	constructor(obj) {
-		this.id = obj.id 
+		this.id = obj.id
 		this.date = formatDate(obj.date)
 		this.startTime = formatStartTime(obj.start_time)
 		this.endTime = formatEndTime(obj.end_time)
@@ -59,7 +59,7 @@ function entriesHTML(entries) {
 			</tr>
 		`)
 
-		entriesHTML.push(html) 
+		entriesHTML.push(html)
 	})
 
 	let tableStartHTML = (`
@@ -74,7 +74,7 @@ function entriesHTML(entries) {
 
 	let tableEndHTML = (`
 		<tr>
-		<td></td><td class="table_total"><strong>Total hours worked:</strong> 
+		<td></td><td class="table_total"><strong>Total hours worked:</strong>
 		</td><td class="table_total"><strong>${totalHours}</strong></td>
 		</tr>
 		</table>
@@ -87,7 +87,7 @@ function entriesHTML(entries) {
 
 function currentUserHTML(entries) {
 /////////Fix because if you have no entries it gives an error
-	let user = entries[0].user 
+	let user = entries[0].user
 	let userName = `
 		<h2>Time Entries: ${user}</h2>
 		<hr>`
@@ -98,7 +98,7 @@ function currentUserHTML(entries) {
 //Calculate total hours worked
 function calculateHours(entries) {
 	hours = []
-	entries.forEach(function(e) {		
+	entries.forEach(function(e) {
 		let time = e.endTime.slice(0, 2) - e.startTime.slice(0, 2)
 		hours.push(time);
 	})
@@ -140,4 +140,3 @@ function formatEndTime(e) {
 // 	let timeString = h + ":" + h;
 // 	return timeString;
 // }
-

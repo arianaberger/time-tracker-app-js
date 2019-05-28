@@ -5,20 +5,20 @@ $(document).ready(function () {
 });
 
 function listenerDisplayShowPageData() {
-	const projectID = window.location.href.replace('http://localhost:3000/projects/', '')
+	const projectID = window.location.href.replace('https://localhost:3000/projects/', '')
 		$.ajax({
 		url: `/projects/${projectID}`,
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
-		let project = new Project(data);		
+		let project = new Project(data);
 		let projectHTML = project.projectHTML();
 		document.getElementById('project-info').innerHTML += projectHTML
 
 		let entries = createEntriesArrayForProject(data);
 		if (entries) {
 			let entriesHTML = entriesProjectHTML(entries);
-			document.getElementById('entries-info').innerHTML += entriesHTML		
+			document.getElementById('entries-info').innerHTML += entriesHTML
 		}
 	})
 }
@@ -74,7 +74,7 @@ function entriesProjectHTML(entries) {
 			</tr>
 		`)
 
-		entriesHTML.push(html) 
+		entriesHTML.push(html)
 	})
 
 	let tableStartHTML = (`
@@ -88,7 +88,7 @@ function entriesProjectHTML(entries) {
 
 	let tableEndHTML = (`
 		<tr>
-		<td class="table_total"><strong>Total hours worked:</strong> 
+		<td class="table_total"><strong>Total hours worked:</strong>
 		</td><td class="table_total"><strong>${totalHours}</strong></td>
 		</tr>
 		</table>
@@ -104,8 +104,6 @@ function formatDate(p) {
 	let months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	let month = months[newDate.getMonth()];
 	let day = newDate.getDate();
-	let date = month + " " + day + ", " + year 
+	let date = month + " " + day + ", " + year
 	return date;
 }
-
-
