@@ -29,7 +29,7 @@ class Project {
 		this.status = obj.project.status
 		this.deadline = formatDate(obj.project.deadline)
 		this.ownerID = obj.project.owner
-		this.owner = obj.owner.name
+		// this.owner = obj.owner.name
 	}
 }
 
@@ -48,8 +48,9 @@ Project.prototype.projectHTML = function () {
 
 //Create an array of Entry objects using the JSON data grabbed with ajax request
 function createEntriesArrayForProject(data) {
+
 	let allEntries = [];
-	let entriesArr = data.entries
+	let entriesArr = data.project.entries
 	if (entriesArr.length != 0) {
 		entriesArr.forEach(function(e) {
 			let entry = new Entry(e);

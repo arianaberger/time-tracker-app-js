@@ -28,8 +28,8 @@ class ProjectsController < ApplicationController
     @entries = @project.entries.desc_order
     respond_to do |f|
       f.html {render :show}
-      f.json {render :json => {:project => @project, :owner => @owner, :entries => @entries}}
-      # f.json {render json: @project}
+      # f.json {render :json => {:project => @project, :owner => @owner, :entries => @entries}}
+      f.json {render json: @project}
     end
   end
 

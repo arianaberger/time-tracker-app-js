@@ -11,6 +11,7 @@ function loadEntries() {
 		method: 'get',
 		dataType: 'json',
 	}).done(function (data) {
+		//this should already be entries (not call .entries on it)
 		entryData = data.entries
 		console.log("the data is", entryData);
 		let entries = createEntriesArray(entryData);

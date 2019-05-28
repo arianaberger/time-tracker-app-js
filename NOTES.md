@@ -56,14 +56,14 @@ A summary of the application
 
 - Todo app allows you to create projects and show you’ve worked on them by submitting time entries. Other colleagues can work on your project and vice versa. 
 
-[ ] What is your plan to render an index page via JavaScript & JSON?
+[x] What is your plan to render an index page via JavaScript & JSON?
 
-* still need to get filter function working
+* filter function not working
 
 - Entries page (this shows all of your time entries) - render JSON (in controller), takes serialized data from EntriesSerializer. Create a JS model object
 - Essentially the view page can be deleted
 
-[ ] What is your plan to render a show page via JavaScript & JSON?
+[x] What is your plan to render a show page via JavaScript & JSON?
 
 - Project show page - shows project details and time entries for that project
 
@@ -71,14 +71,13 @@ A summary of the application
 
 - Can show contributors to a project (via entries) on the project show page - list of contributors on the top (or already included in the entries list?)
 
-[ ] What form will you use to submit via AJAX?
-* Form not working!
+[x] What form will you use to submit via AJAX?
 
 -“In the blog domain example, a user might be able to add a comment to a post, and the comment would be serialized, and submitted via an AJAX POST request, with the response being the new object in JSON and then appending that new comment to the DOM using JavaScript (ES6 Template Literals can help out a lot with this).” 
 
 - Form on ‘Your Projects’ (projects index page) to dynamically create a new project without refreshing. Form will also be displayed using JS.
 
-[ ] What is meant by JavaScript Model Objects and how will you implement them in your application?
+[x] What is meant by JavaScript Model Objects and how will you implement them in your application?
 * Entry class created to gather an array of entry objects
 * Project class and prototype created in project.js
 
